@@ -10,5 +10,6 @@ import UIKit
 import CoreData
 
 class Goal: NSManagedObject {
+    
 
 }
