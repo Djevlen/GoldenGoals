@@ -116,7 +116,6 @@
 		E99F07C02036458E00FA85D8 = {
 			isa = PBXGroup;
 			children = (
-				E95AE66520619CF700F4E6D6 /* AddingGoalSchedulerController.swift */,
 				E99F07CB2036458E00FA85D8 /* GoldenGoals */,
 				E99F07E32036458E00FA85D8 /* GoldenGoalsTests */,
 				E99F07EE2036458E00FA85D8 /* GoldenGoalsUITests */,
@@ -141,6 +140,7 @@
 				E99F07D02036458E00FA85D8 /* Main.storyboard */,
 				E9E90BEF2039B45A0087C123 /* goldenGoalTabBarController.swift */,
 				E99F07DB2036458E00FA85D8 /* Info.plist */,
+				E9C008A4207A48C1004CD929 /* Adding Goal */,
 				E9E90BF32039B8760087C123 /* Goal List */,
 				E92411D52037B861006616CF /* Golden Goal */,
 				E953791A2037A98300864212 /* Core Data Model */,
@@ -166,6 +166,16 @@
 			path = GoldenGoalsUITests;
 			sourceTree = "<group>";
 		};
+		E9C008A4207A48C1004CD929 /* Adding Goal */ = {
+			isa = PBXGroup;
+			children = (
+				E95AE66520619CF700F4E6D6 /* AddingGoalSchedulerController.swift */,
+				E98FC33E206AF04700DB9A57 /* PreviewGoalController.swift */,
+				E9443AFE205184890091B74F /* AddingGoalController.swift */,
+			);
+			path = "Adding Goal";
+			sourceTree = "<group>";
+		};
 		E9E90BEE2038F68E0087C123 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,9 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				E9BCB20F204DCC6400E9CF8D /* GoalListController.swift */,
-				E98FC33E206AF04700DB9A57 /* PreviewGoalController.swift */,
 				E9E90BF42039C23A0087C123 /* goalCell.swift */,
-				E9443AFE205184890091B74F /* AddingGoalController.swift */,
 			);
 			path = "Goal List";
 			sourceTree = "<group>";

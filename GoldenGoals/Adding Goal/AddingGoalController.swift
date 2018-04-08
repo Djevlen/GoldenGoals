@@ -79,3 +79,4 @@ class AddingGoalController: UIViewController {
 }
 
 // TODO: create struct Goal to fill with info
+
