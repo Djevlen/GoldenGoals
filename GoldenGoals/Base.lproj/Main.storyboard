@@ -49,9 +49,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RY1-zF-UGC">
-                                <rect key="frame" x="87" y="409" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RY1-zF-UGC">
+                                <rect key="frame" x="8" y="405" width="398" height="274"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eqs-Ol-Byr">
@@ -81,11 +80,15 @@
                         <color key="backgroundColor" red="0.98388844728469849" green="0.85596650838851929" blue="0.30662769079208374" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XaK-QY-8vp" firstAttribute="trailing" secondItem="eIa-Sg-G2M" secondAttribute="trailing" constant="8" id="5fq-HQ-eCZ"/>
+                            <constraint firstItem="RY1-zF-UGC" firstAttribute="leading" secondItem="XaK-QY-8vp" secondAttribute="leading" constant="8" id="6tA-28-6pI"/>
+                            <constraint firstItem="XaK-QY-8vp" firstAttribute="trailing" secondItem="RY1-zF-UGC" secondAttribute="trailing" constant="8" id="BfI-8s-FSU"/>
+                            <constraint firstItem="XaK-QY-8vp" firstAttribute="bottom" secondItem="RY1-zF-UGC" secondAttribute="bottom" constant="8" id="BxR-AU-w03"/>
                             <constraint firstItem="hck-Ny-Gxb" firstAttribute="top" secondItem="Zyx-0C-8JM" secondAttribute="bottom" constant="8" id="EQl-CU-6d3"/>
                             <constraint firstItem="eqs-Ol-Byr" firstAttribute="leading" secondItem="XaK-QY-8vp" secondAttribute="leading" constant="8" id="EiX-9d-KW2"/>
                             <constraint firstItem="Zyx-0C-8JM" firstAttribute="centerX" secondItem="0SD-cz-2pb" secondAttribute="centerX" id="LrJ-5O-kWP"/>
                             <constraint firstItem="eIa-Sg-G2M" firstAttribute="top" secondItem="eqs-Ol-Byr" secondAttribute="bottom" constant="16" id="O86-2j-6y8"/>
                             <constraint firstItem="XaK-QY-8vp" firstAttribute="trailing" secondItem="hck-Ny-Gxb" secondAttribute="trailing" constant="8" id="PXs-ot-DkA"/>
+                            <constraint firstItem="RY1-zF-UGC" firstAttribute="top" secondItem="eIa-Sg-G2M" secondAttribute="bottom" constant="4" id="Qda-vh-OjG"/>
                             <constraint firstItem="hck-Ny-Gxb" firstAttribute="leading" secondItem="XaK-QY-8vp" secondAttribute="leading" constant="8" id="VhD-nC-6Lb"/>
                             <constraint firstItem="eIa-Sg-G2M" firstAttribute="leading" secondItem="XaK-QY-8vp" secondAttribute="leading" constant="8" id="VnG-Vs-jR2"/>
                             <constraint firstItem="eqs-Ol-Byr" firstAttribute="top" secondItem="hck-Ny-Gxb" secondAttribute="bottom" constant="4" id="ZoZ-OP-lYh"/>
