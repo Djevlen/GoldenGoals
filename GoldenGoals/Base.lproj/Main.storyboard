@@ -20,14 +20,85 @@
                     <view key="view" contentMode="scaleToFill" id="0SD-cz-2pb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zyx-0C-8JM">
+                                <rect key="frame" x="108" y="28" width="199" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="xcO-2f-UZx"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Hall of Fame"/>
+                                    <segment title="Hall of Shame"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hck-Ny-Gxb">
+                                <rect key="frame" x="8" y="71" width="398" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="mIO-Lq-TKR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals - Grouped by CATEGORY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIa-Sg-G2M">
+                                <rect key="frame" x="8" y="366" width="398" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Khn-qf-x8A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RY1-zF-UGC">
+                                <rect key="frame" x="87" y="409" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eqs-Ol-Byr">
+                                <rect key="frame" x="8" y="100" width="398" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="QV4-Q6-K9d"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dbY-ee-Arw">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0ov-fi-dp9">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="0.98388844728469849" green="0.85596650838851929" blue="0.30662769079208374" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XaK-QY-8vp" firstAttribute="trailing" secondItem="eIa-Sg-G2M" secondAttribute="trailing" constant="8" id="5fq-HQ-eCZ"/>
+                            <constraint firstItem="hck-Ny-Gxb" firstAttribute="top" secondItem="Zyx-0C-8JM" secondAttribute="bottom" constant="8" id="EQl-CU-6d3"/>
+                            <constraint firstItem="eqs-Ol-Byr" firstAttribute="leading" secondItem="XaK-QY-8vp" secondAttribute="leading" constant="8" id="EiX-9d-KW2"/>
+                            <constraint firstItem="Zyx-0C-8JM" firstAttribute="centerX" secondItem="0SD-cz-2pb" secondAttribute="centerX" id="LrJ-5O-kWP"/>
+                            <constraint firstItem="eIa-Sg-G2M" firstAttribute="top" secondItem="eqs-Ol-Byr" secondAttribute="bottom" constant="16" id="O86-2j-6y8"/>
+                            <constraint firstItem="XaK-QY-8vp" firstAttribute="trailing" secondItem="hck-Ny-Gxb" secondAttribute="trailing" constant="8" id="PXs-ot-DkA"/>
+                            <constraint firstItem="hck-Ny-Gxb" firstAttribute="leading" secondItem="XaK-QY-8vp" secondAttribute="leading" constant="8" id="VhD-nC-6Lb"/>
+                            <constraint firstItem="eIa-Sg-G2M" firstAttribute="leading" secondItem="XaK-QY-8vp" secondAttribute="leading" constant="8" id="VnG-Vs-jR2"/>
+                            <constraint firstItem="eqs-Ol-Byr" firstAttribute="top" secondItem="hck-Ny-Gxb" secondAttribute="bottom" constant="4" id="ZoZ-OP-lYh"/>
+                            <constraint firstItem="Zyx-0C-8JM" firstAttribute="top" secondItem="XaK-QY-8vp" secondAttribute="top" constant="8" id="eBH-Vf-KLR"/>
+                            <constraint firstItem="XaK-QY-8vp" firstAttribute="trailing" secondItem="eqs-Ol-Byr" secondAttribute="trailing" constant="8" id="y45-k8-lwS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XaK-QY-8vp"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Hall of Fame / Shame" id="ACP-TG-U2j"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hqv-6J-slY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1059.4202898550725" y="1157.608695652174"/>
+            <point key="canvasLocation" x="124.6376811594203" y="818.47826086956525"/>
         </scene>
         <!--Goal List Controller-->
         <scene sceneID="ES4-Qm-AIZ">
@@ -114,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="paM-fa-0p6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-871.01449275362324" y="1157.608695652174"/>
+            <point key="canvasLocation" x="-1171" y="819"/>
         </scene>
         <!--Add Goal Information-->
         <scene sceneID="ZFV-Sj-bjK">
@@ -219,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N0S-5F-ME5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-871.01449275362324" y="1858.6956521739132"/>
+            <point key="canvasLocation" x="-1171" y="1564"/>
         </scene>
         <!--Scheduler-->
         <scene sceneID="Dsy-GC-4re">
@@ -338,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQG-pN-Loc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36.231884057971016" y="1858.6956521739132"/>
+            <point key="canvasLocation" x="-1171" y="2252"/>
         </scene>
         <!--Golden Goal-->
         <scene sceneID="TV8-iE-aoe">
@@ -450,7 +521,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPZ-v6-wHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="92.753623188405811" y="1157.608695652174"/>
+            <point key="canvasLocation" x="-516" y="818"/>
         </scene>
         <!--Golden Goal Tab Bar Controller-->
         <scene sceneID="DHS-5j-I5y">
@@ -488,7 +559,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nqr-KS-qW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1628" y="1158"/>
+            <point key="canvasLocation" x="-1835" y="820"/>
         </scene>
         <!--Preview Goal-->
         <scene sceneID="pO3-pI-JIo">
@@ -598,7 +669,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CU5-Rv-fg4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Xjf-jz-cfW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="736" y="1859"/>
+            <point key="canvasLocation" x="-1171" y="2954"/>
         </scene>
     </scenes>
 </document>
