@@ -18,44 +18,63 @@ class GoldenGoal: UIViewController {
     }
     */
     @IBOutlet weak var titleText: UILabel!
-    @IBOutlet weak var tagLabel: UILabel!
     @IBOutlet weak var dateStart: UILabel!
     @IBOutlet weak var dateEnd: UILabel!
     @IBOutlet weak var progressBarDates: UIProgressView!
     
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     
     
     @IBOutlet weak var imageView: UIImageView!
     
-  /* TODO
-    this must be converted to UIScrollView
- */
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleText.text = "Spare til bil"
-        dateStart.text = "01.01.2018"
-        dateEnd.text = "31.01.2018"
-        progressBarDates.progress = 0.9
+        scrollView!.delegate = self
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
+        //TESTDATA
+        self.navigationItem.title = titleText.text!
+        dateStart.text = "2018-05-01T10:44:00+0000"
+        dateEnd.text = "2018-06-01T10:44:00+0000"
         //setup static information in view
-    
-        tagLabel.text = "Tags"
-        tagLabel.shadowColor = UIColor.red.withAlphaComponent(0.9)
-        
-        
-//        imageView.layer.cornerRadius = imageView.frame.size.width / 20 //20 for rectangle
-//        imageView.clipsToBounds = true
-        imageView.layer.borderColor = UIColor.red.cgColor
+        imageView.layer.cornerRadius = imageView.frame.size.width / 20 //20 for rectangle
+        imageView.layer.borderColor = progressBarDates.progressTintColor?.cgColor // UIColor.red.cgColor
         imageView.layer.borderWidth = 5
         imageView.backgroundColor = .yellow
+        progressBarDates.setProgress(calculateProgress(), animated: false)
     }
     
     
-    
     func calculateProgress() -> Float{
-        return 0.0
+        let calendar = NSCalendar.current
+        let dateFormatter = ISO8601DateFormatter() // YYYY-MM-DD
+        let date1 = dateFormatter.date(from: dateStart.text!)
+        let date2 = dateFormatter.date(from: dateEnd.text!)
+        let date3 = dateFormatter.date(from: "2018-06-10T10:44:00+0000")
+        print("date3 er: \(date3)")
+        //let endDate = calendar.startOfDay(for: date2!)
+  
+        
+        let totalNumberOfDays = calendar.dateComponents([.day], from: date1!, to: date2!)
+        let daysToCompletion  = calendar.dateComponents([.day], from: date2!, to: date3!)
+        print("components blir: \(Float(daysToCompletion.day!)/Float(totalNumberOfDays.day!)) og enkelt: \(Float(daysToCompletion.day!))")
+        return Float(daysToCompletion.day!)/Float(totalNumberOfDays.day!)
+    }
+
+
+}
+
+extension GoldenGoal: UIScrollViewDelegate{
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.bounds.intersects(titleText.frame)){
+            navigationController?.setNavigationBarHidden(true, animated: true)
+        }else{
+            navigationController?.setNavigationBarHidden(false, animated: true)
+        }
     }
     
 }
