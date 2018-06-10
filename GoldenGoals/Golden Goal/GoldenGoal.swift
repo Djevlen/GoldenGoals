@@ -44,7 +44,7 @@ class GoldenGoal: UIViewController {
         imageView.layer.borderColor = progressBarDates.progressTintColor?.cgColor // UIColor.red.cgColor
         imageView.layer.borderWidth = 5
         imageView.backgroundColor = .yellow
-        progressBarDates.setProgress(calculateProgress(), animated: false)
+        progressBarDates.setProgress(calculateProgress(), animated: true)
     }
     
     
@@ -54,7 +54,6 @@ class GoldenGoal: UIViewController {
         let date1 = dateFormatter.date(from: dateStart.text!)
         let date2 = dateFormatter.date(from: dateEnd.text!)
         let date3 = dateFormatter.date(from: "2018-06-10T10:44:00+0000")
-        print("date3 er: \(date3)")
         //let endDate = calendar.startOfDay(for: date2!)
   
         

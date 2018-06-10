@@ -25,8 +25,8 @@ class GoalListController: UIViewController {
         let tomorrow = today.addingTimeInterval(86400.0)
         let nextMonth = today.addingTimeInterval(5259487.66)
         
-        let goal1 = testGoal(image: #imageLiteral(resourceName: "FirstGoalTest"), title: "Buy A House!!!", endDate: tomorrow)
-        let goal2 = testGoal(image: #imageLiteral(resourceName: "SecondGoalTest"), title: "Save Money for a BRAND NEW CAR", endDate: nextMonth)
+        let goal1 = testGoal(image: #imageLiteral(resourceName: "FirstGoalTest"), title: "Buy The Porsche Taycan", endDate: tomorrow)
+        let goal2 = testGoal(image: #imageLiteral(resourceName: "SecondGoalTest"), title: "Graduate Uni from Stanford", endDate: nextMonth)
         
         testGoalArray.append(goal1)
         testGoalArray.append(goal2)
