@@ -36,8 +36,10 @@ class GoalListController: UIViewController {
             print("\(goalTitle), \(goalMotivation), \(goalCategory)")
             //SAVE TO CORE DATA GOAL AND CATEGORY
             let goal = Goal(context: CoreDataService.context)
+            goal.id = UUID()
             goal.title = goalTitle
             goal.motivationalText = goalMotivation
+            
             let category = Category(context: CoreDataService.context)
             category.title = goalCategory
             goal.category = category
@@ -91,22 +93,23 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! goalCell
         cell.titleLabel?.text = goals[indexPath.row].title!
         cell.categoryLabel?.text = goals[indexPath.row].category!.title
+        cell.imageCell.image = UIImage(named: "goalPlaceholder")
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected row: \(indexPath.row) with title \(goals[indexPath.row].title)")
+        print("Selected row: \(indexPath.row) with title \(goals[indexPath.row].title!) and ID: \(goals[indexPath.row].id!)")
         // TODO: Segue to SHOW GOAL VIEW
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        print("Leading Swipe on cell \(indexPath.row) : \(goals[indexPath.row].title)")
+        print("Leading Swipe on cell \(indexPath.row) : \(goals[indexPath.row].title!)")
         // TODO: Implement what to show on LEADING SWIPE: SHAME IT??
         return nil
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // TODO: Implement what to show on TRAILING SWIPE: EDIT??
-        print("Trailing Swipe on cell \(indexPath.row) : \(goals[indexPath.row].title)")
+        print("Trailing Swipe on cell \(indexPath.row) : \(goals[indexPath.row].title!)")
         let deleteAction = self.contextualDeleteAction(forRowAtIndexPath: indexPath)
         let shameAction = self.contextualShameAction(forRowAtIndexPath: indexPath)
         let trailingSwipe = UISwipeActionsConfiguration(actions: [deleteAction, shameAction])
@@ -118,10 +121,12 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
         //        let delete = UIContextualAction(style: .destructive, title: 💣, handler: <#T##UIContextualActionHandler##UIContextualActionHandler##(UIContextualAction, UIView, (Bool) -> Void) -> Void#>)
         let delete = UIContextualAction(style: .normal,
                                         title: "💣") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
-                                            
+                                            let goalToBeDeleted = self.goals[indexPath.row]
+                                            CoreDataService.context.delete(goalToBeDeleted)
                                             self.goals.remove(at: indexPath.row)
-                                            self.goalListTableView.reloadData()
-                                            completionHandler(true)
+                                            self.goalListTableView.deleteRows(at: [indexPath], with: .left)
+                                            
+                                            CoreDataService.saveContext()
 
         }
         delete.backgroundColor = .red

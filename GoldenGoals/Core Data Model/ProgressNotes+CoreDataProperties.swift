@@ -18,7 +18,7 @@ extension ProgressNotes {
     }
 
     @NSManaged public var id: UUID?
-    @NSManaged public var imagePath: String?
+    @NSManaged public var photo: NSData?
     @NSManaged public var motivationalText: String?
     @NSManaged public var goal: Goal?
 

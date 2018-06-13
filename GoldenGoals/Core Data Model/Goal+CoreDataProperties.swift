@@ -17,14 +17,14 @@ extension Goal {
         return NSFetchRequest<Goal>(entityName: "Goal")
     }
 
-    @NSManaged public var dateAdded: String?
+    @NSManaged public var dateAdded: NSDate?
     @NSManaged public var dateEnd: NSDate?
     @NSManaged public var dateStart: NSDate?
     @NSManaged public var deletedGoal: Bool
     @NSManaged public var hallOfFame: Bool
     @NSManaged public var id: UUID?
+    @NSManaged public var photo: NSData?
     @NSManaged public var motivationalText: String?
-    @NSManaged public var imagePath: String?
     @NSManaged public var title: String?
     @NSManaged public var category: Category?
     @NSManaged public var progressNotes: NSSet?

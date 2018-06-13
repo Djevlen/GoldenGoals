@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E901612820D158F2005AA9BD /* GoldenGoal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E901612620D158F2005AA9BD /* GoldenGoal.xcdatamodeld */; };
+		E901612F20D15A08005AA9BD /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E901612920D15A08005AA9BD /* Category+CoreDataClass.swift */; };
+		E901613020D15A08005AA9BD /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E901612A20D15A08005AA9BD /* Category+CoreDataProperties.swift */; };
+		E901613120D15A08005AA9BD /* ProgressNotes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E901612B20D15A08005AA9BD /* ProgressNotes+CoreDataClass.swift */; };
+		E901613220D15A08005AA9BD /* ProgressNotes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E901612C20D15A08005AA9BD /* ProgressNotes+CoreDataProperties.swift */; };
+		E901613320D15A08005AA9BD /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E901612D20D15A08005AA9BD /* Goal+CoreDataClass.swift */; };
+		E901613420D15A08005AA9BD /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E901612E20D15A08005AA9BD /* Goal+CoreDataProperties.swift */; };
 		E92411D42037B828006616CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92411D32037B828006616CF /* LaunchScreen.storyboard */; };
 		E9443AFF205184890091B74F /* AddingGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9443AFE205184890091B74F /* AddingGoalController.swift */; };
 		E95379222037B59B00864212 /* GoldenGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95379212037B59B00864212 /* GoldenGoal.swift */; };
@@ -14,17 +21,10 @@
 		E98FC33F206AF04700DB9A57 /* PreviewGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98FC33E206AF04700DB9A57 /* PreviewGoalController.swift */; };
 		E99F07CD2036458E00FA85D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F07CC2036458E00FA85D8 /* AppDelegate.swift */; };
 		E99F07D22036458E00FA85D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99F07D02036458E00FA85D8 /* Main.storyboard */; };
-		E99F07D52036458E00FA85D8 /* GoldenGoals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E99F07D32036458E00FA85D8 /* GoldenGoals.xcdatamodeld */; };
 		E99F07D72036458E00FA85D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99F07D62036458E00FA85D8 /* Assets.xcassets */; };
 		E99F07E52036458E00FA85D8 /* GoldenGoalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F07E42036458E00FA85D8 /* GoldenGoalsTests.swift */; };
 		E99F07F02036458E00FA85D8 /* GoldenGoalsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F07EF2036458E00FA85D8 /* GoldenGoalsUITests.swift */; };
 		E9BCB210204DCC6400E9CF8D /* GoalListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCB20F204DCC6400E9CF8D /* GoalListController.swift */; };
-		E9C99EE620D13039007D3E8B /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EE020D13039007D3E8B /* Category+CoreDataClass.swift */; };
-		E9C99EE720D13039007D3E8B /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EE120D13039007D3E8B /* Category+CoreDataProperties.swift */; };
-		E9C99EE820D13039007D3E8B /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EE220D13039007D3E8B /* Goal+CoreDataClass.swift */; };
-		E9C99EE920D13039007D3E8B /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EE320D13039007D3E8B /* Goal+CoreDataProperties.swift */; };
-		E9C99EEA20D13039007D3E8B /* ProgressNotes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EE420D13039007D3E8B /* ProgressNotes+CoreDataClass.swift */; };
-		E9C99EEB20D13039007D3E8B /* ProgressNotes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EE520D13039007D3E8B /* ProgressNotes+CoreDataProperties.swift */; };
 		E9C99EED20D133DB007D3E8B /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EEC20D133DB007D3E8B /* CoreDataService.swift */; };
 		E9E90BF02039B45A0087C123 /* goldenGoalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E90BEF2039B45A0087C123 /* goldenGoalTabBarController.swift */; };
 		E9E90BF52039C23A0087C123 /* goalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E90BF42039C23A0087C123 /* goalCell.swift */; };
@@ -48,6 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E901612720D158F2005AA9BD /* GoldenGoal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoldenGoal.xcdatamodel; sourceTree = "<group>"; };
+		E901612920D15A08005AA9BD /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E901612A20D15A08005AA9BD /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E901612B20D15A08005AA9BD /* ProgressNotes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressNotes+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E901612C20D15A08005AA9BD /* ProgressNotes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressNotes+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E901612D20D15A08005AA9BD /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E901612E20D15A08005AA9BD /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E92411D32037B828006616CF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9443AFE205184890091B74F /* AddingGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingGoalController.swift; sourceTree = "<group>"; };
 		E95379212037B59B00864212 /* GoldenGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenGoal.swift; sourceTree = "<group>"; };
@@ -56,7 +63,6 @@
 		E99F07C92036458E00FA85D8 /* GoldenGoals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenGoals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99F07CC2036458E00FA85D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E99F07D12036458E00FA85D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E99F07D42036458E00FA85D8 /* GoldenGoals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoldenGoals.xcdatamodel; sourceTree = "<group>"; };
 		E99F07D62036458E00FA85D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E99F07DB2036458E00FA85D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E99F07E02036458E00FA85D8 /* GoldenGoalsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldenGoalsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,12 +72,6 @@
 		E99F07EF2036458E00FA85D8 /* GoldenGoalsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenGoalsUITests.swift; sourceTree = "<group>"; };
 		E99F07F12036458E00FA85D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9BCB20F204DCC6400E9CF8D /* GoalListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListController.swift; sourceTree = "<group>"; };
-		E9C99EE020D13039007D3E8B /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E9C99EE120D13039007D3E8B /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E9C99EE220D13039007D3E8B /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E9C99EE320D13039007D3E8B /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E9C99EE420D13039007D3E8B /* ProgressNotes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressNotes+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E9C99EE520D13039007D3E8B /* ProgressNotes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressNotes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E9C99EEC20D133DB007D3E8B /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataService.swift; path = "GoldenGoals/Core Data Model/CoreDataService.swift"; sourceTree = SOURCE_ROOT; };
 		E9E90BEF2039B45A0087C123 /* goldenGoalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goldenGoalTabBarController.swift; sourceTree = "<group>"; };
 		E9E90BF42039C23A0087C123 /* goalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goalCell.swift; sourceTree = "<group>"; };
@@ -113,13 +113,14 @@
 		E953791A2037A98300864212 /* Core Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				E9C99EE020D13039007D3E8B /* Category+CoreDataClass.swift */,
-				E9C99EE120D13039007D3E8B /* Category+CoreDataProperties.swift */,
-				E9C99EE220D13039007D3E8B /* Goal+CoreDataClass.swift */,
-				E9C99EE320D13039007D3E8B /* Goal+CoreDataProperties.swift */,
-				E9C99EE420D13039007D3E8B /* ProgressNotes+CoreDataClass.swift */,
-				E9C99EE520D13039007D3E8B /* ProgressNotes+CoreDataProperties.swift */,
-				E99F07D32036458E00FA85D8 /* GoldenGoals.xcdatamodeld */,
+				E9C99EEC20D133DB007D3E8B /* CoreDataService.swift */,
+				E901612920D15A08005AA9BD /* Category+CoreDataClass.swift */,
+				E901612A20D15A08005AA9BD /* Category+CoreDataProperties.swift */,
+				E901612B20D15A08005AA9BD /* ProgressNotes+CoreDataClass.swift */,
+				E901612C20D15A08005AA9BD /* ProgressNotes+CoreDataProperties.swift */,
+				E901612D20D15A08005AA9BD /* Goal+CoreDataClass.swift */,
+				E901612E20D15A08005AA9BD /* Goal+CoreDataProperties.swift */,
+				E901612620D158F2005AA9BD /* GoldenGoal.xcdatamodeld */,
 			);
 			path = "Core Data Model";
 			sourceTree = "<group>";
@@ -191,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				E99F07CC2036458E00FA85D8 /* AppDelegate.swift */,
-				E9C99EEC20D133DB007D3E8B /* CoreDataService.swift */,
 				E92411D32037B828006616CF /* LaunchScreen.storyboard */,
 				E99F07D62036458E00FA85D8 /* Assets.xcassets */,
 			);
@@ -270,7 +270,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Appbryggeriet;
 				TargetAttributes = {
 					E99F07C82036458E00FA85D8 = {
@@ -341,22 +341,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E901613120D15A08005AA9BD /* ProgressNotes+CoreDataClass.swift in Sources */,
+				E901612820D158F2005AA9BD /* GoldenGoal.xcdatamodeld in Sources */,
 				E9BCB210204DCC6400E9CF8D /* GoalListController.swift in Sources */,
+				E901612F20D15A08005AA9BD /* Category+CoreDataClass.swift in Sources */,
 				E95AE66620619CF700F4E6D6 /* AddingGoalSchedulerController.swift in Sources */,
-				E9C99EE620D13039007D3E8B /* Category+CoreDataClass.swift in Sources */,
-				E99F07D52036458E00FA85D8 /* GoldenGoals.xcdatamodeld in Sources */,
+				E901613320D15A08005AA9BD /* Goal+CoreDataClass.swift in Sources */,
+				E901613420D15A08005AA9BD /* Goal+CoreDataProperties.swift in Sources */,
 				E9C99EED20D133DB007D3E8B /* CoreDataService.swift in Sources */,
-				E9C99EE820D13039007D3E8B /* Goal+CoreDataClass.swift in Sources */,
-				E9C99EEA20D13039007D3E8B /* ProgressNotes+CoreDataClass.swift in Sources */,
-				E9C99EE920D13039007D3E8B /* Goal+CoreDataProperties.swift in Sources */,
 				E9443AFF205184890091B74F /* AddingGoalController.swift in Sources */,
 				E9E90BF02039B45A0087C123 /* goldenGoalTabBarController.swift in Sources */,
-				E9C99EE720D13039007D3E8B /* Category+CoreDataProperties.swift in Sources */,
+				E901613220D15A08005AA9BD /* ProgressNotes+CoreDataProperties.swift in Sources */,
+				E901613020D15A08005AA9BD /* Category+CoreDataProperties.swift in Sources */,
 				E98FC33F206AF04700DB9A57 /* PreviewGoalController.swift in Sources */,
 				E9E90BF52039C23A0087C123 /* goalCell.swift in Sources */,
 				E95379222037B59B00864212 /* GoldenGoal.swift in Sources */,
 				E99F07CD2036458E00FA85D8 /* AppDelegate.swift in Sources */,
-				E9C99EEB20D13039007D3E8B /* ProgressNotes+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +417,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -424,6 +425,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -474,6 +476,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -481,6 +484,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -650,13 +654,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E99F07D32036458E00FA85D8 /* GoldenGoals.xcdatamodeld */ = {
+		E901612620D158F2005AA9BD /* GoldenGoal.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E99F07D42036458E00FA85D8 /* GoldenGoals.xcdatamodel */,
+				E901612720D158F2005AA9BD /* GoldenGoal.xcdatamodel */,
 			);
-			currentVersion = E99F07D42036458E00FA85D8 /* GoldenGoals.xcdatamodel */;
-			path = GoldenGoals.xcdatamodeld;
+			currentVersion = E901612720D158F2005AA9BD /* GoldenGoal.xcdatamodel */;
+			path = GoldenGoal.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
