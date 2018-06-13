@@ -21,11 +21,7 @@ class GoldenGoal: UIViewController {
     @IBOutlet weak var dateStart: UILabel!
     @IBOutlet weak var dateEnd: UILabel!
     @IBOutlet weak var progressBarDates: UIProgressView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    
-    
     @IBOutlet weak var imageView: UIImageView!
     
 
@@ -54,7 +50,6 @@ class GoldenGoal: UIViewController {
         let date1 = dateFormatter.date(from: dateStart.text!)
         let date2 = dateFormatter.date(from: dateEnd.text!)
         let date3 = dateFormatter.date(from: "2018-06-10T10:44:00+0000")
-        //let endDate = calendar.startOfDay(for: date2!)
   
         
         let totalNumberOfDays = calendar.dateComponents([.day], from: date1!, to: date2!)
@@ -75,5 +70,4 @@ extension GoldenGoal: UIScrollViewDelegate{
             navigationController?.setNavigationBarHidden(false, animated: true)
         }
     }
-    
 }

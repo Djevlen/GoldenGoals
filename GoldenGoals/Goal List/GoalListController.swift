@@ -7,49 +7,63 @@
 //
 
 import UIKit
+import CoreData
 
 class GoalListController: UIViewController {
     
-     @IBOutlet weak var goalListTableView: UITableView!
     
-    //test code for filling a goal
-    var goals: [testGoal] = []
-    
+    @IBOutlet weak var goalListTableView: UITableView!
    
-    func createArray() -> [testGoal] {
+    var goals = [Goal]()
+   
+    @IBAction func addGoal(_ sender: UIBarButtonItem) {
+        print("prøver å legge til nytt mål!")
+        let alert = UIAlertController(title: "Add New Goal", message: nil, preferredStyle: .alert)
+        alert.addTextField(configurationHandler: { (textfield) in
+            textfield.placeholder = "Goal Title"
+        })
+        alert.addTextField(configurationHandler: { (textfield) in
+            textfield.placeholder = "Goal Motivation"
+        })
+        alert.addTextField(configurationHandler: { (textfield) in
+            textfield.placeholder = "Category?"
+            
+        })
+        let action = UIAlertAction(title: "Add Goal!", style: .default) { (_) in
+            let goalTitle = alert.textFields!.first!.text!
+            let goalMotivation = alert.textFields![1].text!
+            let goalCategory = alert.textFields![2].text!
+            print("\(goalTitle), \(goalMotivation), \(goalCategory)")
+            //SAVE TO CORE DATA GOAL AND CATEGORY
+            let goal = Goal(context: CoreDataService.context)
+            goal.title = goalTitle
+            goal.motivationalText = goalMotivation
+            let category = Category(context: CoreDataService.context)
+            category.title = goalCategory
+            goal.category = category
+            CoreDataService.saveContext()
+            self.goals.append(goal)
+            self.goalListTableView.reloadData()
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
         
-        var testGoalArray: [testGoal] = []
-        
-        //help for dates
-        let today = Date()
-        let tomorrow = today.addingTimeInterval(86400.0)
-        let nextMonth = today.addingTimeInterval(5259487.66)
-        
-        let goal1 = testGoal(image: #imageLiteral(resourceName: "FirstGoalTest"), title: "Buy The Porsche Taycan", endDate: tomorrow)
-        let goal2 = testGoal(image: #imageLiteral(resourceName: "SecondGoalTest"), title: "Graduate Uni from Stanford", endDate: nextMonth)
-        
-        testGoalArray.append(goal1)
-        testGoalArray.append(goal2)
-        
-        
-        return testGoalArray
     }
     
-    func appendArray(){
-        let today = Date()
-        let tomorrow = today.addingTimeInterval(86400.0)
-        let goal1 = testGoal(image: #imageLiteral(resourceName: "FirstGoalTest"), title: "Buy A House!!!", endDate: tomorrow)
-        goals.append(goal1)
-        goalListTableView.reloadData()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        goals = createArray()
-        
         goalListTableView.delegate = self
         goalListTableView.dataSource = self
+        
+        let fetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
+        do {
+            let goals = try CoreDataService.context.fetch(fetchRequest)
+            self.goals = goals
+            goalListTableView.reloadData()
+        } catch  {
+            print("GoalListController fetchRequest in viewDidLoad failed")
+        }
+        
         
         setupNavigationController()
     }
@@ -64,21 +78,7 @@ class GoalListController: UIViewController {
         self.navigationController?.navigationBar.largeTitleTextAttributes = attributes
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
-        
-        //programmatically creating button - replaced by storyboard
-//        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addGoal) )
-//        navigationItem.rightBarButtonItem = button
     }
-    
-    @objc func addGoal(){
-        print("addGoal()")
-        appendArray()
-        // TODO: Segue to ADD NEW GOAL VIEW
-    }
-    
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
-    
-
 }
 
 extension GoalListController: UITableViewDataSource, UITableViewDelegate{
@@ -88,9 +88,9 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let testGoal = goals[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! goalCell
-        cell.setGoal(goal: testGoal)
+        cell.titleLabel?.text = goals[indexPath.row].title!
+        cell.categoryLabel?.text = goals[indexPath.row].category!.title
         return cell
     }
     
@@ -139,20 +139,5 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
         delete.backgroundColor = .black
         return delete
     }
-    
-    
 }
 
-
-class testGoal{
-    
-    var image: UIImage
-    var title: String
-    var endDate: Date
-    
-    init(image: UIImage, title: String, endDate: Date) {
-        self.image = image
-        self.title = title
-        self.endDate = endDate
-    }
-}

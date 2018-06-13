@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		E92411D42037B828006616CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92411D32037B828006616CF /* LaunchScreen.storyboard */; };
 		E9443AFF205184890091B74F /* AddingGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9443AFE205184890091B74F /* AddingGoalController.swift */; };
-		E953791C2037A9C100864212 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953791B2037A9C100864212 /* Goal.swift */; };
-		E953791E2037A9DA00864212 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953791D2037A9DA00864212 /* Tag.swift */; };
-		E95379202037A9EE00864212 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953791F2037A9EE00864212 /* Category.swift */; };
 		E95379222037B59B00864212 /* GoldenGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95379212037B59B00864212 /* GoldenGoal.swift */; };
 		E95AE66620619CF700F4E6D6 /* AddingGoalSchedulerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AE66520619CF700F4E6D6 /* AddingGoalSchedulerController.swift */; };
 		E98FC33F206AF04700DB9A57 /* PreviewGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98FC33E206AF04700DB9A57 /* PreviewGoalController.swift */; };
@@ -22,6 +19,13 @@
 		E99F07E52036458E00FA85D8 /* GoldenGoalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F07E42036458E00FA85D8 /* GoldenGoalsTests.swift */; };
 		E99F07F02036458E00FA85D8 /* GoldenGoalsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F07EF2036458E00FA85D8 /* GoldenGoalsUITests.swift */; };
 		E9BCB210204DCC6400E9CF8D /* GoalListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCB20F204DCC6400E9CF8D /* GoalListController.swift */; };
+		E9C99EE620D13039007D3E8B /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EE020D13039007D3E8B /* Category+CoreDataClass.swift */; };
+		E9C99EE720D13039007D3E8B /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EE120D13039007D3E8B /* Category+CoreDataProperties.swift */; };
+		E9C99EE820D13039007D3E8B /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EE220D13039007D3E8B /* Goal+CoreDataClass.swift */; };
+		E9C99EE920D13039007D3E8B /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EE320D13039007D3E8B /* Goal+CoreDataProperties.swift */; };
+		E9C99EEA20D13039007D3E8B /* ProgressNotes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EE420D13039007D3E8B /* ProgressNotes+CoreDataClass.swift */; };
+		E9C99EEB20D13039007D3E8B /* ProgressNotes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EE520D13039007D3E8B /* ProgressNotes+CoreDataProperties.swift */; };
+		E9C99EED20D133DB007D3E8B /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EEC20D133DB007D3E8B /* CoreDataService.swift */; };
 		E9E90BF02039B45A0087C123 /* goldenGoalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E90BEF2039B45A0087C123 /* goldenGoalTabBarController.swift */; };
 		E9E90BF52039C23A0087C123 /* goalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E90BF42039C23A0087C123 /* goalCell.swift */; };
 /* End PBXBuildFile section */
@@ -46,9 +50,6 @@
 /* Begin PBXFileReference section */
 		E92411D32037B828006616CF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9443AFE205184890091B74F /* AddingGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingGoalController.swift; sourceTree = "<group>"; };
-		E953791B2037A9C100864212 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
-		E953791D2037A9DA00864212 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
-		E953791F2037A9EE00864212 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E95379212037B59B00864212 /* GoldenGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenGoal.swift; sourceTree = "<group>"; };
 		E95AE66520619CF700F4E6D6 /* AddingGoalSchedulerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingGoalSchedulerController.swift; sourceTree = "<group>"; };
 		E98FC33E206AF04700DB9A57 /* PreviewGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewGoalController.swift; sourceTree = "<group>"; };
@@ -65,6 +66,13 @@
 		E99F07EF2036458E00FA85D8 /* GoldenGoalsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenGoalsUITests.swift; sourceTree = "<group>"; };
 		E99F07F12036458E00FA85D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9BCB20F204DCC6400E9CF8D /* GoalListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListController.swift; sourceTree = "<group>"; };
+		E9C99EE020D13039007D3E8B /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E9C99EE120D13039007D3E8B /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E9C99EE220D13039007D3E8B /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E9C99EE320D13039007D3E8B /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E9C99EE420D13039007D3E8B /* ProgressNotes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressNotes+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E9C99EE520D13039007D3E8B /* ProgressNotes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressNotes+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E9C99EEC20D133DB007D3E8B /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataService.swift; path = "GoldenGoals/Core Data Model/CoreDataService.swift"; sourceTree = SOURCE_ROOT; };
 		E9E90BEF2039B45A0087C123 /* goldenGoalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goldenGoalTabBarController.swift; sourceTree = "<group>"; };
 		E9E90BF42039C23A0087C123 /* goalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,10 +113,13 @@
 		E953791A2037A98300864212 /* Core Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				E9C99EE020D13039007D3E8B /* Category+CoreDataClass.swift */,
+				E9C99EE120D13039007D3E8B /* Category+CoreDataProperties.swift */,
+				E9C99EE220D13039007D3E8B /* Goal+CoreDataClass.swift */,
+				E9C99EE320D13039007D3E8B /* Goal+CoreDataProperties.swift */,
+				E9C99EE420D13039007D3E8B /* ProgressNotes+CoreDataClass.swift */,
+				E9C99EE520D13039007D3E8B /* ProgressNotes+CoreDataProperties.swift */,
 				E99F07D32036458E00FA85D8 /* GoldenGoals.xcdatamodeld */,
-				E953791B2037A9C100864212 /* Goal.swift */,
-				E953791D2037A9DA00864212 /* Tag.swift */,
-				E953791F2037A9EE00864212 /* Category.swift */,
 			);
 			path = "Core Data Model";
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				E99F07CC2036458E00FA85D8 /* AppDelegate.swift */,
+				E9C99EEC20D133DB007D3E8B /* CoreDataService.swift */,
 				E92411D32037B828006616CF /* LaunchScreen.storyboard */,
 				E99F07D62036458E00FA85D8 /* Assets.xcassets */,
 			);
@@ -331,16 +343,20 @@
 			files = (
 				E9BCB210204DCC6400E9CF8D /* GoalListController.swift in Sources */,
 				E95AE66620619CF700F4E6D6 /* AddingGoalSchedulerController.swift in Sources */,
-				E953791C2037A9C100864212 /* Goal.swift in Sources */,
+				E9C99EE620D13039007D3E8B /* Category+CoreDataClass.swift in Sources */,
 				E99F07D52036458E00FA85D8 /* GoldenGoals.xcdatamodeld in Sources */,
+				E9C99EED20D133DB007D3E8B /* CoreDataService.swift in Sources */,
+				E9C99EE820D13039007D3E8B /* Goal+CoreDataClass.swift in Sources */,
+				E9C99EEA20D13039007D3E8B /* ProgressNotes+CoreDataClass.swift in Sources */,
+				E9C99EE920D13039007D3E8B /* Goal+CoreDataProperties.swift in Sources */,
 				E9443AFF205184890091B74F /* AddingGoalController.swift in Sources */,
-				E953791E2037A9DA00864212 /* Tag.swift in Sources */,
 				E9E90BF02039B45A0087C123 /* goldenGoalTabBarController.swift in Sources */,
+				E9C99EE720D13039007D3E8B /* Category+CoreDataProperties.swift in Sources */,
 				E98FC33F206AF04700DB9A57 /* PreviewGoalController.swift in Sources */,
 				E9E90BF52039C23A0087C123 /* goalCell.swift in Sources */,
 				E95379222037B59B00864212 /* GoldenGoal.swift in Sources */,
 				E99F07CD2036458E00FA85D8 /* AppDelegate.swift in Sources */,
-				E95379202037A9EE00864212 /* Category.swift in Sources */,
+				E9C99EEB20D13039007D3E8B /* ProgressNotes+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
