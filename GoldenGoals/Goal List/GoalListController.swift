@@ -65,21 +65,33 @@ class GoalListController: UIViewController {
         } catch  {
             print("GoalListController fetchRequest in viewDidLoad failed")
         }
-        
-        
+
         setupNavigationController()
+        //MARK: THIS MUST BE CHANGED, TESTING ONLY
+        setupCategories()
     }
-    
+    func setupCategories(){
+        print("I setupCategories")
+        let categoryTitles = ["Lifestyle","Health & Fitness","Education","Skills","Social","Productivity","Business","Travel","Entertainment","Money"]
+        let categoryImages = [UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney")]
+        
+        for (index,cat) in categoryTitles.enumerated() {
+            let category = Category(context: CoreDataService.context)
+            print("i for setupcategories: \(categoryTitles[index])")
+            category.title = categoryTitles[index]
+            if let data = UIImagePNGRepresentation(categoryImages[index]!){
+                category.image = data as NSData
+                }
+            //cat.image = UIImagePNGRepresentation(categoryImages[index]!) as? NSData!
+            CoreDataService.saveContext()
+        }
+        
+    }
     func setupNavigationController(){
-        navigationItem.title = "Active 🏆 Goals"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        UINavigationBar.appearance().tintColor = .red
-        let attributes = [
-            NSAttributedStringKey.foregroundColor : UIColor.red
-        ]
-        self.navigationController?.navigationBar.largeTitleTextAttributes = attributes
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
+        //TODO: Implement the searchcontroller
     }
 }
 
@@ -118,7 +130,6 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func contextualDeleteAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction{
-        //        let delete = UIContextualAction(style: .destructive, title: 💣, handler: <#T##UIContextualActionHandler##UIContextualActionHandler##(UIContextualAction, UIView, (Bool) -> Void) -> Void#>)
         let delete = UIContextualAction(style: .normal,
                                         title: "💣") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
                                             let goalToBeDeleted = self.goals[indexPath.row]
@@ -133,7 +144,6 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
         return delete
     }
     func contextualShameAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction{
-        //        let delete = UIContextualAction(style: .destructive, title: 💣, handler: <#T##UIContextualActionHandler##UIContextualActionHandler##(UIContextualAction, UIView, (Bool) -> Void) -> Void#>)
         let delete = UIContextualAction(style: .normal,
                                         title: "😨") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
                                             // TODO: Make this change color and slowly fade away

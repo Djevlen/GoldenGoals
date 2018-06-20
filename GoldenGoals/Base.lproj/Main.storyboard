@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pus-te-Ich">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pus-te-Ich">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,7 +18,7 @@
         <!--Hall of Fame / Shame-->
         <scene sceneID="JmW-Qd-Txo">
             <objects>
-                <viewController id="37N-1R-yeH" sceneMemberID="viewController">
+                <viewController id="37N-1R-yeH" customClass="HallOfFameController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0SD-cz-2pb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,7 +117,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOo-wu-sC4" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="766.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="776.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy the Porsche Taycan" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9dM-gG-bTl">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="40.666666666666664"/>
@@ -125,7 +125,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="categoryTestMoney" translatesAutoresizingMaskIntoConstraints="NO" id="fpi-jH-J4P" userLabel="categoryImage View">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="categoryMoney" translatesAutoresizingMaskIntoConstraints="NO" id="fpi-jH-J4P" userLabel="categoryImage View">
                                                 <rect key="frame" x="8" y="57" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="riP-mJ-dhU"/>
@@ -133,7 +133,7 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5SC-gL-Yzx">
-                                                <rect key="frame" x="66" y="56.666666666666664" width="343" height="15.666666666666664"/>
+                                                <rect key="frame" x="66" y="66.666666666666657" width="343" height="15.666666666666671"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="2018-05-01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJx-aR-B8G">
                                                         <rect key="frame" x="0.0" y="0.0" width="270.33333333333331" height="15.666666666666666"/>
@@ -150,16 +150,16 @@
                                                 </subviews>
                                             </stackView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TY0-tz-AFB">
-                                                <rect key="frame" x="66" y="80.333333333333343" width="343" height="2"/>
+                                                <rect key="frame" x="66" y="90.333333333333343" width="343" height="2"/>
                                             </progressView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FirstGoalTest" translatesAutoresizingMaskIntoConstraints="NO" id="BYO-CS-mq8">
-                                                <rect key="frame" x="45" y="162.33333333333337" width="325" height="325"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="BYO-CS-mq8">
+                                                <rect key="frame" x="45" y="172.33333333333337" width="325" height="325"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="BYO-CS-mq8" secondAttribute="height" multiplier="1:1" id="l27-7M-OaQ"/>
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BbY-bz-zVk">
-                                                <rect key="frame" x="5" y="532.33333333333337" width="404" height="239.33333333333337"/>
+                                                <rect key="frame" x="5" y="542.33333333333337" width="404" height="239.33333333333337"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
@@ -168,7 +168,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="5SC-gL-Yzx" firstAttribute="top" secondItem="9dM-gG-bTl" secondAttribute="bottom" constant="16" id="Aqs-Fo-yez"/>
+                                            <constraint firstItem="5SC-gL-Yzx" firstAttribute="top" secondItem="9dM-gG-bTl" secondAttribute="bottom" constant="26" id="Aqs-Fo-yez"/>
                                             <constraint firstItem="9dM-gG-bTl" firstAttribute="top" secondItem="fOo-wu-sC4" secondAttribute="top" id="GA7-dG-SQh"/>
                                             <constraint firstItem="BYO-CS-mq8" firstAttribute="leading" secondItem="fOo-wu-sC4" secondAttribute="leading" constant="45" id="MbZ-3B-7b5"/>
                                             <constraint firstItem="TY0-tz-AFB" firstAttribute="leading" secondItem="fpi-jH-J4P" secondAttribute="trailing" constant="8" id="Nmu-Y4-48j"/>
@@ -184,7 +184,7 @@
                                             <constraint firstItem="BbY-bz-zVk" firstAttribute="top" secondItem="BYO-CS-mq8" secondAttribute="bottom" constant="45" id="p3t-Nc-qD7"/>
                                             <constraint firstItem="TY0-tz-AFB" firstAttribute="width" secondItem="5SC-gL-Yzx" secondAttribute="width" id="u8W-Vd-M8q"/>
                                             <constraint firstItem="5SC-gL-Yzx" firstAttribute="leading" secondItem="fpi-jH-J4P" secondAttribute="trailing" constant="8" id="ufa-w4-aKb"/>
-                                            <constraint firstItem="fpi-jH-J4P" firstAttribute="firstBaseline" secondItem="9dM-gG-bTl" secondAttribute="baseline" constant="18.666666666666668" symbolType="layoutAnchor" id="vPc-B1-S3t"/>
+                                            <constraint firstItem="fpi-jH-J4P" firstAttribute="firstBaseline" secondItem="9dM-gG-bTl" secondAttribute="baseline" constant="24.666666666666668" symbolType="layoutAnchor" id="vPc-B1-S3t"/>
                                             <constraint firstItem="BYO-CS-mq8" firstAttribute="trailing" secondItem="fOo-wu-sC4" secondAttribute="trailing" constant="-44" id="yTn-ML-e3o"/>
                                         </constraints>
                                     </view>
@@ -207,7 +207,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XKd-eE-8HX"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Vua-0m-V60"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Vua-0m-V60">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="GNU-qB-ZN1"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dateEnd" destination="8nu-zw-YDL" id="JWc-ff-H7D"/>
@@ -222,7 +224,7 @@
             </objects>
             <point key="canvasLocation" x="-507" y="1564"/>
         </scene>
-        <!--Goal List Controller-->
+        <!--Active Goals-->
         <scene sceneID="ES4-Qm-AIZ">
             <objects>
                 <viewController id="4JW-N3-Ld4" customClass="GoalListController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
@@ -230,7 +232,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6LI-dX-Dcp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6LI-dX-Dcp">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -280,6 +282,7 @@
                                             <outlet property="categoryLabel" destination="osK-tv-Q46" id="czM-jS-df0"/>
                                             <outlet property="imageCell" destination="TWH-Ns-two" id="zCv-Ua-4AP"/>
                                             <outlet property="titleLabel" destination="fui-iG-Vy8" id="ize-tw-5ww"/>
+                                            <segue destination="u3m-oy-T6S" kind="show" id="MPw-rs-gHz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -294,7 +297,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ksj-vX-dm1"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rGc-Uu-PKP">
+                    <navigationItem key="navigationItem" title="Active Goals" id="rGc-Uu-PKP">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hEW-xG-axM">
                             <connections>
                                 <action selector="addGoal:" destination="4JW-N3-Ld4" id="VCG-xR-hiM"/>
@@ -706,7 +709,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FirstGoalTest" width="956" height="538"/>
-        <image name="categoryTestMoney" width="50" height="50"/>
+        <image name="categoryMoney" width="25" height="25"/>
+        <image name="goalPlaceholder" width="956" height="538"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MPw-rs-gHz"/>
+    </inferredMetricsTieBreakers>
 </document>

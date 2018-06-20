@@ -17,6 +17,7 @@
 		E92411D42037B828006616CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92411D32037B828006616CF /* LaunchScreen.storyboard */; };
 		E9443AFF205184890091B74F /* AddingGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9443AFE205184890091B74F /* AddingGoalController.swift */; };
 		E95379222037B59B00864212 /* GoldenGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95379212037B59B00864212 /* GoldenGoal.swift */; };
+		E958DFDF20D2AB7E006C6CF4 /* HallOfFameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958DFDE20D2AB7E006C6CF4 /* HallOfFameController.swift */; };
 		E95AE66620619CF700F4E6D6 /* AddingGoalSchedulerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95AE66520619CF700F4E6D6 /* AddingGoalSchedulerController.swift */; };
 		E98FC33F206AF04700DB9A57 /* PreviewGoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98FC33E206AF04700DB9A57 /* PreviewGoalController.swift */; };
 		E99F07CD2036458E00FA85D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F07CC2036458E00FA85D8 /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 		E92411D32037B828006616CF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9443AFE205184890091B74F /* AddingGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingGoalController.swift; sourceTree = "<group>"; };
 		E95379212037B59B00864212 /* GoldenGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenGoal.swift; sourceTree = "<group>"; };
+		E958DFDE20D2AB7E006C6CF4 /* HallOfFameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallOfFameController.swift; sourceTree = "<group>"; };
 		E95AE66520619CF700F4E6D6 /* AddingGoalSchedulerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingGoalSchedulerController.swift; sourceTree = "<group>"; };
 		E98FC33E206AF04700DB9A57 /* PreviewGoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewGoalController.swift; sourceTree = "<group>"; };
 		E99F07C92036458E00FA85D8 /* GoldenGoals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenGoals.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,14 @@
 			path = "Core Data Model";
 			sourceTree = "<group>";
 		};
+		E958DFDD20D2AB47006C6CF4 /* Hall of */ = {
+			isa = PBXGroup;
+			children = (
+				E958DFDE20D2AB7E006C6CF4 /* HallOfFameController.swift */,
+			);
+			path = "Hall of";
+			sourceTree = "<group>";
+		};
 		E99F07C02036458E00FA85D8 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +158,7 @@
 		E99F07CB2036458E00FA85D8 /* GoldenGoals */ = {
 			isa = PBXGroup;
 			children = (
+				E958DFDD20D2AB47006C6CF4 /* Hall of */,
 				E9E90BEE2038F68E0087C123 /* Support */,
 				E99F07D02036458E00FA85D8 /* Main.storyboard */,
 				E9E90BEF2039B45A0087C123 /* goldenGoalTabBarController.swift */,
@@ -345,6 +356,7 @@
 				E901612820D158F2005AA9BD /* GoldenGoal.xcdatamodeld in Sources */,
 				E9BCB210204DCC6400E9CF8D /* GoalListController.swift in Sources */,
 				E901612F20D15A08005AA9BD /* Category+CoreDataClass.swift in Sources */,
+				E958DFDF20D2AB7E006C6CF4 /* HallOfFameController.swift in Sources */,
 				E95AE66620619CF700F4E6D6 /* AddingGoalSchedulerController.swift in Sources */,
 				E901613320D15A08005AA9BD /* Goal+CoreDataClass.swift in Sources */,
 				E901613420D15A08005AA9BD /* Goal+CoreDataProperties.swift in Sources */,

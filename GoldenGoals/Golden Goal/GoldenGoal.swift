@@ -17,7 +17,7 @@ class GoldenGoal: UIViewController {
         // Drawing code
     }
     */
-    @IBOutlet weak var titleText: UILabel!
+    @IBOutlet weak var titleText: UILabel! // TODO: REMOVE THIS
     @IBOutlet weak var dateStart: UILabel!
     @IBOutlet weak var dateEnd: UILabel!
     @IBOutlet weak var progressBarDates: UIProgressView!
@@ -29,7 +29,7 @@ class GoldenGoal: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView!.delegate = self
-        navigationController?.setNavigationBarHidden(true, animated: false)
+//        navigationController?.setNavigationBarHidden(true, animated: false)
         
         //TESTDATA
         self.navigationItem.title = titleText.text!
@@ -64,10 +64,10 @@ class GoldenGoal: UIViewController {
 extension GoldenGoal: UIScrollViewDelegate{
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (scrollView.bounds.intersects(titleText.frame)){
-            navigationController?.setNavigationBarHidden(true, animated: true)
-        }else{
-            navigationController?.setNavigationBarHidden(false, animated: true)
-        }
+//        if (scrollView.bounds.intersects(titleText.frame)){
+//            navigationController?.setNavigationBarHidden(true, animated: true)
+//        }else{
+//            navigationController?.setNavigationBarHidden(false, animated: true)
+//        }
     }
 }
