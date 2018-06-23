@@ -17,22 +17,24 @@ class GoldenGoal: UIViewController {
         // Drawing code
     }
     */
-    @IBOutlet weak var titleText: UILabel! // TODO: REMOVE THIS
     @IBOutlet weak var dateStart: UILabel!
     @IBOutlet weak var dateEnd: UILabel!
     @IBOutlet weak var progressBarDates: UIProgressView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     
-
+    //shows the tool bar and goes into edit mode
+    @IBAction func editButtonSelected(_ sender: UIBarButtonItem) {
+        self.navigationController?.setToolbarHidden(false, animated: true)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView!.delegate = self
 //        navigationController?.setNavigationBarHidden(true, animated: false)
         
-        //TESTDATA
-        self.navigationItem.title = titleText.text!
+
         dateStart.text = "2018-05-01T10:44:00+0000"
         dateEnd.text = "2018-06-01T10:44:00+0000"
         //setup static information in view

@@ -42,6 +42,9 @@ class GoalListController: UIViewController {
             
             let category = Category(context: CoreDataService.context)
             category.title = goalCategory
+//            if let imageTodata = UIImagePNGRepresentation(UIImage(named: "categoryFitness")!){
+//                category.image = imageTodata as NSData
+//            }
             goal.category = category
             CoreDataService.saveContext()
             self.goals.append(goal)
@@ -68,25 +71,8 @@ class GoalListController: UIViewController {
 
         setupNavigationController()
         //MARK: THIS MUST BE CHANGED, TESTING ONLY
-        setupCategories()
     }
-    func setupCategories(){
-        print("I setupCategories")
-        let categoryTitles = ["Lifestyle","Health & Fitness","Education","Skills","Social","Productivity","Business","Travel","Entertainment","Money"]
-        let categoryImages = [UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney")]
-        
-        for (index,cat) in categoryTitles.enumerated() {
-            let category = Category(context: CoreDataService.context)
-            print("i for setupcategories: \(categoryTitles[index])")
-            category.title = categoryTitles[index]
-            if let data = UIImagePNGRepresentation(categoryImages[index]!){
-                category.image = data as NSData
-                }
-            //cat.image = UIImagePNGRepresentation(categoryImages[index]!) as? NSData!
-            CoreDataService.saveContext()
-        }
-        
-    }
+    
     func setupNavigationController(){
         self.navigationController?.navigationBar.prefersLargeTitles = true
         let searchController = UISearchController(searchResultsController: nil)

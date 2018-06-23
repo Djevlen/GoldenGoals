@@ -14,7 +14,7 @@ class goldenGoalTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBar.tintColor = .red
+        //which view should be default
         self.selectedIndex = 0
         
 
