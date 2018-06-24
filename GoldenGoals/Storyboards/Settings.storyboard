@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KCg-bu-Fk3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings-->
+        <scene sceneID="CKT-dz-Ctn">
+            <objects>
+                <tableViewController id="9BJ-9j-eId" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jk1-vD-fTO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rbE-0D-U7O">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rbE-0D-U7O" id="R01-Uy-Rfr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9BJ-9j-eId" id="kJu-yR-KFP"/>
+                            <outlet property="delegate" destination="9BJ-9j-eId" id="Hgy-B6-GfW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="GC6-ht-BVV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sp8-ZY-7QT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="1551"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="SRg-MJ-k5j">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KCg-bu-Fk3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="tabBarSettingsPlaceholder" selectedImage="tabBarSettingsPlaceholder" id="us3-HC-Xc4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WWQ-O5-Dqv">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9BJ-9j-eId" kind="relationship" relationship="rootViewController" id="1Of-TF-qs9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W9b-3i-M7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="818"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabBarSettingsPlaceholder" width="25" height="25"/>
+    </resources>
+</document>

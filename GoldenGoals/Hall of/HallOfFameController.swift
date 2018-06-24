@@ -59,6 +59,7 @@ class HallOfFameController: UIViewController {
                     allCategories[index].image = categoryImageData as NSData
                     print("Bildet: \(categoryImage!)")
                 }else{
+                    allCategories[index].image = UIImagePNGRepresentation(#imageLiteral(resourceName: "categoryMoney")) as NSData?
                     print("Har ikke noe bilde for kategorien : (")
                 }
             }
@@ -90,6 +91,12 @@ class HallOfFameController: UIViewController {
 // MARK: EXTENSION UICollectionView delegate functions
 extension HallOfFameController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let alert = UIAlertController(title: allCategories[indexPath.row].title, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK!", style: .cancel, handler: nil))
+            present(alert,animated: true)
+
+    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

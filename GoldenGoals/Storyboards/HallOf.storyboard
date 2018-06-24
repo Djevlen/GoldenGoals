@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="png-CM-Qha">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hall of Fame-->
+        <scene sceneID="0V2-Y9-glq">
+            <objects>
+                <viewController id="png-CM-Qha" customClass="HallOfFameController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jst-Ag-TEa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="btc-u1-rtM">
+                                <rect key="frame" x="88" y="28" width="199" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="FPo-U2-1qW"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Hall of Fame"/>
+                                    <segment title="Hall of Shame"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzI-sR-ZqW">
+                                <rect key="frame" x="8" y="71" width="359" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="dCp-xu-6qM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals - Grouped by CATEGORY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-aq-7ei">
+                                <rect key="frame" x="8" y="366" width="359" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="GmJ-WP-ION"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pfw-F9-aVl">
+                                <rect key="frame" x="8" y="405" width="359" height="205"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Do3-bm-bHh">
+                                <rect key="frame" x="8" y="100" width="359" height="250"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="S5i-QU-d03"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rNM-gz-Eee">
+                                    <size key="itemSize" width="102" height="101"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCell" id="wSP-R0-gHu" customClass="categoryCell" customModule="GoldenGoals" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="101"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="102" height="101"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="imX-Yf-97R">
+                                                    <rect key="frame" x="26" y="25.5" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="XDB-Sz-UKz"/>
+                                                        <constraint firstAttribute="width" constant="50" id="oqL-J7-Wv2"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19m-Xh-1Oh">
+                                                    <rect key="frame" x="5" y="84" width="92" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="19m-Xh-1Oh" secondAttribute="trailing" constant="5" id="6Gu-ON-EPd"/>
+                                            <constraint firstItem="imX-Yf-97R" firstAttribute="centerX" secondItem="wSP-R0-gHu" secondAttribute="centerX" id="I8O-4B-7vw"/>
+                                            <constraint firstAttribute="bottom" secondItem="19m-Xh-1Oh" secondAttribute="bottom" constant="-3" id="NYW-hC-wiy"/>
+                                            <constraint firstItem="19m-Xh-1Oh" firstAttribute="centerX" secondItem="imX-Yf-97R" secondAttribute="centerX" id="TmN-zD-JAk"/>
+                                            <constraint firstItem="imX-Yf-97R" firstAttribute="centerY" secondItem="wSP-R0-gHu" secondAttribute="centerY" id="nfS-7q-AhE"/>
+                                            <constraint firstItem="19m-Xh-1Oh" firstAttribute="leading" secondItem="wSP-R0-gHu" secondAttribute="leading" constant="5" id="pnb-UF-FFr"/>
+                                            <constraint firstItem="19m-Xh-1Oh" firstAttribute="firstBaseline" secondItem="imX-Yf-97R" secondAttribute="baseline" constant="24.333333333333332" symbolType="layoutAnchor" id="uhc-ls-KHR"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="categoryCellImage" destination="imX-Yf-97R" id="tQa-3j-Y2O"/>
+                                            <outlet property="categoryCellTitle" destination="19m-Xh-1Oh" id="tB1-lA-vOp"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="btc-u1-rtM" firstAttribute="centerX" secondItem="jst-Ag-TEa" secondAttribute="centerX" id="3WD-i3-MLq"/>
+                            <constraint firstItem="Do3-bm-bHh" firstAttribute="top" secondItem="rzI-sR-ZqW" secondAttribute="bottom" constant="4" id="6Qy-Mn-u9O"/>
+                            <constraint firstItem="btc-u1-rtM" firstAttribute="top" secondItem="Ywa-he-73e" secondAttribute="top" constant="8" id="7QC-qg-Zvh"/>
+                            <constraint firstItem="Dhj-aq-7ei" firstAttribute="leading" secondItem="Ywa-he-73e" secondAttribute="leading" constant="8" id="8Sr-Wx-ktn"/>
+                            <constraint firstItem="Ywa-he-73e" firstAttribute="trailing" secondItem="Do3-bm-bHh" secondAttribute="trailing" constant="8" id="Hvb-dW-Pee"/>
+                            <constraint firstItem="Ywa-he-73e" firstAttribute="trailing" secondItem="rzI-sR-ZqW" secondAttribute="trailing" constant="8" id="Lk2-P6-wYe"/>
+                            <constraint firstItem="Dhj-aq-7ei" firstAttribute="top" secondItem="Do3-bm-bHh" secondAttribute="bottom" constant="16" id="XeL-vM-2I1"/>
+                            <constraint firstItem="Pfw-F9-aVl" firstAttribute="leading" secondItem="Ywa-he-73e" secondAttribute="leading" constant="8" id="a3p-qo-2xi"/>
+                            <constraint firstItem="Pfw-F9-aVl" firstAttribute="top" secondItem="Dhj-aq-7ei" secondAttribute="bottom" constant="4" id="bQT-Qj-RIH"/>
+                            <constraint firstItem="Do3-bm-bHh" firstAttribute="leading" secondItem="Ywa-he-73e" secondAttribute="leading" constant="8" id="eZA-Wu-ler"/>
+                            <constraint firstItem="rzI-sR-ZqW" firstAttribute="leading" secondItem="Ywa-he-73e" secondAttribute="leading" constant="8" id="geh-2i-Io1"/>
+                            <constraint firstItem="Ywa-he-73e" firstAttribute="trailing" secondItem="Dhj-aq-7ei" secondAttribute="trailing" constant="8" id="guX-qd-gFy"/>
+                            <constraint firstItem="Ywa-he-73e" firstAttribute="bottom" secondItem="Pfw-F9-aVl" secondAttribute="bottom" constant="8" id="mxU-y4-Sif"/>
+                            <constraint firstItem="Ywa-he-73e" firstAttribute="trailing" secondItem="Pfw-F9-aVl" secondAttribute="trailing" constant="8" id="rQO-f9-xCx"/>
+                            <constraint firstItem="rzI-sR-ZqW" firstAttribute="top" secondItem="btc-u1-rtM" secondAttribute="bottom" constant="8" id="uOW-Dh-RU1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ywa-he-73e"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Hall of Fame" image="tabBarHallOfPlaceholder" id="mNP-C6-0QJ"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="hallOfCollectionView" destination="Do3-bm-bHh" id="vAT-cv-fMk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6T-1h-aDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-410.14492753623193" y="817.66304347826099"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabBarHallOfPlaceholder" width="25" height="25"/>
+    </resources>
+</document>

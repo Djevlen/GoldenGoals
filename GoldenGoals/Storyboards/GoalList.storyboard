@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TGE-gx-jq7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Active Goals-->
+        <scene sceneID="77j-4i-sPy">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qpw-WH-OfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Cif-he-bS1" customClass="GoalListController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="duD-Vd-CrR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pox-Iw-FOv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="goalCell" rowHeight="100" id="XGx-7m-Dtd" customClass="goalCell" customModule="GoldenGoals" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XGx-7m-Dtd" id="D3Z-qr-Psg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ms5-Xz-dkp">
+                                                    <rect key="frame" x="12" y="13.5" width="126" height="71"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="126" id="RY0-UF-oT3"/>
+                                                        <constraint firstAttribute="width" secondItem="Ms5-Xz-dkp" secondAttribute="height" multiplier="16:9" id="ao6-5V-EPo"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OVh-Mf-VKo">
+                                                    <rect key="frame" x="146" y="19" width="251" height="62"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JWz-6y-4KN" userLabel="titleLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="46.5" height="39.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wG6-Zu-gE0" userLabel="categoryLabel">
+                                                            <rect key="frame" x="0.0" y="47.5" width="52" height="14.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="Ms5-Xz-dkp" firstAttribute="centerY" secondItem="D3Z-qr-Psg" secondAttribute="centerY" id="19j-C5-fwu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="OVh-Mf-VKo" secondAttribute="bottom" constant="8" id="6SG-99-VVH"/>
+                                                <constraint firstItem="Ms5-Xz-dkp" firstAttribute="leading" secondItem="D3Z-qr-Psg" secondAttribute="leading" constant="12" id="SNG-fg-Jdi"/>
+                                                <constraint firstItem="OVh-Mf-VKo" firstAttribute="top" secondItem="D3Z-qr-Psg" secondAttribute="topMargin" constant="8" id="mF5-0z-a8v"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OVh-Mf-VKo" secondAttribute="trailing" constant="2" id="sTh-yR-Q3B"/>
+                                                <constraint firstItem="OVh-Mf-VKo" firstAttribute="leading" secondItem="Ms5-Xz-dkp" secondAttribute="trailing" constant="8" id="ug3-Sq-2OS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryLabel" destination="wG6-Zu-gE0" id="BiF-is-2Dm"/>
+                                            <outlet property="imageCell" destination="Ms5-Xz-dkp" id="XsL-ve-BRa"/>
+                                            <outlet property="titleLabel" destination="JWz-6y-4KN" id="p8s-bU-PDu"/>
+                                            <segue destination="tA0-3x-vSb" kind="show" id="Onh-Ie-9j5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Pox-Iw-FOv" secondAttribute="trailing" id="VYS-Kz-BpZ"/>
+                            <constraint firstItem="Pox-Iw-FOv" firstAttribute="leading" secondItem="duD-Vd-CrR" secondAttribute="leading" id="Xb9-fo-aEM"/>
+                            <constraint firstItem="Pox-Iw-FOv" firstAttribute="top" secondItem="duD-Vd-CrR" secondAttribute="top" id="Xh2-l5-ZHW"/>
+                            <constraint firstAttribute="bottom" secondItem="Pox-Iw-FOv" secondAttribute="bottom" id="kIc-0D-olL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jN6-DD-kR8"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Goal List" image="tabBarGoalListPlaceholder" id="hXs-3h-e40"/>
+                    <navigationItem key="navigationItem" title="Active Goals" id="FS9-Gl-IsA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YBz-80-oqR">
+                            <connections>
+                                <action selector="addGoal:" destination="Cif-he-bS1" id="Iqp-Lu-Z5F"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="goalListTableView" destination="Pox-Iw-FOv" id="IK8-Wd-0qG"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1891" y="1551"/>
+        </scene>
+        <!--GoldenGoal-->
+        <scene sceneID="nHR-qX-nil">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GoldenGoal" referencedIdentifier="GoldenGoal" id="tA0-3x-vSb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y2k-8a-Djq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1139" y="1408"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4Nn-J8-p2d">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="raA-Nx-OGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TGE-gx-jq7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A0X-ai-JTN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Cif-he-bS1" kind="relationship" relationship="rootViewController" id="zdF-h6-5TL"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1891" y="818"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabBarGoalListPlaceholder" width="25" height="25"/>
+    </resources>
+</document>
