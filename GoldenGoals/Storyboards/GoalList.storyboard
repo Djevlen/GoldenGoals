@@ -9,14 +9,14 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Active Goals-->
+        <!--Goals-->
         <scene sceneID="77j-4i-sPy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qpw-WH-OfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Cif-he-bS1" customClass="GoalListController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="duD-Vd-CrR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -41,7 +41,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OVh-Mf-VKo">
-                                                    <rect key="frame" x="146" y="19" width="251" height="62"/>
+                                                    <rect key="frame" x="146" y="19" width="212" height="62"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JWz-6y-4KN" userLabel="titleLabel">
                                                             <rect key="frame" x="0.0" y="0.0" width="46.5" height="39.5"/>
@@ -72,7 +72,10 @@
                                             <outlet property="categoryLabel" destination="wG6-Zu-gE0" id="BiF-is-2Dm"/>
                                             <outlet property="imageCell" destination="Ms5-Xz-dkp" id="XsL-ve-BRa"/>
                                             <outlet property="titleLabel" destination="JWz-6y-4KN" id="p8s-bU-PDu"/>
-                                            <segue destination="tA0-3x-vSb" kind="show" id="Onh-Ie-9j5"/>
+                                            <segue destination="tA0-3x-vSb" kind="show" id="Onh-Ie-9j5">
+                                                <segue key="commit" inheritsFrom="parent" id="EVd-Ss-NtM"/>
+                                                <segue key="preview" inheritsFrom="commit" id="Lia-Ou-APn"/>
+                                            </segue>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -88,10 +91,11 @@
                         <viewLayoutGuide key="safeArea" id="jN6-DD-kR8"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Goal List" image="tabBarGoalListPlaceholder" id="hXs-3h-e40"/>
-                    <navigationItem key="navigationItem" title="Active Goals" id="FS9-Gl-IsA">
+                    <navigationItem key="navigationItem" title="Goals" id="FS9-Gl-IsA">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YBz-80-oqR">
                             <connections>
                                 <action selector="addGoal:" destination="Cif-he-bS1" id="Iqp-Lu-Z5F"/>
+                                <segue destination="bta-dL-0hb" kind="show" id="FN8-O0-FYc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -100,6 +104,7 @@
                         <outlet property="goalListTableView" destination="Pox-Iw-FOv" id="IK8-Wd-0qG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qpw-WH-OfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1891" y="1551"/>
         </scene>
@@ -109,12 +114,133 @@
                 <viewControllerPlaceholder storyboardName="GoldenGoal" referencedIdentifier="GoldenGoal" id="tA0-3x-vSb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2k-8a-Djq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1139" y="1408"/>
+            <point key="canvasLocation" x="-1893" y="2046"/>
+        </scene>
+        <!--Add Goal-->
+        <scene sceneID="oI7-Q1-kUX">
+            <objects>
+                <viewController id="bta-dL-0hb" customClass="AddGoalViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oY4-yd-KpF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give Your Goal a Meaningful Title" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tUu-Zv-FVs">
+                                <rect key="frame" x="5" y="69" width="365" height="38"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nYO-jG-VtP">
+                                <rect key="frame" x="5" y="115" width="365" height="220"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="USd-kT-EfD"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JPy-JX-FnJ">
+                                    <size key="itemSize" width="126" height="93"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCell" id="e0O-Py-x1N" customClass="AddGoalCategoryCell" customModule="GoldenGoals" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="93"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="126" height="93"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.14999999999999999" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S1Z-s2-gHp">
+                                                    <rect key="frame" x="5" y="60" width="116" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ug-88-cKW">
+                                                    <rect key="frame" x="38" y="5" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="Lvu-Ta-ZBw"/>
+                                                        <constraint firstAttribute="width" constant="50" id="bAv-rJ-twu"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="S1Z-s2-gHp" secondAttribute="bottom" constant="5" id="DJD-BT-zsi"/>
+                                            <constraint firstItem="S1Z-s2-gHp" firstAttribute="top" secondItem="4ug-88-cKW" secondAttribute="bottom" constant="5" id="DNJ-Fo-cXi"/>
+                                            <constraint firstItem="S1Z-s2-gHp" firstAttribute="leading" secondItem="e0O-Py-x1N" secondAttribute="leading" constant="5" id="NfP-Oy-6ki"/>
+                                            <constraint firstItem="4ug-88-cKW" firstAttribute="top" secondItem="e0O-Py-x1N" secondAttribute="top" constant="5" id="QmK-9b-LBV"/>
+                                            <constraint firstItem="4ug-88-cKW" firstAttribute="centerX" secondItem="e0O-Py-x1N" secondAttribute="centerX" id="d46-y6-z5t"/>
+                                            <constraint firstAttribute="trailing" secondItem="S1Z-s2-gHp" secondAttribute="trailing" constant="5" id="e9a-jC-0bD"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="image" destination="4ug-88-cKW" id="mpH-qM-b4R"/>
+                                            <outlet property="title" destination="S1Z-s2-gHp" id="oND-dj-pY3"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="GhF-6N-bV5">
+                                <rect key="frame" x="0.0" y="372" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="552136419.62527001">
+                                    <!--2018-07-01 11:13:39 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kXJ-1O-XAh">
+                                <rect key="frame" x="5" y="345" width="365" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nYO-jG-VtP" firstAttribute="top" secondItem="tUu-Zv-FVs" secondAttribute="bottom" constant="8" id="2V0-SH-VDJ"/>
+                            <constraint firstItem="kXJ-1O-XAh" firstAttribute="top" secondItem="nYO-jG-VtP" secondAttribute="bottom" constant="10" id="2vv-bL-SH2"/>
+                            <constraint firstItem="SJB-k3-Tj4" firstAttribute="trailing" secondItem="kXJ-1O-XAh" secondAttribute="trailing" constant="5" id="4hM-iW-0uZ"/>
+                            <constraint firstItem="tUu-Zv-FVs" firstAttribute="leading" secondItem="SJB-k3-Tj4" secondAttribute="leading" constant="5" id="54p-68-jM4"/>
+                            <constraint firstItem="GhF-6N-bV5" firstAttribute="top" secondItem="kXJ-1O-XAh" secondAttribute="bottom" constant="3" id="AHV-a5-9hs"/>
+                            <constraint firstItem="SJB-k3-Tj4" firstAttribute="trailing" secondItem="tUu-Zv-FVs" secondAttribute="trailing" constant="5" id="CWD-SA-oXS"/>
+                            <constraint firstItem="GhF-6N-bV5" firstAttribute="leading" secondItem="SJB-k3-Tj4" secondAttribute="leading" id="O94-SV-c4F"/>
+                            <constraint firstItem="nYO-jG-VtP" firstAttribute="leading" secondItem="SJB-k3-Tj4" secondAttribute="leading" constant="5" id="Pd9-Kz-SUh"/>
+                            <constraint firstItem="GhF-6N-bV5" firstAttribute="trailing" secondItem="SJB-k3-Tj4" secondAttribute="trailing" id="h9P-ek-FAN"/>
+                            <constraint firstItem="tUu-Zv-FVs" firstAttribute="top" secondItem="SJB-k3-Tj4" secondAttribute="top" constant="5" id="sF1-oz-zAf"/>
+                            <constraint firstItem="SJB-k3-Tj4" firstAttribute="trailing" secondItem="nYO-jG-VtP" secondAttribute="trailing" constant="5" id="sh5-fe-kw2"/>
+                            <constraint firstItem="kXJ-1O-XAh" firstAttribute="leading" secondItem="SJB-k3-Tj4" secondAttribute="leading" constant="5" id="tHE-Lh-xfK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SJB-k3-Tj4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Goal" largeTitleDisplayMode="never" id="uq6-MV-hjk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="Fk1-eG-hJj"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="categoryCollection" destination="nYO-jG-VtP" id="tXE-QY-TAy"/>
+                        <outlet property="goalEndDate" destination="GhF-6N-bV5" id="gY6-Cr-clB"/>
+                        <outlet property="goalTitle" destination="tUu-Zv-FVs" id="DZp-yY-5Yh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lfo-v5-8Cj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1047.2" y="1549.4752623688157"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="t3J-Y6-LD1">
+            <objects>
+                <viewController id="Xyh-cE-cCo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ucJ-8P-ciD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7cR-C3-ZQr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dqf-TC-lNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-311" y="1550"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Nn-J8-p2d">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="raA-Nx-OGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TGE-gx-jq7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A0X-ai-JTN">
@@ -126,6 +252,7 @@
                         <segue destination="Cif-he-bS1" kind="relationship" relationship="rootViewController" id="zdF-h6-5TL"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="raA-Nx-OGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1891" y="818"/>
         </scene>
@@ -133,4 +260,7 @@
     <resources>
         <image name="tabBarGoalListPlaceholder" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Onh-Ie-9j5"/>
+    </inferredMetricsTieBreakers>
 </document>

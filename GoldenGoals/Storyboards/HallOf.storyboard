@@ -6,8 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +37,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals - Grouped by CATEGORY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-aq-7ei">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhj-aq-7ei">
                                 <rect key="frame" x="8" y="366" width="359" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="GmJ-WP-ION"/>
@@ -79,8 +77,14 @@
                                                         <constraint firstAttribute="width" constant="50" id="oqL-J7-Wv2"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19m-Xh-1Oh">
-                                                    <rect key="frame" x="5" y="84" width="92" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19m-Xh-1Oh">
+                                                    <rect key="frame" x="3" y="3" width="96" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUh-IK-5Cz">
+                                                    <rect key="frame" x="3" y="76" width="96" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -88,17 +92,21 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="19m-Xh-1Oh" secondAttribute="trailing" constant="5" id="6Gu-ON-EPd"/>
+                                            <constraint firstItem="BUh-IK-5Cz" firstAttribute="leading" secondItem="wSP-R0-gHu" secondAttribute="leading" constant="3" id="2Kb-su-k0Q"/>
                                             <constraint firstItem="imX-Yf-97R" firstAttribute="centerX" secondItem="wSP-R0-gHu" secondAttribute="centerX" id="I8O-4B-7vw"/>
-                                            <constraint firstAttribute="bottom" secondItem="19m-Xh-1Oh" secondAttribute="bottom" constant="-3" id="NYW-hC-wiy"/>
-                                            <constraint firstItem="19m-Xh-1Oh" firstAttribute="centerX" secondItem="imX-Yf-97R" secondAttribute="centerX" id="TmN-zD-JAk"/>
+                                            <constraint firstAttribute="bottom" secondItem="BUh-IK-5Cz" secondAttribute="bottom" constant="2" id="LiP-5x-EYc"/>
+                                            <constraint firstItem="BUh-IK-5Cz" firstAttribute="top" secondItem="imX-Yf-97R" secondAttribute="bottom" constant="1" id="Ouh-2a-77K"/>
+                                            <constraint firstItem="19m-Xh-1Oh" firstAttribute="top" secondItem="wSP-R0-gHu" secondAttribute="top" constant="3" id="QoK-KO-FCk"/>
+                                            <constraint firstAttribute="trailing" secondItem="19m-Xh-1Oh" secondAttribute="trailing" constant="3" id="SJf-Nx-GiR"/>
+                                            <constraint firstItem="19m-Xh-1Oh" firstAttribute="leading" secondItem="wSP-R0-gHu" secondAttribute="leading" constant="3" id="TYC-Jn-aTp"/>
+                                            <constraint firstItem="imX-Yf-97R" firstAttribute="top" secondItem="19m-Xh-1Oh" secondAttribute="bottom" constant="2" id="gIu-vf-aOu"/>
                                             <constraint firstItem="imX-Yf-97R" firstAttribute="centerY" secondItem="wSP-R0-gHu" secondAttribute="centerY" id="nfS-7q-AhE"/>
-                                            <constraint firstItem="19m-Xh-1Oh" firstAttribute="leading" secondItem="wSP-R0-gHu" secondAttribute="leading" constant="5" id="pnb-UF-FFr"/>
-                                            <constraint firstItem="19m-Xh-1Oh" firstAttribute="firstBaseline" secondItem="imX-Yf-97R" secondAttribute="baseline" constant="24.333333333333332" symbolType="layoutAnchor" id="uhc-ls-KHR"/>
+                                            <constraint firstAttribute="trailing" secondItem="BUh-IK-5Cz" secondAttribute="trailing" constant="3" id="ybs-DB-SlG"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="categoryCellImage" destination="imX-Yf-97R" id="tQa-3j-Y2O"/>
-                                            <outlet property="categoryCellTitle" destination="19m-Xh-1Oh" id="tB1-lA-vOp"/>
+                                            <outlet property="image" destination="imX-Yf-97R" id="tQa-3j-Y2O"/>
+                                            <outlet property="numberOfGoalsLabel" destination="BUh-IK-5Cz" id="hjQ-Fu-ogi"/>
+                                            <outlet property="title" destination="19m-Xh-1Oh" id="tB1-lA-vOp"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -127,6 +135,7 @@
                     <tabBarItem key="tabBarItem" title="Hall of Fame" image="tabBarHallOfPlaceholder" id="mNP-C6-0QJ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="goalsListTitleLabel" destination="Dhj-aq-7ei" id="uvN-O4-ePu"/>
                         <outlet property="hallOfCollectionView" destination="Do3-bm-bHh" id="vAT-cv-fMk"/>
                     </connections>
                 </viewController>

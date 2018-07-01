@@ -106,9 +106,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Golden Goal" image="tabBarGoldenGoalPlaceholder" id="IJS-ZB-24e"/>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="pON-gq-UvO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="CaX-3p-QxT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ktT-yP-xRt">
                             <connections>
-                                <action selector="editButtonSelected:" destination="g76-qx-7ZG" id="Zyw-4a-8BH"/>
+                                <action selector="editButtonSelected:" destination="g76-qx-7ZG" id="k1h-iH-4Uu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

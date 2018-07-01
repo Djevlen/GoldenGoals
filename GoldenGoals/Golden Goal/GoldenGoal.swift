@@ -25,9 +25,16 @@ class GoldenGoal: UIViewController {
     
     //shows the tool bar and goes into edit mode
     @IBAction func editButtonSelected(_ sender: UIBarButtonItem) {
-        self.navigationController?.setToolbarHidden(false, animated: true)
+        setEditing(!self.navigationController!.isToolbarHidden, animated: true)
+        self.isEditing = true
+        self.navigationController?.setToolbarHidden(!self.navigationController!.isToolbarHidden, animated: true)
     }
     
+    //TODO: This needs to work. probably change uibarbutton and remake it so this method works
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing,animated:animated)
+        print("i setEditing: \(editing)")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
