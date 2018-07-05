@@ -27,7 +27,7 @@ class HallOfFameController: UIViewController {
             print("i for setupcategories: \(categoryTitles[index])")
             category.title = categoryTitles[index]
             if let data = UIImagePNGRepresentation(categoryImages[index]!){
-                category.image = data as NSData
+                category.image = data as Data?
             }
             //cat.image = UIImagePNGRepresentation(categoryImages[index]!) as? NSData!
             CoreDataService.saveContext()
@@ -58,10 +58,10 @@ class HallOfFameController: UIViewController {
                 }
                 if let categoryImageData = category.image as Data?{
                     let categoryImage = UIImage(data: categoryImageData)
-                    allCategories[index].image = categoryImageData as NSData
+                    allCategories[index].image = categoryImageData as Data
                     print("Bildet: \(categoryImage!)")
                 }else{
-                    allCategories[index].image = UIImagePNGRepresentation(#imageLiteral(resourceName: "categoryMoney")) as NSData?
+                    allCategories[index].image = UIImagePNGRepresentation(#imageLiteral(resourceName: "categoryMoney")) as Data?
                     print("Har ikke noe bilde for kategorien : (")
                 }                
             }

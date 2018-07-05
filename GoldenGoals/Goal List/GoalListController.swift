@@ -11,49 +11,9 @@ import CoreData
 
 class GoalListController: UIViewController {
     
-    
     @IBOutlet weak var goalListTableView: UITableView!
-   
-    var goals = [Goal]()
-   
-    @IBAction func addGoal(_ sender: UIBarButtonItem) {
-        print("prøver å legge til nytt mål!")
-        let alert = UIAlertController(title: "Add New Goal", message: nil, preferredStyle: .alert)
-        alert.addTextField(configurationHandler: { (textfield) in
-            textfield.placeholder = "Goal Title"
-        })
-        alert.addTextField(configurationHandler: { (textfield) in
-            textfield.placeholder = "Goal Motivation"
-        })
-        alert.addTextField(configurationHandler: { (textfield) in
-            textfield.placeholder = "Category?"
-            
-        })
-        let action = UIAlertAction(title: "Add Goal!", style: .default) { (_) in
-            let goalTitle = alert.textFields!.first!.text!
-            let goalMotivation = alert.textFields![1].text!
-            let goalCategory = alert.textFields![2].text!
-            print("\(goalTitle), \(goalMotivation), \(goalCategory)")
-            //SAVE TO CORE DATA GOAL AND CATEGORY
-            let goal = Goal(context: CoreDataService.context)
-            goal.id = UUID()
-            goal.title = goalTitle
-            goal.motivationalText = goalMotivation
-            
-            let category = Category(context: CoreDataService.context)
-            category.title = goalCategory
-//            if let imageTodata = UIImagePNGRepresentation(UIImage(named: "categoryFitness")!){
-//                category.image = imageTodata as NSData
-//            }
-            goal.category = category
-            CoreDataService.saveContext()
-            self.goals.append(goal)
-            self.goalListTableView.reloadData()
-        }
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-        
-    }
+
+    var goals : [Goal]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +28,7 @@ class GoalListController: UIViewController {
         } catch  {
             print("GoalListController fetchRequest in viewDidLoad failed")
         }
-
+        
         setupNavigationController()
         //MARK: THIS MUST BE CHANGED, TESTING ONLY
     }
@@ -77,7 +37,18 @@ class GoalListController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
-        //TODO: Implement the searchcontroller
+        //TODO: Implement or scrap the searchcontroller
+    }
+    
+    @IBAction func unwindFromAddingGoal(_ sender: UIStoryboardSegue){
+        if (sender.source is AddGoalMotivationViewController){
+            if let senderVC = sender.source as? AddGoalMotivationViewController{
+                //this comes from the last ADD GOAL VIEW - it's possible to access the data in that controller through this method
+                self.goals.append(senderVC.goal)
+                goalListTableView.reloadData()
+                
+            }
+        }
     }
 }
 
@@ -102,17 +73,18 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         print("Leading Swipe on cell \(indexPath.row) : \(goals[indexPath.row].title!)")
-        // TODO: Implement what to show on LEADING SWIPE: SHAME IT??
-        return nil
+        // TODO: Implement what to show on LEADING SWIPE:
+        let devInfoAction = contextualShameAction(forRowAtIndexPath: indexPath)
+        let leadingSwipe = UISwipeActionsConfiguration(actions: [devInfoAction])
+        return leadingSwipe
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        // TODO: Implement what to show on TRAILING SWIPE: EDIT??
+        // TODO: Implement what to show on TRAILING SWIPE:
         print("Trailing Swipe on cell \(indexPath.row) : \(goals[indexPath.row].title!)")
         let deleteAction = self.contextualDeleteAction(forRowAtIndexPath: indexPath)
         let shameAction = self.contextualShameAction(forRowAtIndexPath: indexPath)
         let trailingSwipe = UISwipeActionsConfiguration(actions: [deleteAction, shameAction])
         return trailingSwipe
-//        return nil
     }
     
     func contextualDeleteAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction{
@@ -124,19 +96,56 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
                                             self.goalListTableView.deleteRows(at: [indexPath], with: .left)
                                             
                                             CoreDataService.saveContext()
-
+                                            
         }
         delete.backgroundColor = .red
         return delete
     }
+    //dumping all goal info in an Alert
     func contextualShameAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction{
-        let delete = UIContextualAction(style: .normal,
-                                        title: "😨") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
-                                            // TODO: Make this change color and slowly fade away
-                                            self.goalListTableView.reloadData()
-                                            completionHandler(true)
+        let delete = UIContextualAction(style: .normal, title: "?") {
+            (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
+            // TODO: Make this change color and slowly fade away
+            let alert = UIAlertController(title: "Goal Info Dump", message: nil, preferredStyle: .alert)
+            alert.addTextField(configurationHandler: { (textfield) in
+                textfield.text = "ID: \(self.goals[indexPath.row].id!.uuidString)"
+            })
+            alert.addTextField(configurationHandler: { (textfield) in
+                textfield.text = "title: \(self.goals[indexPath.row].title!)"
+            })
+            alert.addTextField(configurationHandler: { (textfield) in
+                textfield.text = "category: \(self.goals[indexPath.row].category!.title!)"
+            })
+            alert.addTextField(configurationHandler: { (textfield) in
+                textfield.text = "dateAdded: \(String(describing: self.goals[indexPath.row].dateAdded))"
+                
+            })
+            alert.addTextField(configurationHandler: { (textfield) in
+                textfield.text = "dateStart: \(String(describing: self.goals[indexPath.row].dateStart))"
+            })
+            alert.addTextField(configurationHandler: { (textfield) in
+                textfield.text = "dateEnd: \(String(describing: self.goals[indexPath.row].dateEnd))"
+            })
+            alert.addTextField(configurationHandler: { (textfield) in
+                textfield.text = "motivationalText: \(String(describing: self.goals[indexPath.row].motivationalText))"
+            })
+            alert.addTextField(configurationHandler: { (textfield) in
+                textfield.text = "deletedGoal: \(self.goals[indexPath.row].deletedGoal)"
+            })
+            alert.addTextField(configurationHandler: { (textfield) in
+                textfield.text = "hallOfFame: \(self.goals[indexPath.row].hallOfFame)"
+            })
+            alert.addTextField(configurationHandler: { (textfield) in
+                textfield.text = "photo: \(String(describing: self.goals[indexPath.row].photo))"
+                
+            })
+            let action =  UIAlertAction(title: "OK!!", style: .default) { (_) in
+            }
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+            completionHandler(true)
         }
- 
+        
         delete.backgroundColor = .black
         return delete
     }

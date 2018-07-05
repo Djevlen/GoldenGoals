@@ -94,7 +94,6 @@
                     <navigationItem key="navigationItem" title="Goals" id="FS9-Gl-IsA">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YBz-80-oqR">
                             <connections>
-                                <action selector="addGoal:" destination="Cif-he-bS1" id="Iqp-Lu-Z5F"/>
                                 <segue destination="bta-dL-0hb" kind="show" id="FN8-O0-FYc"/>
                             </connections>
                         </barButtonItem>
@@ -124,11 +123,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give Your Goal a Meaningful Title" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tUu-Zv-FVs">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give Your Goal a Title" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tUu-Zv-FVs">
                                 <rect key="frame" x="5" y="69" width="365" height="38"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nYO-jG-VtP">
                                 <rect key="frame" x="5" y="115" width="365" height="220"/>
@@ -211,7 +210,11 @@
                         <viewLayoutGuide key="safeArea" id="SJB-k3-Tj4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Goal" largeTitleDisplayMode="never" id="uq6-MV-hjk">
-                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="Fk1-eG-hJj"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="Fk1-eG-hJj">
+                            <connections>
+                                <segue destination="Xyh-cE-cCo" kind="show" identifier="segueToMotivation" id="hMk-MH-cv0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="categoryCollection" destination="nYO-jG-VtP" id="tXE-QY-TAy"/>
@@ -223,20 +226,63 @@
             </objects>
             <point key="canvasLocation" x="-1047.2" y="1549.4752623688157"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Motivation-->
         <scene sceneID="t3J-Y6-LD1">
             <objects>
-                <viewController id="Xyh-cE-cCo" sceneMemberID="viewController">
+                <viewController id="Xyh-cE-cCo" customClass="AddGoalMotivationViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ucJ-8P-ciD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9jC-ca-3Si">
+                                <rect key="frame" x="42" y="69" width="290" height="290"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="Sqy-rT-ffj"/>
+                                    <constraint firstAttribute="width" secondItem="9jC-ca-3Si" secondAttribute="height" multiplier="1:1" id="g6b-1R-0Aa"/>
+                                    <constraint firstAttribute="height" constant="290" id="yN5-2S-GFH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motivate yourself" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZUR-PS-g4K">
+                                <rect key="frame" x="5" y="364" width="365" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5wE-W8-4dK">
+                                <rect key="frame" x="5" y="396" width="365" height="217"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7cR-C3-ZQr" firstAttribute="trailing" secondItem="5wE-W8-4dK" secondAttribute="trailing" constant="5" id="16j-W2-tJP"/>
+                            <constraint firstItem="5wE-W8-4dK" firstAttribute="top" secondItem="ZUR-PS-g4K" secondAttribute="bottom" constant="3" id="Alj-y3-Yl0"/>
+                            <constraint firstItem="ZUR-PS-g4K" firstAttribute="leading" secondItem="7cR-C3-ZQr" secondAttribute="leading" constant="5" id="DRt-bD-a9s"/>
+                            <constraint firstItem="7cR-C3-ZQr" firstAttribute="trailing" secondItem="ZUR-PS-g4K" secondAttribute="trailing" constant="5" id="Exo-0T-xGr"/>
+                            <constraint firstItem="9jC-ca-3Si" firstAttribute="top" secondItem="7cR-C3-ZQr" secondAttribute="top" constant="5" id="GJU-Fn-KQf"/>
+                            <constraint firstItem="ZUR-PS-g4K" firstAttribute="top" secondItem="9jC-ca-3Si" secondAttribute="bottom" constant="5" id="GxD-bd-g9W"/>
+                            <constraint firstItem="7cR-C3-ZQr" firstAttribute="bottom" secondItem="5wE-W8-4dK" secondAttribute="bottom" constant="5" id="SvV-mH-XVK"/>
+                            <constraint firstItem="9jC-ca-3Si" firstAttribute="centerX" secondItem="7cR-C3-ZQr" secondAttribute="centerX" id="b9C-AY-r4V"/>
+                            <constraint firstItem="5wE-W8-4dK" firstAttribute="leading" secondItem="7cR-C3-ZQr" secondAttribute="leading" constant="5" id="irw-Yo-REb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7cR-C3-ZQr"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add Motivation" id="LAd-mb-fLr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="T8f-Xn-ZAC">
+                            <connections>
+                                <segue destination="Tc6-w1-VUn" kind="unwind" unwindAction="unwindFromAddingGoal:" id="ftT-ah-qeA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqf-TC-lNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Tc6-w1-VUn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-311" y="1550"/>
+            <point key="canvasLocation" x="-252" y="1548.5757121439281"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Nn-J8-p2d">

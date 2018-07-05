@@ -13,6 +13,14 @@ import CoreData
 class CoreDataService: NSPersistentContainer {
     
     
+    static var goalEntity: NSEntityDescription{
+        return NSEntityDescription.entity(forEntityName: "Goal", in: CoreDataService.context)!
+    }
+    static var goal: NSManagedObject {
+        return NSManagedObject(entity: CoreDataService.goalEntity, insertInto: CoreDataService.context)
+        
+    }
+    
     static var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
