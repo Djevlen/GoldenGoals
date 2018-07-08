@@ -12,8 +12,9 @@ import CoreData
 class GoalListController: UIViewController {
     
     @IBOutlet weak var goalListTableView: UITableView!
-
-    var goals : [Goal]!
+    
+//    var goals = [Goal(context: CoreDataService.context)]
+    var goals: [Goal]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,26 +29,30 @@ class GoalListController: UIViewController {
         } catch  {
             print("GoalListController fetchRequest in viewDidLoad failed")
         }
-        
-        setupNavigationController()
-        //MARK: THIS MUST BE CHANGED, TESTING ONLY
-    }
-    
-    func setupNavigationController(){
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        let searchController = UISearchController(searchResultsController: nil)
-        navigationItem.searchController = searchController
-        //TODO: Implement or scrap the searchcontroller
     }
     
     @IBAction func unwindFromAddingGoal(_ sender: UIStoryboardSegue){
         if (sender.source is AddGoalMotivationViewController){
             if let senderVC = sender.source as? AddGoalMotivationViewController{
                 //this comes from the last ADD GOAL VIEW - it's possible to access the data in that controller through this method
+                do {
+                    print("TRYNG TO SAVE NEW GOAL!!!")
+                    try CoreDataService.context.save()
+                } catch let error as NSError {
+                    print("ERROR SAVING NEW GOAL!!!")
+                }
                 self.goals.append(senderVC.goal)
                 goalListTableView.reloadData()
                 
             }
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toGoalView"){
+            let goalView = segue.destination as! GoldenGoal
+            let selectedGoal = self.goalListTableView.indexPathForSelectedRow
+            goalView.goal = goals[selectedGoal!.row]
+            
         }
     }
 }
@@ -60,9 +65,22 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! goalCell
-        cell.titleLabel?.text = goals[indexPath.row].title!
-        cell.categoryLabel?.text = goals[indexPath.row].category!.title
-        cell.imageCell.image = UIImage(named: "goalPlaceholder")
+        
+        if let goalsTitle = goals[indexPath.row].title{
+            cell.titleLabel?.text = goalsTitle
+        }else{
+            cell.titleLabel!.text = "Error getting title!"
+        }
+        if let goalsCategory = goals[indexPath.row].category{
+            cell.categoryLabel?.text = goalsCategory.title!
+        }else{
+            cell.categoryLabel?.text = "Error getting category!"
+        }
+        if let goalsImage = goals[indexPath.row].photo{
+            cell.imageCell.image = UIImage(data: goalsImage)
+        }else{
+            cell.imageCell.image = UIImage(named: "goalPlaceholder")
+        }
         return cell
     }
     
@@ -80,7 +98,6 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // TODO: Implement what to show on TRAILING SWIPE:
-        print("Trailing Swipe on cell \(indexPath.row) : \(goals[indexPath.row].title!)")
         let deleteAction = self.contextualDeleteAction(forRowAtIndexPath: indexPath)
         let shameAction = self.contextualShameAction(forRowAtIndexPath: indexPath)
         let trailingSwipe = UISwipeActionsConfiguration(actions: [deleteAction, shameAction])
@@ -103,7 +120,7 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
     }
     //dumping all goal info in an Alert
     func contextualShameAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction{
-        let delete = UIContextualAction(style: .normal, title: "?") {
+        let questionMark = UIContextualAction(style: .normal, title: "?") {
             (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
             // TODO: Make this change color and slowly fade away
             let alert = UIAlertController(title: "Goal Info Dump", message: nil, preferredStyle: .alert)
@@ -146,8 +163,8 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
             completionHandler(true)
         }
         
-        delete.backgroundColor = .black
-        return delete
+        questionMark.backgroundColor = .black
+        return questionMark
     }
 }
 

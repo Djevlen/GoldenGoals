@@ -12,7 +12,9 @@ class AddGoalMotivationViewController: UIViewController {
     
     var goal = Goal()
 
-
+    @IBOutlet weak var motivationImage: UIImageView!
+    @IBOutlet weak var motivationalText: UITextView!
+    
     
 
     override func viewDidLoad() {
@@ -37,4 +39,10 @@ class AddGoalMotivationViewController: UIViewController {
     }
     */
 
+}
+
+extension AddGoalMotivationViewController: UITextViewDelegate{
+    func textViewDidChange(_ textView: UITextView) {
+        goal.motivationalText = textView.text
+    }
 }

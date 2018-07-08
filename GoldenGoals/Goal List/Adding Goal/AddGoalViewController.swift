@@ -10,27 +10,74 @@ import UIKit
 import CoreData
 
 class AddGoalViewController: UIViewController {
-
+    
     @IBOutlet weak var goalTitle: UITextField!
     @IBOutlet weak var categoryCollection: UICollectionView!
     @IBOutlet weak var goalEndDate: UIDatePicker!
+    @IBOutlet weak var dateSelector: UISegmentedControl!
+    @IBOutlet weak var goalStartDate: UIDatePicker!
+    
+    @IBOutlet weak var startDateSelectorHighlightView: UIView!
+    @IBOutlet weak var dueDateSelectorHighlightView: UIView!
+    @IBAction func changeSelectedSegment(_ sender: UISegmentedControl) {
+        switch dateSelector.selectedSegmentIndex {
+        case 0:
+            goalStartDate.isEnabled = true
+            goalStartDate.isHidden = false
+            goalEndDate.isEnabled = false
+            goalEndDate.isHidden = true
+        case 1:
+            goalStartDate.isEnabled = false
+            goalStartDate.isHidden = true
+            goalEndDate.isEnabled = true
+            goalEndDate.isHidden = false
+        default:
+            break
+        }
+        if goalStartDate.isHidden {
+            UIView.animate(withDuration: 0.5) {
+                self.startDateSelectorHighlightView.alpha = 0.0
+                self.dueDateSelectorHighlightView.alpha = 1.0
+            }
+        }else{
+            UIView.animate(withDuration: 0.5) {
+                self.startDateSelectorHighlightView.alpha = 1.0
+                self.dueDateSelectorHighlightView.alpha = 0.0
+            }
+        }
+        
+    }
+    
     
     var allCategories : [Category]!
     var newGoal = Goal(context: CoreDataService.context)
+
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        categoryCollection.dataSource = self
-        categoryCollection.delegate = self
-        goalTitle.delegate = self
-        
+    fileprivate func fetchCategories() {
         let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
         do {
-            let categories = try CoreDataService.context.fetch(fetchRequest)
+            var categories = try CoreDataService.context.fetch(fetchRequest)
             allCategories = categories
             if allCategories.count == 0{
                 print("allCategories.count ER 0! LAG NYE!!")
+                
+                //REMOVE THIS STUFF
+                let categoryTitles = ["Lifestyle","Health & Fitness","Education","Skills","Social","Productivity","Business","Travel","Entertainment","Money"]
+                let categoryImages = [UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney")]
+                
+                for (index,cat) in categoryTitles.enumerated() {
+                    let category = Category(context: CoreDataService.context)
+                    print("i for setupcategories: \(categoryTitles[index])")
+                    category.title = categoryTitles[index]
+                    if let data = UIImagePNGRepresentation(categoryImages[index]!){
+                        category.image = data as Data?
+                    }
+                    //cat.image = UIImagePNGRepresentation(categoryImages[index]!) as? NSData!
+                    CoreDataService.saveContext()
+                }
             }
+            categories = try CoreDataService.context.fetch(fetchRequest)
+            allCategories = categories
             print("I Adding Goal. Antall Kategorier i databasen: \(categories.count)")
             for (index,category) in categories.enumerated() {
                 print("DETTE ER EN KATEGORI: \(category.title!) på plass: \(index)")
@@ -52,42 +99,81 @@ class AddGoalViewController: UIViewController {
         } catch  {
             print("AddGoalViewController fetchRequest in viewDidLoad failed")
         }
-        // Do any additional setup after loading the view.
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        categoryCollection.dataSource = self
+        categoryCollection.delegate = self
+        goalTitle.delegate = self
+        
+        fetchCategories()
+        
+        dateSelector.tintColor = .clear
+        dateSelector.backgroundColor = .clear
+        dateSelector.setTitleTextAttributes([
+            NSAttributedStringKey.font : UIFont.systemFont(ofSize: 18),
+            NSAttributedStringKey.foregroundColor: UIColor.lightGray
+            ], for: .normal)
+        
+        dateSelector.setTitleTextAttributes([
+            NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18),
+            NSAttributedStringKey.foregroundColor: UIColor(red: 252.0/255.0, green: 194.0/255.0, blue: 0, alpha: 1.0)//gold
+            ], for: .selected)
+        
+        goalEndDate.minimumDate = Date()
+        
+        UIView.animate(withDuration: 2.0) {
+            self.goalTitle.layer.borderColor = UIColor.yellow.cgColor
+            self.goalTitle.layer.borderWidth = 2.0
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if(identifier == "segueToMotivation"){
-            //TODO: Change this to GUARD
+            //TODO: make this its own function to check every field to be reused in seperate views
             guard let title = goalTitle.text, title != "" else{
                 print("GOAL TITLE IKKE SATT")
-                goalTitle.borderStyle = .line
+                goalTitle.layer.borderWidth = 3.0
+                goalTitle.layer.borderColor = UIColor.red.cgColor
                 return false
             }
+            goalTitle.layer.borderWidth = 0.0
+            goalTitle.layer.borderColor = UIColor.clear.cgColor
+            guard let _ = newGoal.category else {
+                categoryCollection.layer.borderWidth = 2.0
+                categoryCollection.layer.borderColor = UIColor.red.cgColor
+                return false
+            }
+            categoryCollection.layer.borderWidth = 0.0
+            categoryCollection.layer.borderColor = UIColor.clear.cgColor
+            
+            
             newGoal.title = goalTitle.text!
             newGoal.id = UUID(uuidString: UUID().uuidString)
+            newGoal.dateAdded = Date()
+            newGoal.dateStart = goalStartDate.date
+            newGoal.dateEnd = goalEndDate.date
         }
-        do {
-            print("TRYNG TO SAVE NEW GOAL!!!")
-            try CoreDataService.context.save()
-        } catch let error as NSError {
-            print("ERROR SAVING NEW GOAL!!!")
-        }
+        
+        //TODO: Flytte denne til neste view
+        
         
         return true
     }
@@ -96,38 +182,45 @@ class AddGoalViewController: UIViewController {
         let goalMotivationView = segue.destination as! AddGoalMotivationViewController
         goalMotivationView.goal = newGoal
     }
-
+    
 }
 
 extension AddGoalViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //cell rebranding doesn't work
+        self.goalTitle.resignFirstResponder()
         let cell = collectionView.cellForItem(at: indexPath) as! AddGoalCategoryCell
         cell.layer.borderWidth = 2.0
-        cell.layer.borderColor = UIColor.red.cgColor
-//        collectionView.reloadItems(at: [indexPath])
+        cell.layer.borderColor = UIColor.yellow.cgColor
         newGoal.category = allCategories[indexPath.row]
+        self.categoryCollection.layer.borderWidth = 0.0
     }
+    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! AddGoalCategoryCell
-        cell.layer.borderColor = UIColor.clear.cgColor
+        if let cell = collectionView.cellForItem(at: indexPath){
+            let theCell =  cell as! AddGoalCategoryCell
+            theCell.layer.borderColor = UIColor.clear.cgColor
+        }
     }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("in AddGoalViewController extension: \(allCategories.count)")
         return allCategories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! AddGoalCategoryCell
-        cell.image.image = UIImage(data: allCategories[indexPath.row].image! as Data)
-        cell.title.text = allCategories[indexPath.row].title
-        return cell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as? AddGoalCategoryCell{
+            cell.image.image = UIImage(data: allCategories[indexPath.row].image! as Data)
+            cell.title.text = allCategories[indexPath.row].title
+            return cell
+        }else{
+            return collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath)
+        }
     }
+    
     
 }
 

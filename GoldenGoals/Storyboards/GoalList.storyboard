@@ -72,7 +72,7 @@
                                             <outlet property="categoryLabel" destination="wG6-Zu-gE0" id="BiF-is-2Dm"/>
                                             <outlet property="imageCell" destination="Ms5-Xz-dkp" id="XsL-ve-BRa"/>
                                             <outlet property="titleLabel" destination="JWz-6y-4KN" id="p8s-bU-PDu"/>
-                                            <segue destination="tA0-3x-vSb" kind="show" id="Onh-Ie-9j5">
+                                            <segue destination="tA0-3x-vSb" kind="show" identifier="toGoalView" id="Onh-Ie-9j5">
                                                 <segue key="commit" inheritsFrom="parent" id="EVd-Ss-NtM"/>
                                                 <segue key="preview" inheritsFrom="commit" id="Lia-Ou-APn"/>
                                             </segue>
@@ -91,7 +91,7 @@
                         <viewLayoutGuide key="safeArea" id="jN6-DD-kR8"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Goal List" image="tabBarGoalListPlaceholder" id="hXs-3h-e40"/>
-                    <navigationItem key="navigationItem" title="Goals" id="FS9-Gl-IsA">
+                    <navigationItem key="navigationItem" title="Goals" largeTitleDisplayMode="always" id="FS9-Gl-IsA">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YBz-80-oqR">
                             <connections>
                                 <segue destination="bta-dL-0hb" kind="show" id="FN8-O0-FYc"/>
@@ -123,14 +123,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Give Your Goal a Title" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tUu-Zv-FVs">
-                                <rect key="frame" x="5" y="69" width="365" height="38"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Give Your Goal a Title" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tUu-Zv-FVs">
+                                <rect key="frame" x="5" y="69" width="365" height="34"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nYO-jG-VtP">
-                                <rect key="frame" x="5" y="115" width="365" height="220"/>
+                                <rect key="frame" x="5" y="111" width="365" height="220"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="USd-kT-EfD"/>
@@ -179,33 +179,67 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="GhF-6N-bV5">
-                                <rect key="frame" x="0.0" y="372" width="375" height="216"/>
+                            <datePicker hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="249" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="GhF-6N-bV5">
+                                <rect key="frame" x="5" y="370" width="365" height="292"/>
                                 <date key="date" timeIntervalSinceReferenceDate="552136419.62527001">
                                     <!--2018-07-01 11:13:39 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kXJ-1O-XAh">
-                                <rect key="frame" x="5" y="345" width="365" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="d7J-qA-JTj" userLabel="Goal Start Date">
+                                <rect key="frame" x="5" y="370" width="365" height="292"/>
+                                <date key="date" timeIntervalSinceReferenceDate="552136419.62527001">
+                                    <!--2018-07-01 11:13:39 +0000-->
+                                </date>
+                            </datePicker>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="E1W-Fn-kAM">
+                                <rect key="frame" x="15" y="339" width="345" height="29"/>
+                                <segments>
+                                    <segment title="Start Date"/>
+                                    <segment title="Due Date"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeSelectedSegment:" destination="bta-dL-0hb" eventType="valueChanged" id="3Oz-qN-Y3b"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="T5q-9G-nSw">
+                                <rect key="frame" x="15" y="368" width="345" height="5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cR-7O-W8c" userLabel="startDateSelectorHighlightView">
+                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="5"/>
+                                        <color key="backgroundColor" red="0.98388844730000002" green="0.85596650839999999" blue="0.30662769080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFW-8T-CJj" userLabel="dueDateSelectorHighlightView">
+                                        <rect key="frame" x="172.5" y="0.0" width="172.5" height="5"/>
+                                        <color key="backgroundColor" red="0.98388844730000002" green="0.85596650839999999" blue="0.30662769080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="gMx-PV-sjW"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nYO-jG-VtP" firstAttribute="top" secondItem="tUu-Zv-FVs" secondAttribute="bottom" constant="8" id="2V0-SH-VDJ"/>
-                            <constraint firstItem="kXJ-1O-XAh" firstAttribute="top" secondItem="nYO-jG-VtP" secondAttribute="bottom" constant="10" id="2vv-bL-SH2"/>
-                            <constraint firstItem="SJB-k3-Tj4" firstAttribute="trailing" secondItem="kXJ-1O-XAh" secondAttribute="trailing" constant="5" id="4hM-iW-0uZ"/>
                             <constraint firstItem="tUu-Zv-FVs" firstAttribute="leading" secondItem="SJB-k3-Tj4" secondAttribute="leading" constant="5" id="54p-68-jM4"/>
-                            <constraint firstItem="GhF-6N-bV5" firstAttribute="top" secondItem="kXJ-1O-XAh" secondAttribute="bottom" constant="3" id="AHV-a5-9hs"/>
+                            <constraint firstItem="SJB-k3-Tj4" firstAttribute="trailing" secondItem="T5q-9G-nSw" secondAttribute="trailing" constant="15" id="7iH-9J-n2x"/>
+                            <constraint firstItem="GhF-6N-bV5" firstAttribute="top" secondItem="E1W-Fn-kAM" secondAttribute="bottom" constant="3" id="A9Q-JW-mmr"/>
                             <constraint firstItem="SJB-k3-Tj4" firstAttribute="trailing" secondItem="tUu-Zv-FVs" secondAttribute="trailing" constant="5" id="CWD-SA-oXS"/>
-                            <constraint firstItem="GhF-6N-bV5" firstAttribute="leading" secondItem="SJB-k3-Tj4" secondAttribute="leading" id="O94-SV-c4F"/>
+                            <constraint firstAttribute="bottom" secondItem="GhF-6N-bV5" secondAttribute="bottom" constant="5" id="EJY-XP-LbL"/>
+                            <constraint firstItem="SJB-k3-Tj4" firstAttribute="trailing" secondItem="E1W-Fn-kAM" secondAttribute="trailing" constant="15" id="MoS-EW-Stj"/>
                             <constraint firstItem="nYO-jG-VtP" firstAttribute="leading" secondItem="SJB-k3-Tj4" secondAttribute="leading" constant="5" id="Pd9-Kz-SUh"/>
-                            <constraint firstItem="GhF-6N-bV5" firstAttribute="trailing" secondItem="SJB-k3-Tj4" secondAttribute="trailing" id="h9P-ek-FAN"/>
+                            <constraint firstItem="T5q-9G-nSw" firstAttribute="leading" secondItem="SJB-k3-Tj4" secondAttribute="leading" constant="15" id="SWo-bt-Omv"/>
+                            <constraint firstItem="E1W-Fn-kAM" firstAttribute="top" secondItem="nYO-jG-VtP" secondAttribute="bottom" constant="8" id="UTg-pt-QNu"/>
+                            <constraint firstItem="SJB-k3-Tj4" firstAttribute="trailing" secondItem="d7J-qA-JTj" secondAttribute="trailing" constant="5" id="bdg-nc-E5z"/>
+                            <constraint firstItem="d7J-qA-JTj" firstAttribute="leading" secondItem="SJB-k3-Tj4" secondAttribute="leading" constant="5" id="eeT-ND-QXd"/>
+                            <constraint firstItem="d7J-qA-JTj" firstAttribute="top" secondItem="E1W-Fn-kAM" secondAttribute="bottom" constant="3" id="i6c-IK-FIg"/>
+                            <constraint firstAttribute="bottom" secondItem="d7J-qA-JTj" secondAttribute="bottom" constant="5" id="rWO-32-WHV"/>
                             <constraint firstItem="tUu-Zv-FVs" firstAttribute="top" secondItem="SJB-k3-Tj4" secondAttribute="top" constant="5" id="sF1-oz-zAf"/>
                             <constraint firstItem="SJB-k3-Tj4" firstAttribute="trailing" secondItem="nYO-jG-VtP" secondAttribute="trailing" constant="5" id="sh5-fe-kw2"/>
-                            <constraint firstItem="kXJ-1O-XAh" firstAttribute="leading" secondItem="SJB-k3-Tj4" secondAttribute="leading" constant="5" id="tHE-Lh-xfK"/>
+                            <constraint firstItem="T5q-9G-nSw" firstAttribute="top" secondItem="E1W-Fn-kAM" secondAttribute="bottom" constant="1" id="th6-c4-Fmh"/>
+                            <constraint firstAttribute="trailing" secondItem="GhF-6N-bV5" secondAttribute="trailing" constant="5" id="uHC-f5-Hhv"/>
+                            <constraint firstItem="E1W-Fn-kAM" firstAttribute="leading" secondItem="SJB-k3-Tj4" secondAttribute="leading" constant="15" id="vIw-eV-a4T"/>
+                            <constraint firstItem="GhF-6N-bV5" firstAttribute="leading" secondItem="SJB-k3-Tj4" secondAttribute="leading" constant="5" id="xa7-eT-oKz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SJB-k3-Tj4"/>
                     </view>
@@ -218,8 +252,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="categoryCollection" destination="nYO-jG-VtP" id="tXE-QY-TAy"/>
+                        <outlet property="dateSelector" destination="E1W-Fn-kAM" id="Bpu-5k-2zI"/>
+                        <outlet property="dueDateSelectorHighlightView" destination="NFW-8T-CJj" id="VpK-tG-fkl"/>
                         <outlet property="goalEndDate" destination="GhF-6N-bV5" id="gY6-Cr-clB"/>
+                        <outlet property="goalStartDate" destination="d7J-qA-JTj" id="9fS-CH-ZYk"/>
                         <outlet property="goalTitle" destination="tUu-Zv-FVs" id="DZp-yY-5Yh"/>
+                        <outlet property="startDateSelectorHighlightView" destination="2cR-7O-W8c" id="2at-pm-lIz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lfo-v5-8Cj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -248,11 +286,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5wE-W8-4dK">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5wE-W8-4dK">
                                 <rect key="frame" x="5" y="396" width="365" height="217"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -278,6 +316,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="motivationImage" destination="9jC-ca-3Si" id="4Ax-hC-dnD"/>
+                        <outlet property="motivationalText" destination="5wE-W8-4dK" id="ZwN-OJ-2rt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqf-TC-lNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Tc6-w1-VUn" userLabel="Exit" sceneMemberID="exit"/>

@@ -16,24 +16,6 @@ class HallOfFameController: UIViewController {
     var allCategories = [Category]()
 
 
-    //helper category to populate categories
-    func setupCategories(){
-        print("I setupCategories")
-        let categoryTitles = ["Lifestyle","Health & Fitness","Education","Skills","Social","Productivity","Business","Travel","Entertainment","Money"]
-        let categoryImages = [UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney")]
-        
-        for (index,cat) in categoryTitles.enumerated() {
-            let category = Category(context: CoreDataService.context)
-            print("i for setupcategories: \(categoryTitles[index])")
-            category.title = categoryTitles[index]
-            if let data = UIImagePNGRepresentation(categoryImages[index]!){
-                category.image = data as Data?
-            }
-            //cat.image = UIImagePNGRepresentation(categoryImages[index]!) as? NSData!
-            CoreDataService.saveContext()
-        }
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,7 +27,6 @@ class HallOfFameController: UIViewController {
             allCategories = categories
             if allCategories.count == 0{
                 print("allCategories.count ER 0! LAG NYE!!")
-                setupCategories()
             }
             print("I hall of fame. Antall Kategorier i databasen: \(categories.count)")
             for (index,category) in categories.enumerated() {
@@ -112,7 +93,7 @@ extension HallOfFameController: UICollectionViewDataSource, UICollectionViewDele
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! categoryCell
         cell.image.image = UIImage(data: allCategories[indexPath.row].image! as Data)
         cell.title.text = allCategories[indexPath.row].title
-        cell.numberOfGoalsLabel.text = "\(arc4random_uniform(10)) goals"
+        cell.numberOfGoalsLabel.text = (allCategories[indexPath.row].goals!.count == 1 ? "1 goal" : "\(allCategories[indexPath.row].goals!.count) goals")
         return cell
     }
     

@@ -23,6 +23,10 @@ class GoldenGoal: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     
+    var goal: Goal!
+    let calendar = NSCalendar.current
+    let dateFormatter = ISO8601DateFormatter() // YYYY-MM-DD
+    
     //shows the tool bar and goes into edit mode
     @IBAction func editButtonSelected(_ sender: UIBarButtonItem) {
         setEditing(!self.navigationController!.isToolbarHidden, animated: true)
@@ -39,11 +43,14 @@ class GoldenGoal: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView!.delegate = self
-//        navigationController?.setNavigationBarHidden(true, animated: false)
         
-
-        dateStart.text = "2018-05-01T10:44:00+0000"
-        dateEnd.text = "2018-06-01T10:44:00+0000"
+        self.title = goal.title!
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateStart.text = dateFormatter.string(from: goal.dateStart!)
+        dateEnd.text = dateFormatter.string(from: goal.dateEnd!)
+        
         //setup static information in view
         imageView.layer.cornerRadius = imageView.frame.size.width / 20 //20 for rectangle
         imageView.layer.borderColor = progressBarDates.progressTintColor?.cgColor // UIColor.red.cgColor
@@ -54,17 +61,16 @@ class GoldenGoal: UIViewController {
     
     
     func calculateProgress() -> Float{
-        let calendar = NSCalendar.current
-        let dateFormatter = ISO8601DateFormatter() // YYYY-MM-DD
-        let date1 = dateFormatter.date(from: dateStart.text!)
-        let date2 = dateFormatter.date(from: dateEnd.text!)
-        let date3 = dateFormatter.date(from: "2018-06-10T10:44:00+0000")
-  
+
         
-        let totalNumberOfDays = calendar.dateComponents([.day], from: date1!, to: date2!)
-        let daysToCompletion  = calendar.dateComponents([.day], from: date2!, to: date3!)
+        let totalNumberOfDays = calendar.dateComponents([.day], from: goal.dateStart!, to: goal.dateEnd!)
+        let daysToCompletion  = calendar.dateComponents([.day], from: Date(), to: goal.dateEnd!)
         print("components blir: \(Float(daysToCompletion.day!)/Float(totalNumberOfDays.day!)) og enkelt: \(Float(daysToCompletion.day!))")
         return Float(daysToCompletion.day!)/Float(totalNumberOfDays.day!)
+    }
+    
+    func calculateDaysToDueDate() -> Int{
+        return 10
     }
 
 
