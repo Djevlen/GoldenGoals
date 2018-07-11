@@ -17,6 +17,7 @@
 		E925843920E8F6E000A2E7B2 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925843820E8F6E000A2E7B2 /* AddGoalViewController.swift */; };
 		E925843B20E900EC00A2E7B2 /* AddGoalCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925843A20E900EC00A2E7B2 /* AddGoalCategoryCell.swift */; };
 		E925843D20E936F300A2E7B2 /* AddGoalMotivationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925843C20E936F300A2E7B2 /* AddGoalMotivationViewController.swift */; };
+		E92AF6E320F61D840025D1ED /* AddGoalMotivationalTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92AF6E220F61D840025D1ED /* AddGoalMotivationalTextViewController.swift */; };
 		E95379222037B59B00864212 /* GoldenGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95379212037B59B00864212 /* GoldenGoal.swift */; };
 		E958DFDF20D2AB7E006C6CF4 /* HallOfFameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958DFDE20D2AB7E006C6CF4 /* HallOfFameController.swift */; };
 		E96B192A20EE2C7700772966 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B192920EE2C7700772966 /* Goal.swift */; };
@@ -61,6 +62,7 @@
 		E925843820E8F6E000A2E7B2 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		E925843A20E900EC00A2E7B2 /* AddGoalCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalCategoryCell.swift; sourceTree = "<group>"; };
 		E925843C20E936F300A2E7B2 /* AddGoalMotivationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddGoalMotivationViewController.swift; path = "GoldenGoals/Goal List/Adding Goal/AddGoalMotivationViewController.swift"; sourceTree = SOURCE_ROOT; };
+		E92AF6E220F61D840025D1ED /* AddGoalMotivationalTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalMotivationalTextViewController.swift; sourceTree = "<group>"; };
 		E95379212037B59B00864212 /* GoldenGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenGoal.swift; sourceTree = "<group>"; };
 		E958DFDE20D2AB7E006C6CF4 /* HallOfFameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallOfFameController.swift; sourceTree = "<group>"; };
 		E96B192920EE2C7700772966 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			children = (
 				E925843820E8F6E000A2E7B2 /* AddGoalViewController.swift */,
 				E925843C20E936F300A2E7B2 /* AddGoalMotivationViewController.swift */,
+				E92AF6E220F61D840025D1ED /* AddGoalMotivationalTextViewController.swift */,
 				E925843A20E900EC00A2E7B2 /* AddGoalCategoryCell.swift */,
 			);
 			path = "Adding Goal";
@@ -383,6 +386,7 @@
 				E9E90BF52039C23A0087C123 /* goalCell.swift in Sources */,
 				E96B192E20EE2C9A00772966 /* ProgressNotes.swift in Sources */,
 				E95379222037B59B00864212 /* GoldenGoal.swift in Sources */,
+				E92AF6E320F61D840025D1ED /* AddGoalMotivationalTextViewController.swift in Sources */,
 				E99F07CD2036458E00FA85D8 /* AppDelegate.swift in Sources */,
 				E96B192C20EE2C8300772966 /* Category.swift in Sources */,
 			);

@@ -35,12 +35,12 @@ class AddGoalViewController: UIViewController {
             break
         }
         if goalStartDate.isHidden {
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.3) {
                 self.startDateSelectorHighlightView.alpha = 0.0
                 self.dueDateSelectorHighlightView.alpha = 1.0
             }
         }else{
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.3) {
                 self.startDateSelectorHighlightView.alpha = 1.0
                 self.dueDateSelectorHighlightView.alpha = 0.0
             }
@@ -65,7 +65,7 @@ class AddGoalViewController: UIViewController {
                 let categoryTitles = ["Lifestyle","Health & Fitness","Education","Skills","Social","Productivity","Business","Travel","Entertainment","Money"]
                 let categoryImages = [UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney"),UIImage(named: "categoryFitness"),UIImage(named: "categoryMoney")]
                 
-                for (index,cat) in categoryTitles.enumerated() {
+                for (index,_) in categoryTitles.enumerated() {
                     let category = Category(context: CoreDataService.context)
                     print("i for setupcategories: \(categoryTitles[index])")
                     category.title = categoryTitles[index]
