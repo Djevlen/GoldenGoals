@@ -125,6 +125,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Give Your Goal a Title" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="tUu-Zv-FVs">
                                 <rect key="frame" x="5" y="69" width="365" height="34"/>
+                                <color key="tintColor" red="1" green="0.85098039215686272" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -272,13 +273,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPhotoPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="9jC-ca-3Si">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPhotoPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="9jC-ca-3Si">
                                 <rect key="frame" x="42" y="103" width="290" height="290"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="290" id="0Pn-dv-uXe"/>
                                     <constraint firstAttribute="width" constant="290" id="QPF-WM-hJG"/>
                                     <constraint firstAttribute="width" secondItem="9jC-ca-3Si" secondAttribute="height" multiplier="1:1" id="rZQ-fT-AUH"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Vd9-Xz-NOb" appends="YES" id="czD-ZV-zg0"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a photo that helps you focus" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZUR-PS-g4K">
                                 <rect key="frame" x="5" y="69" width="365" height="29"/>
@@ -360,6 +365,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqf-TC-lNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Tc6-w1-VUn" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="Vd9-Xz-NOb">
+                    <connections>
+                        <action selector="tappedImage:" destination="Xyh-cE-cCo" id="Jw1-rV-EYM"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-252" y="1548.5757121439281"/>
         </scene>
