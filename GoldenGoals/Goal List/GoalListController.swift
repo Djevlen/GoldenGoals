@@ -34,12 +34,12 @@ class GoalListController: UIViewController {
     @IBAction func unwindFromAddingGoal(_ sender: UIStoryboardSegue){
         if (sender.source is AddGoalMotivationViewController){
             if let senderVC = sender.source as? AddGoalMotivationViewController{
-                //this comes from the last ADD GOAL VIEW - it's possible to access the data in that controller through this method
+                //this comes from the last ADD GOAL VIEW - it's  possible to access the data in that controller through this method
                 do {
                     print("TRYNG TO SAVE NEW GOAL!!!")
                     try CoreDataService.context.save()
                 } catch let error as NSError {
-                    print("ERROR SAVING NEW GOAL!!!")
+                    print("ERROR SAVING NEW GOAL in UnwindFromAddingGoal: \(error)")
                 }
                 self.goals.append(senderVC.goal)
                 goalListTableView.reloadData()
