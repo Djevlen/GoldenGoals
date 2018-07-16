@@ -105,9 +105,8 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIt-RV-HY6">
-                                <rect key="frame" x="282" y="404" width="122" height="30"/>
+                                <rect key="frame" x="290" y="404" width="114" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="122" id="IYJ-yb-Dlw"/>
                                     <constraint firstAttribute="height" constant="30" id="bLL-Ff-Dnb"/>
                                 </constraints>
                                 <state key="normal" title="Go To Scheduler"/>

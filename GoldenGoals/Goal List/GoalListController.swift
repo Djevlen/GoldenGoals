@@ -41,9 +41,10 @@ class GoalListController: UIViewController {
                 } catch let error as NSError {
                     print("ERROR SAVING NEW GOAL in UnwindFromAddingGoal: \(error)")
                 }
+                print("unwinded from adding goal, number of goals in array: \(self.goals.count)")
                 self.goals.append(senderVC.goal)
                 goalListTableView.reloadData()
-                
+                print("unwinded from adding goal, number of goals in array after APPEND: \(self.goals.count)")
             }
         }
     }
@@ -60,6 +61,7 @@ class GoalListController: UIViewController {
 extension GoalListController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("NUMBER OF GOALS IN THE DATABASE: \(goals.count)")
         return goals.count
     }
     
@@ -150,7 +152,7 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
                 textfield.text = "deletedGoal: \(self.goals[indexPath.row].deletedGoal)"
             })
             alert.addTextField(configurationHandler: { (textfield) in
-                textfield.text = "hallOfFame: \(self.goals[indexPath.row].hallOfFame)"
+                textfield.text = "hallOfFame: \(self.goals[indexPath.row].hallOfFame!)"
             })
             alert.addTextField(configurationHandler: { (textfield) in
                 textfield.text = "photo: \(String(describing: self.goals[indexPath.row].photo))"

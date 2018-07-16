@@ -117,6 +117,7 @@
                         <outlet property="dateEnd" destination="Lyp-qt-ukZ" id="E3w-r1-S4I"/>
                         <outlet property="dateStart" destination="gXp-cb-akf" id="Zla-6Q-NC1"/>
                         <outlet property="imageView" destination="EMG-Ja-uJR" id="Af4-tL-sQY"/>
+                        <outlet property="motivationalText" destination="jsy-qL-KIl" id="5nH-Op-r0a"/>
                         <outlet property="progressBarDates" destination="cge-6H-eQn" id="gEf-nR-iGt"/>
                         <outlet property="scrollView" destination="ojd-NJ-6S0" id="jtr-aM-Vaq"/>
                     </connections>
