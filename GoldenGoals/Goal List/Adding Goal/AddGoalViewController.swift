@@ -72,7 +72,6 @@ class AddGoalViewController: UIViewController {
                     if let data = UIImagePNGRepresentation(categoryImages[index]!){
                         category.image = data as Data?
                     }
-                    //cat.image = UIImagePNGRepresentation(categoryImages[index]!) as? NSData!
                     CoreDataService.saveContext()
                 }
             }

@@ -10,20 +10,13 @@ import UIKit
 
 class GoldenGoal: UIViewController {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     @IBOutlet weak var dateStart: UILabel!
     @IBOutlet weak var dateEnd: UILabel!
     @IBOutlet weak var progressBarDates: UIProgressView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     
-    var goal: Goal!
+    var showGoal: Goal?
     let calendar = NSCalendar.current
     let dateFormatter = ISO8601DateFormatter() // YYYY-MM-DD
     
@@ -43,36 +36,56 @@ class GoldenGoal: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView!.delegate = self
-        
-        self.title = goal.title!
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
-        dateStart.text = dateFormatter.string(from: goal.dateStart!)
-        dateEnd.text = dateFormatter.string(from: goal.dateEnd!)
         
+        //if goal is not nil, this class was called from the goalListView
+        //and we can populate the view with info about the goal
+        if let goal = showGoal {
+            self.title = goal.title
+            dateStart.text = dateFormatter.string(from: goal.dateStart!)
+            dateEnd.text = dateFormatter.string(from: goal.dateEnd!)
+            if let goalPhoto = goal.photo{
+                imageView.image = UIImage(data: goalPhoto)
+            }else{
+                print("Image was nil, setting placeholder")
+                imageView.image = #imageLiteral(resourceName: "goalPlaceholder")
+            }
+            progressBarDates.setProgress(calculateProgress(fromDate: goal.dateStart!, toDate: goal.dateEnd!), animated: true)
+        } else{
+            print("something went wrong, the goal sent was nil!")
+        }
+        //if goal is nil:
+        //      Check Database for a golden goal
+        //      if no golden goal exists show placeholder dude with info about goals
         //setup static information in view
         imageView.layer.cornerRadius = imageView.frame.size.width / 20 //20 for rectangle
         imageView.layer.borderColor = progressBarDates.progressTintColor?.cgColor // UIColor.red.cgColor
         imageView.layer.borderWidth = 5
-        imageView.backgroundColor = .yellow
-        progressBarDates.setProgress(calculateProgress(), animated: true)
     }
     
-    
-    func calculateProgress() -> Float{
-
+    // calculates the progress between two dates
+    // used by the progressbar to show how far along a goal is
+    func calculateProgress(fromDate: Date, toDate: Date) -> Float{
+        let startDate = calendar.startOfDay(for: fromDate)
+        let endDate = calendar.startOfDay(for: toDate)
         
-        let totalNumberOfDays = calendar.dateComponents([.day], from: goal.dateStart!, to: goal.dateEnd!)
-        let daysToCompletion  = calendar.dateComponents([.day], from: Date(), to: goal.dateEnd!)
-        print("components blir: \(Float(daysToCompletion.day!)/Float(totalNumberOfDays.day!)) og enkelt: \(Float(daysToCompletion.day!))")
+        let totalNumberOfDays = calendar.dateComponents([.day], from: startDate, to: endDate)
+        let daysToCompletion  = calendar.dateComponents([.day], from: calendar.startOfDay(for: Date()), to: toDate)
+        
+        print("totalNumberOfDays: \(totalNumberOfDays)")
+        print("daysToCompletion: \(daysToCompletion)")
         return Float(daysToCompletion.day!)/Float(totalNumberOfDays.day!)
     }
     
     func calculateDaysToDueDate() -> Int{
         return 10
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setToolbarHidden(true, animated: false)
+    }
 
 }
 

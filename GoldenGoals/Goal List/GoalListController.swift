@@ -51,7 +51,7 @@ class GoalListController: UIViewController {
         if (segue.identifier == "toGoalView"){
             let goalView = segue.destination as! GoldenGoal
             let selectedGoal = self.goalListTableView.indexPathForSelectedRow
-            goalView.goal = goals[selectedGoal!.row]
+            goalView.showGoal = goals[selectedGoal!.row]
             
         }
     }
