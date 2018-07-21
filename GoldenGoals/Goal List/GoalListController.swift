@@ -29,6 +29,9 @@ class GoalListController: UIViewController {
         } catch  {
             print("GoalListController fetchRequest in viewDidLoad failed")
         }
+        
+        goalListTableView.backgroundColor = Theme.backgroundColor!
+        goalListTableView.tintColor = Theme.tintColor!
     }
     
     @IBAction func unwindFromAddingGoal(_ sender: UIStoryboardSegue){
@@ -83,6 +86,8 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
         }else{
             cell.imageCell.image = UIImage(named: "goalPlaceholder")
         }
+        cell.setupCell(for: goals[indexPath.row])
+        
         return cell
     }
     

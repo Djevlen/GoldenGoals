@@ -123,7 +123,7 @@ class AddGoalViewController: UIViewController {
         goalEndDate.minimumDate = Date()
         
         UIView.animate(withDuration: 2.0) {
-            self.goalTitle.layer.borderColor = UIColor.yellow.cgColor
+            self.goalTitle.layer.borderColor = Theme.gold!.cgColor
             self.goalTitle.layer.borderWidth = 2.0
         }
     }

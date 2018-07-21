@@ -58,10 +58,13 @@ class GoldenGoal: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView!.delegate = self
+        scrollView.delegate = self
         
-        imageView.layer.cornerRadius = imageView.frame.size.width / 20 //20 for rectangle
-        imageView.layer.borderWidth = 10
+        scrollView.backgroundColor = Theme.backgroundColor!
+        scrollView.tintColor = Theme.tintColor!
+        
+        imageView.layer.cornerRadius = 10 //imageView.frame.size.width / 20 //20 for rectangle
+        imageView.layer.borderWidth = 5
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,14 +100,15 @@ class GoldenGoal: UIViewController {
         let totalNumberOfDays = calendar.dateComponents([.day], from: startDate, to: endDate)
         let daysToCompletion  = calendar.dateComponents([.day], from: calendar.startOfDay(for: Date()), to: toDate)
         
+        print("totalNumberOfDays: \(totalNumberOfDays) daysToCompletion: \(daysToCompletion)")
+        print("daysToCompletion delt på totalNumberofDays: \((Float(totalNumberOfDays.day!-daysToCompletion.day!)/Float(totalNumberOfDays.day!))*100)")
         if (Float(daysToCompletion.day!)/Float(totalNumberOfDays.day!)) == 0{
             return 1
-        }else if daysToCompletion.day! > totalNumberOfDays.day! {
+        }else if daysToCompletion.day! >= totalNumberOfDays.day! {
             return 0
         }else {
-            return Float(daysToCompletion.day!)/Float(totalNumberOfDays.day!)
+            return (Float(totalNumberOfDays.day!-daysToCompletion.day!)/Float(totalNumberOfDays.day!))*100
         }
-        
     }
     
     // calculates how many days are left of the goal
