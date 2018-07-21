@@ -17,4 +17,8 @@ class Theme {
     static let detailTextColor = UIColor(named: "DetailTextColor")
     static let mainFontName = "Insert Font Name Here"
     
+    
+    static func setupView(for view: UIView){
+        view.backgroundColor = Theme.backgroundColor
+    }
 }

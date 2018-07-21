@@ -62,8 +62,9 @@ class GoldenGoal: UIViewController {
         
         scrollView.backgroundColor = Theme.backgroundColor!
         scrollView.tintColor = Theme.tintColor!
+        Theme.setupView(for: scrollView)
         
-        imageView.layer.cornerRadius = 10 //imageView.frame.size.width / 20 //20 for rectangle
+        imageView.layer.cornerRadius = 10 
         imageView.layer.borderWidth = 5
     }
     

@@ -70,24 +70,7 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! goalCell
-        
-        if let goalsTitle = goals[indexPath.row].title{
-            cell.titleLabel?.text = goalsTitle
-        }else{
-            cell.titleLabel!.text = "Error getting title!"
-        }
-        if let goalsCategory = goals[indexPath.row].category{
-            cell.categoryLabel?.text = goalsCategory.title!
-        }else{
-            cell.categoryLabel?.text = "Error getting category!"
-        }
-        if let goalsImage = goals[indexPath.row].photo{
-            cell.imageCell.image = UIImage(data: goalsImage)
-        }else{
-            cell.imageCell.image = UIImage(named: "goalPlaceholder")
-        }
         cell.setupCell(for: goals[indexPath.row])
-        
         return cell
     }
     
@@ -106,8 +89,7 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         // TODO: Implement what to show on TRAILING SWIPE:
         let deleteAction = self.contextualDeleteAction(forRowAtIndexPath: indexPath)
-        let shameAction = self.contextualShameAction(forRowAtIndexPath: indexPath)
-        let trailingSwipe = UISwipeActionsConfiguration(actions: [deleteAction, shameAction])
+        let trailingSwipe = UISwipeActionsConfiguration(actions: [deleteAction])
         return trailingSwipe
     }
     

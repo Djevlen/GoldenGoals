@@ -21,24 +21,50 @@ class goalCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-//        self.contentView.layer.shadowOpacity = 1
-//        self.contentView.layer.shadowOffset = CGSize.zero
-//        self.contentView.layer.shadowColor = UIColor.red.cgColor
+        self.contentView.layer.shadowOpacity = 1
+        self.contentView.layer.shadowOffset = CGSize.zero
+        self.contentView.layer.shadowColor = UIColor.black.cgColor
+    }
+    
+    fileprivate func setupCellVisual(_ goal: Goal) {
+        backgroundColor = Theme.backgroundColor!
+        tintColor = Theme.tintColor!
+        
+        titleLabel.textColor = Theme.textColor!
+        titleLabel.backgroundColor = .white
+        
+        categoryLabel.textColor = Theme.detailTextColor!
+        categoryLabel.backgroundColor = .white
+        
+        if goal.golden{
+            cardView.backgroundColor = Theme.gold!
+        }else{
+            cardView.backgroundColor = Theme.mainColor!
+        }
+        
+        cardView.layer.cornerRadius = 10
     }
     
     func setupCell(for goal: Goal){
-        self.backgroundColor = Theme.mainColor!
-        self.tintColor = Theme.tintColor!
+        if let goalsTitle = goal.title{
+            titleLabel.text = goalsTitle
+        }else{
+            titleLabel.text = "Error getting title!"
+        }
+        if let goalsCategory = goal.category{
+            categoryLabel.text = goalsCategory.title!
+        }else{
+            categoryLabel.text = "Error getting category!"
+        }
+        if let goalsImage = goal.photo{
+            imageCell.image = UIImage(data: goalsImage)
+        }else{
+            imageCell.image = UIImage(named: "goalPlaceholder")
+        }
         
-        self.titleLabel.textColor = Theme.textColor!
-        self.titleLabel.backgroundColor = .white
-        
-        self.categoryLabel.textColor = Theme.detailTextColor!
-        self.categoryLabel.backgroundColor = .white
+        setupCellVisual(goal)
         
         
-        self.cardView.backgroundColor = Theme.gold!
-        self.cardView.layer.cornerRadius = 10
         
     }
 }
