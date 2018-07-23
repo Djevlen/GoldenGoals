@@ -14,9 +14,6 @@ class goalCell: UITableViewCell {
     @IBOutlet weak var imageCell: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
-    // TODO:
-    // add the view that encapsulates this cell as its own iboutlet
-    // or use self.contentview
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,10 +28,10 @@ class goalCell: UITableViewCell {
         tintColor = Theme.tintColor!
         
         titleLabel.textColor = Theme.textColor!
-        titleLabel.backgroundColor = .white
+        titleLabel.backgroundColor = Theme.backgroundColor!
         
-        categoryLabel.textColor = Theme.detailTextColor!
-        categoryLabel.backgroundColor = .white
+        categoryLabel.textColor = Theme.textColor!
+        categoryLabel.backgroundColor = Theme.backgroundColor!
         
         if goal.golden{
             cardView.backgroundColor = Theme.gold!
@@ -61,10 +58,6 @@ class goalCell: UITableViewCell {
         }else{
             imageCell.image = UIImage(named: "goalPlaceholder")
         }
-        
         setupCellVisual(goal)
-        
-        
-        
     }
 }

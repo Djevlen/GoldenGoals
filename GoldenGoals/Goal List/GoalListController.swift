@@ -29,7 +29,6 @@ class GoalListController: UIViewController {
         } catch  {
             print("GoalListController fetchRequest in viewDidLoad failed")
         }
-        
         goalListTableView.backgroundColor = Theme.backgroundColor!
         goalListTableView.tintColor = Theme.tintColor!
     }
@@ -65,6 +64,12 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("NUMBER OF GOALS IN THE DATABASE: \(goals.count)")
+        if goals.count > 0{
+            goalListTableView.backgroundView = nil
+        }else{
+            goalListTableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "goalPlaceholder"))
+            goalListTableView.separatorStyle = .none
+        }
         return goals.count
     }
     

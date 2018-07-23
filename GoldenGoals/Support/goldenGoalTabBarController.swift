@@ -16,8 +16,8 @@ class goldenGoalTabBarController: UITabBarController {
         
         //which view should be default
         self.selectedIndex = 0
-        self.tabBar.backgroundColor = Theme.backgroundColor
-        self.tabBar.tintColor = Theme.tintColor
+        self.tabBar.backgroundColor = Theme.mainColor!
+        self.tabBar.tintColor = .red //Theme.tintColor
         
 
         // Do any additional setup after loading the view.
