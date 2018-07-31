@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		E901612820D158F2005AA9BD /* GoldenGoal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E901612620D158F2005AA9BD /* GoldenGoal.xcdatamodeld */; };
 		E91B8D8020DED0F100649852 /* categoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B8D7F20DED0F100649852 /* categoryCell.swift */; };
-		E91B8D8320E040D000649852 /* GoalList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91B8D8220E040D000649852 /* GoalList.storyboard */; };
-		E91B8D8520E040F500649852 /* GoldenGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91B8D8420E040F500649852 /* GoldenGoal.storyboard */; };
-		E91B8D8720E0414000649852 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91B8D8620E0414000649852 /* Settings.storyboard */; };
-		E91B8D8A20E041E300649852 /* HallOf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91B8D8920E041E300649852 /* HallOf.storyboard */; };
 		E92411D42037B828006616CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92411D32037B828006616CF /* LaunchScreen.storyboard */; };
 		E925843920E8F6E000A2E7B2 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925843820E8F6E000A2E7B2 /* AddGoalViewController.swift */; };
 		E925843B20E900EC00A2E7B2 /* AddGoalCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925843A20E900EC00A2E7B2 /* AddGoalCategoryCell.swift */; };
@@ -25,8 +21,12 @@
 		E96B192A20EE2C7700772966 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B192920EE2C7700772966 /* Goal.swift */; };
 		E96B192C20EE2C8300772966 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B192B20EE2C8300772966 /* Category.swift */; };
 		E96B192E20EE2C9A00772966 /* ProgressNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B192D20EE2C9A00772966 /* ProgressNotes.swift */; };
+		E977BCEF210758D2000009C9 /* TabBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E977BCEE210758D2000009C9 /* TabBarStoryboard.storyboard */; };
+		E977BCF121075967000009C9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E977BCF021075967000009C9 /* Settings.storyboard */; };
+		E977BCF5210759E8000009C9 /* HallOf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E977BCF4210759E8000009C9 /* HallOf.storyboard */; };
+		E977BCF721075A4E000009C9 /* GoldenGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E977BCF621075A4E000009C9 /* GoldenGoal.storyboard */; };
+		E977BCF921075AF3000009C9 /* GoalList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E977BCF821075AF3000009C9 /* GoalList.storyboard */; };
 		E99F07CD2036458E00FA85D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F07CC2036458E00FA85D8 /* AppDelegate.swift */; };
-		E99F07D22036458E00FA85D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E99F07D02036458E00FA85D8 /* Main.storyboard */; };
 		E99F07D72036458E00FA85D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99F07D62036458E00FA85D8 /* Assets.xcassets */; };
 		E99F07E52036458E00FA85D8 /* GoldenGoalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F07E42036458E00FA85D8 /* GoldenGoalsTests.swift */; };
 		E99F07F02036458E00FA85D8 /* GoldenGoalsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F07EF2036458E00FA85D8 /* GoldenGoalsUITests.swift */; };
@@ -56,10 +56,6 @@
 /* Begin PBXFileReference section */
 		E901612720D158F2005AA9BD /* GoldenGoal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoldenGoal.xcdatamodel; sourceTree = "<group>"; };
 		E91B8D7F20DED0F100649852 /* categoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryCell.swift; sourceTree = "<group>"; };
-		E91B8D8220E040D000649852 /* GoalList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoalList.storyboard; sourceTree = "<group>"; };
-		E91B8D8420E040F500649852 /* GoldenGoal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoldenGoal.storyboard; sourceTree = "<group>"; };
-		E91B8D8620E0414000649852 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		E91B8D8920E041E300649852 /* HallOf.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HallOf.storyboard; sourceTree = "<group>"; };
 		E92411D32037B828006616CF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E925843820E8F6E000A2E7B2 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		E925843A20E900EC00A2E7B2 /* AddGoalCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalCategoryCell.swift; sourceTree = "<group>"; };
@@ -72,9 +68,13 @@
 		E96B192920EE2C7700772966 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		E96B192B20EE2C8300772966 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E96B192D20EE2C9A00772966 /* ProgressNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressNotes.swift; sourceTree = "<group>"; };
+		E977BCEE210758D2000009C9 /* TabBarStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = TabBarStoryboard.storyboard; path = GoldenGoals/Storyboards/TabBarStoryboard.storyboard; sourceTree = "<group>"; };
+		E977BCF021075967000009C9 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		E977BCF4210759E8000009C9 /* HallOf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = HallOf.storyboard; path = GoldenGoals/HallOf.storyboard; sourceTree = "<group>"; };
+		E977BCF621075A4E000009C9 /* GoldenGoal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GoldenGoal.storyboard; path = GoldenGoals/Storyboards/GoldenGoal.storyboard; sourceTree = "<group>"; };
+		E977BCF821075AF3000009C9 /* GoalList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoalList.storyboard; sourceTree = "<group>"; };
 		E99F07C92036458E00FA85D8 /* GoldenGoals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenGoals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99F07CC2036458E00FA85D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E99F07D12036458E00FA85D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E99F07D62036458E00FA85D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E99F07DB2036458E00FA85D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E99F07E02036458E00FA85D8 /* GoldenGoalsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldenGoalsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,11 +117,11 @@
 		E91B8D8120E0405900649852 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				E99F07D02036458E00FA85D8 /* Main.storyboard */,
-				E91B8D8220E040D000649852 /* GoalList.storyboard */,
-				E91B8D8420E040F500649852 /* GoldenGoal.storyboard */,
-				E91B8D8920E041E300649852 /* HallOf.storyboard */,
-				E91B8D8620E0414000649852 /* Settings.storyboard */,
+				E977BCEE210758D2000009C9 /* TabBarStoryboard.storyboard */,
+				E977BCF821075AF3000009C9 /* GoalList.storyboard */,
+				E977BCF621075A4E000009C9 /* GoldenGoal.storyboard */,
+				E977BCF4210759E8000009C9 /* HallOf.storyboard */,
+				E977BCF021075967000009C9 /* Settings.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -349,13 +349,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E92411D42037B828006616CF /* LaunchScreen.storyboard in Resources */,
-				E91B8D8320E040D000649852 /* GoalList.storyboard in Resources */,
-				E91B8D8520E040F500649852 /* GoldenGoal.storyboard in Resources */,
-				E91B8D8720E0414000649852 /* Settings.storyboard in Resources */,
+				E977BCF5210759E8000009C9 /* HallOf.storyboard in Resources */,
+				E977BCF921075AF3000009C9 /* GoalList.storyboard in Resources */,
+				E977BCF121075967000009C9 /* Settings.storyboard in Resources */,
+				E977BCF721075A4E000009C9 /* GoldenGoal.storyboard in Resources */,
 				E99F07D72036458E00FA85D8 /* Assets.xcassets in Resources */,
 				E93816322102109E009C3398 /* Colors.xcassets in Resources */,
-				E99F07D22036458E00FA85D8 /* Main.storyboard in Resources */,
-				E91B8D8A20E041E300649852 /* HallOf.storyboard in Resources */,
+				E977BCEF210758D2000009C9 /* TabBarStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,17 +430,6 @@
 			targetProxy = E99F07EC2036458E00FA85D8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		E99F07D02036458E00FA85D8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E99F07D12036458E00FA85D8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E99F07F22036458E00FA85D8 /* Debug */ = {

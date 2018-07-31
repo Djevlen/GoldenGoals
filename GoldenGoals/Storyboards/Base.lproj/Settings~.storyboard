@@ -49,7 +49,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2wr-Sf-LPx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-493" y="523"/>
+            <point key="canvasLocation" x="269" y="311"/>
         </scene>
         <!--Add Goal Information-->
         <scene sceneID="ZFV-Sj-bjK">
@@ -278,6 +278,7 @@
         <scene sceneID="DHS-5j-I5y">
             <objects>
                 <tabBarController id="Pus-te-Ich" customClass="goldenGoalTabBarController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aoq-aG-C5t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -288,6 +289,7 @@
                         <segue destination="71Z-8u-Xjh" kind="relationship" relationship="viewControllers" id="wgD-SH-awz"/>
                         <segue destination="BRb-8o-UZN" kind="relationship" relationship="viewControllers" id="WAd-Es-JvI"/>
                         <segue destination="foM-g5-oTh" kind="relationship" relationship="viewControllers" id="Vtu-U4-f7W"/>
+                        <segue destination="BbM-gu-Sus" kind="show" id="gox-tn-YVJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJ6-7W-acl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -404,5 +406,60 @@
             </objects>
             <point key="canvasLocation" x="-1171" y="2954"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="nPX-se-7Uf">
+            <objects>
+                <tableViewController id="l9r-C4-e5w" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sZU-h9-RxX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="jYk-te-rwd">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jYk-te-rwd" id="g1b-ze-C0X">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="l9r-C4-e5w" id="kZG-DA-4Hz"/>
+                            <outlet property="delegate" destination="l9r-C4-e5w" id="tXG-M8-Lma"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="R0F-lh-jz1"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5G-Ra-Mq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="1551"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="GnV-6w-AKR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BbM-gu-Sus" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="tabBarSettingsPlaceholder" selectedImage="tabBarSettingsPlaceholder" id="YxD-xi-lp6"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="cyL-VE-Jum">
+                        <rect key="frame" x="0.0" y="20" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6HF-1E-mw7">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="l9r-C4-e5w" kind="relationship" relationship="rootViewController" id="Drd-kN-Gzz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C54-vK-dKY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="818"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="tabBarSettingsPlaceholder" width="25" height="25"/>
+    </resources>
 </document>

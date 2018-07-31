@@ -24,11 +24,11 @@ class Goal: NSManagedObject {
         }
         
         let daysSinceStart = calendar.dateComponents([.day], from: self.dateStart!, to: today)
-        let numberOfDaysToGo = calendar.dateComponents([.day], from: Date(), to: dueDate)
+        let numberOfDaysToGo = daysToGoUntil(dueDate: dueDate)//calendar.dateComponents([.day], from: Date(), to: dueDate)
         let totalNumberOfDays = calendar.dateComponents([.day], from: self.dateStart!, to: dueDate)
         
         print("daysSinceStart: \(daysSinceStart.day!)")
-        print("daysToGo: \(numberOfDaysToGo.day!)")
+        print("daysToGo: \(numberOfDaysToGo)")
         print("totalNumberOfDays: \(totalNumberOfDays.day!)")
         print("(Float(daysSinceStart.day!)/Float(totalNumberOfDays.day!)) \((Float(daysSinceStart.day!)/Float(totalNumberOfDays.day!)))")
         
@@ -37,6 +37,11 @@ class Goal: NSManagedObject {
         }else{
             return (Float(daysSinceStart.day!)/Float(totalNumberOfDays.day!))
         }
-        
+    }
+    
+    //extension to Date?
+    func daysToGoUntil(dueDate: Date) -> Int {
+        let numberOfDaysToGo = calendar.dateComponents([.day], from: Date(), to: dueDate)
+        return numberOfDaysToGo.day!
     }
 }

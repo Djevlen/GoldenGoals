@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UTp-5Y-arF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Golden Goal Tab Bar Controller-->
+        <scene sceneID="8zs-rc-OPz">
+            <objects>
+                <tabBarController id="UTp-5Y-arF" customClass="goldenGoalTabBarController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EFS-DZ-00H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Mex-lg-umI" kind="relationship" relationship="viewControllers" id="Gp3-HF-eI4"/>
+                        <segue destination="nAt-gy-KJM" kind="relationship" relationship="viewControllers" id="hlk-oK-CFh"/>
+                        <segue destination="7bg-Hm-fLg" kind="relationship" relationship="viewControllers" id="xPf-cn-2Tt"/>
+                        <segue destination="kiS-PX-A5x" kind="relationship" relationship="viewControllers" id="CQ1-Mr-rlg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TqA-tf-Ew8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-919" y="-111"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Ib4-Rd-JED">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="kiS-PX-A5x" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="WR8-Du-Fh9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0n4-Ee-ddQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-634" y="503"/>
+        </scene>
+        <!--HallOf-->
+        <scene sceneID="2ZN-bZ-Wpe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HallOf" id="7bg-Hm-fLg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Eo3-hR-LZd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6di-Ic-myi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-822" y="503"/>
+        </scene>
+        <!--Golden Goal-->
+        <scene sceneID="7lM-bf-H8F">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GoldenGoal" id="nAt-gy-KJM" userLabel="Golden Goal" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="GSn-9d-0VZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rMn-bN-PIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1026" y="503"/>
+        </scene>
+        <!--GoalList-->
+        <scene sceneID="f5T-rn-uR0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GoalList" id="Mex-lg-umI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Y3Y-li-BSA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="01h-lN-677" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1250" y="503"/>
+        </scene>
+    </scenes>
+</document>
