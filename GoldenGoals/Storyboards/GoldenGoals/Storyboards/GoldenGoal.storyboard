@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -70,33 +69,50 @@
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dal-s8-MJB">
-                                                <rect key="frame" x="41" y="52" width="50" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5yq-97-GYk">
+                                                <rect key="frame" x="48" y="49" width="50" height="67"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dal-s8-MJB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="HOe-4m-XSm"/>
+                                                            <constraint firstAttribute="width" constant="50" id="vmg-U2-MIk"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="addPhotoPlaceholder"/>
+                                                        <connections>
+                                                            <action selector="tappedAddProgressNotesButton:" destination="LLa-Bf-VQa" eventType="touchUpInside" id="stj-GY-1ts"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gi1-Ik-4l7">
+                                                        <rect key="frame" x="0.0" y="50" width="50" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="lBH-Ym-AEX"/>
-                                                    <constraint firstAttribute="height" constant="50" id="osf-VP-9fw"/>
+                                                    <constraint firstItem="Gi1-Ik-4l7" firstAttribute="leading" secondItem="5yq-97-GYk" secondAttribute="leading" id="I9z-Dh-e65"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Gi1-Ik-4l7" secondAttribute="trailing" id="lgb-QV-Jdc"/>
+                                                    <constraint firstItem="Dal-s8-MJB" firstAttribute="top" secondItem="5yq-97-GYk" secondAttribute="top" id="oRf-Yz-tcE"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="addPhotoPlaceholder"/>
-                                                <connections>
-                                                    <action selector="tappedAddProgressNotesButton:" destination="LLa-Bf-VQa" eventType="touchUpInside" id="stj-GY-1ts"/>
-                                                </connections>
-                                            </button>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ezS-er-vHg" firstAttribute="leading" secondItem="6K7-Th-Zuy" secondAttribute="trailing" constant="8" id="2u3-Qg-u9B"/>
                                             <constraint firstItem="wwI-me-cA3" firstAttribute="leading" secondItem="qgM-t6-8Ik" secondAttribute="leading" constant="45" id="7OZ-dM-NEx"/>
-                                            <constraint firstItem="Dal-s8-MJB" firstAttribute="centerX" secondItem="Xbb-6y-JuR" secondAttribute="leading" id="834-z6-ue0"/>
+                                            <constraint firstItem="5yq-97-GYk" firstAttribute="leading" secondItem="6K7-Th-Zuy" secondAttribute="trailing" constant="-10" id="AWA-0j-gRn"/>
                                             <constraint firstItem="Nb5-wC-zLz" firstAttribute="leading" secondItem="qgM-t6-8Ik" secondAttribute="leading" constant="5" id="Bol-RW-UnS"/>
-                                            <constraint firstItem="Xbb-6y-JuR" firstAttribute="width" secondItem="ezS-er-vHg" secondAttribute="width" id="Lwm-Zf-hiv"/>
+                                            <constraint firstItem="5yq-97-GYk" firstAttribute="top" secondItem="Xbb-6y-JuR" secondAttribute="bottom" id="KZd-AE-9Zj"/>
                                             <constraint firstItem="6K7-Th-Zuy" firstAttribute="leading" secondItem="qgM-t6-8Ik" secondAttribute="leading" constant="8" id="NxK-76-J0f"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xbb-6y-JuR" secondAttribute="trailing" constant="5" id="OLT-RY-dpo"/>
                                             <constraint firstItem="6K7-Th-Zuy" firstAttribute="top" secondItem="qgM-t6-8Ik" secondAttribute="top" constant="5" id="PTG-U3-uJT"/>
                                             <constraint firstAttribute="trailing" secondItem="Nb5-wC-zLz" secondAttribute="trailing" constant="5" id="YUW-Ug-xfl"/>
                                             <constraint firstItem="Nb5-wC-zLz" firstAttribute="top" secondItem="wwI-me-cA3" secondAttribute="bottom" constant="45" id="dmy-GY-A2A"/>
                                             <constraint firstItem="wwI-me-cA3" firstAttribute="top" secondItem="Xbb-6y-JuR" secondAttribute="bottom" constant="80" id="gvX-7p-bCU"/>
                                             <constraint firstItem="Xbb-6y-JuR" firstAttribute="top" secondItem="ezS-er-vHg" secondAttribute="bottom" constant="8" id="hPE-Jn-vNI"/>
                                             <constraint firstItem="wwI-me-cA3" firstAttribute="trailing" secondItem="qgM-t6-8Ik" secondAttribute="trailing" constant="-44" id="kCH-jy-TIV"/>
-                                            <constraint firstItem="Dal-s8-MJB" firstAttribute="top" secondItem="Xbb-6y-JuR" secondAttribute="bottom" constant="3" id="kQx-Il-0Fb"/>
                                             <constraint firstAttribute="trailing" secondItem="ezS-er-vHg" secondAttribute="trailing" constant="5" id="qYR-2y-NdG"/>
                                             <constraint firstItem="ezS-er-vHg" firstAttribute="top" secondItem="qgM-t6-8Ik" secondAttribute="top" constant="5" id="tKc-ol-Ban"/>
                                             <constraint firstItem="Xbb-6y-JuR" firstAttribute="leading" secondItem="6K7-Th-Zuy" secondAttribute="trailing" constant="8" id="wjf-aV-XYp"/>
@@ -132,7 +148,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addProgressNotesButton" destination="Dal-s8-MJB" id="hdn-78-g4s"/>
-                        <outlet property="addProgressNotesButtonHorizontalLayout" destination="834-z6-ue0" id="bg8-y2-orM"/>
+                        <outlet property="addProgressNotesButtonLabel" destination="Gi1-Ik-4l7" id="x5E-Q6-2PG"/>
+                        <outlet property="addProgressNotesButtonStack" destination="5yq-97-GYk" id="IBc-GX-v46"/>
+                        <outlet property="addProgressNotesButtonStackHorizontalLayout" destination="AWA-0j-gRn" id="SpV-mK-dGT"/>
                         <outlet property="dateEnd" destination="P33-Of-VNx" id="kn9-3f-5ij"/>
                         <outlet property="dateStart" destination="SnV-Ti-xLg" id="Sqb-zy-6RB"/>
                         <outlet property="imageView" destination="wwI-me-cA3" id="o6y-Ld-dTy"/>

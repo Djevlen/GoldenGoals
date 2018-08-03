@@ -19,12 +19,15 @@ class GoldenGoal: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var motivationalText: UITextView!
     @IBOutlet weak var addProgressNotesButton: UIButton!
-    @IBOutlet weak var addProgressNotesButtonHorizontalLayout: NSLayoutConstraint!
+    @IBOutlet weak var addProgressNotesButtonLabel: UILabel!
+    @IBOutlet weak var addProgressNotesButtonStack: UIStackView!
+    @IBOutlet weak var addProgressNotesButtonStackHorizontalLayout: NSLayoutConstraint!
     
     var showGoal: Goal?
     let calendar = NSCalendar.current
     let dateFormatter = ISO8601DateFormatter() // YYYY-MM-DD
     
+   
     
     
     override func viewDidLoad() {
@@ -107,11 +110,13 @@ class GoldenGoal: UIViewController {
             imageView.image = #imageLiteral(resourceName: "goalPlaceholder")
         }
         
+        //TODO: Make this a variable of the class, to be accessed when needed
         if goal.golden{
             self.progressBarDates.progressTintColor = Theme.gold!
             self.imageView.layer.borderColor = Theme.gold!.cgColor
         }
         progressBarDates.setProgress(goal.goalProgress(), animated: true)
+        addProgressNotesButtonLabel.text = dateFormatter.string(from: Date())
         
         
     }
@@ -119,13 +124,12 @@ class GoldenGoal: UIViewController {
 
     @IBAction func tappedAddProgressNotesButton(_ sender: UIButton) {
         print("Show View to Add Progress Notes")
-//        addProgressNotesButtonHorizontalLayout.constant = progressBarDates.progress.//CGFloat(self.progressBarDates.progress)
-        addProgressNotesButtonHorizontalLayout.constant = CGFloat(progressBarDates.progress.distance(to: Float(self.progressBarDates.frame.minX)))
-        print("DistanceTo self.view.bounds.maxX: \(progressBarDates.progress.distance(to: Float(self.view.bounds.maxX)))")
-        print("DistanceTo self.progressBarDates.frame.minX: \(CGFloat(progressBarDates.progress.distance(to: Float(self.progressBarDates.frame.minX))))")
-        print("binade: \(progressBarDates.progress.binade)")
-        print("\(progressBarDates.progress.debugDescription)")
-        
+        if self.progressBarDates.progress == 1 {
+            addProgressNotesButtonStack.frame.origin.x = self.view.frame.midX - (addProgressNotesButtonStack.frame.width/2)
+        }else{
+            let offset = ( progressBarDates.frame.width * CGFloat(progressBarDates.progress) ) - (addProgressNotesButtonStack.frame.width/2)
+            addProgressNotesButtonStackHorizontalLayout.constant = offset
+        }
         addProgressNotesButton.layoutIfNeeded()
     }
     

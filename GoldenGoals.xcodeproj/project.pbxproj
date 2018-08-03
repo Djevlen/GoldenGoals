@@ -16,6 +16,7 @@
 		E92AF6E320F61D840025D1ED /* AddGoalMotivationalTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92AF6E220F61D840025D1ED /* AddGoalMotivationalTextViewController.swift */; };
 		E938163021020F69009C3398 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938162F21020F69009C3398 /* Theme.swift */; };
 		E93816322102109E009C3398 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E93816312102109E009C3398 /* Colors.xcassets */; };
+		E94163BF211454CF00B5ECAC /* GoldenGoalTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94163BE211454CF00B5ECAC /* GoldenGoalTopViewController.swift */; };
 		E95379222037B59B00864212 /* GoldenGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95379212037B59B00864212 /* GoldenGoal.swift */; };
 		E958DFDF20D2AB7E006C6CF4 /* HallOfFameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958DFDE20D2AB7E006C6CF4 /* HallOfFameController.swift */; };
 		E96B192A20EE2C7700772966 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B192920EE2C7700772966 /* Goal.swift */; };
@@ -63,6 +64,7 @@
 		E92AF6E220F61D840025D1ED /* AddGoalMotivationalTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalMotivationalTextViewController.swift; sourceTree = "<group>"; };
 		E938162F21020F69009C3398 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E93816312102109E009C3398 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E94163BE211454CF00B5ECAC /* GoldenGoalTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoldenGoalTopViewController.swift; path = "GoldenGoals/Golden Goal/GoldenGoalTopViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E95379212037B59B00864212 /* GoldenGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenGoal.swift; sourceTree = "<group>"; };
 		E958DFDE20D2AB7E006C6CF4 /* HallOfFameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallOfFameController.swift; sourceTree = "<group>"; };
 		E96B192920EE2C7700772966 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		E92411D52037B861006616CF /* Golden Goal */ = {
 			isa = PBXGroup;
 			children = (
+				E94163BE211454CF00B5ECAC /* GoldenGoalTopViewController.swift */,
 				E95379212037B59B00864212 /* GoldenGoal.swift */,
 			);
 			path = "Golden Goal";
@@ -396,6 +399,7 @@
 				E92AF6E320F61D840025D1ED /* AddGoalMotivationalTextViewController.swift in Sources */,
 				E99F07CD2036458E00FA85D8 /* AppDelegate.swift in Sources */,
 				E96B192C20EE2C8300772966 /* Category.swift in Sources */,
+				E94163BF211454CF00B5ECAC /* GoldenGoalTopViewController.swift in Sources */,
 				E938163021020F69009C3398 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
