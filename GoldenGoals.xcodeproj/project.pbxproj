@@ -33,6 +33,7 @@
 		E9BCB210204DCC6400E9CF8D /* GoalListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCB20F204DCC6400E9CF8D /* GoalListController.swift */; };
 		E9C99EED20D133DB007D3E8B /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C99EEC20D133DB007D3E8B /* CoreDataService.swift */; };
 		E9DE665B211505B8009F175C /* HallOf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9DE665A211505B8009F175C /* HallOf.storyboard */; };
+		E9DE666F211A1A2A009F175C /* TopPageInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DE666E211A1A2A009F175C /* TopPageInfoViewController.swift */; };
 		E9E90BF02039B45A0087C123 /* goldenGoalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E90BEF2039B45A0087C123 /* goldenGoalTabBarController.swift */; };
 		E9E90BF52039C23A0087C123 /* goalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E90BF42039C23A0087C123 /* goalCell.swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		E9BCB20F204DCC6400E9CF8D /* GoalListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalListController.swift; sourceTree = "<group>"; };
 		E9C99EEC20D133DB007D3E8B /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataService.swift; path = "GoldenGoals/Core Data Model/CoreDataService.swift"; sourceTree = SOURCE_ROOT; };
 		E9DE665A211505B8009F175C /* HallOf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HallOf.storyboard; sourceTree = "<group>"; };
+		E9DE666E211A1A2A009F175C /* TopPageInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPageInfoViewController.swift; sourceTree = "<group>"; };
 		E9E90BEF2039B45A0087C123 /* goldenGoalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goldenGoalTabBarController.swift; sourceTree = "<group>"; };
 		E9E90BF42039C23A0087C123 /* goalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				E94163BE211454CF00B5ECAC /* GoldenGoalTopViewController.swift */,
+				E9DE666E211A1A2A009F175C /* TopPageInfoViewController.swift */,
 				E95379212037B59B00864212 /* GoldenGoal.swift */,
 			);
 			path = "Golden Goal";
@@ -396,6 +399,7 @@
 				E9E90BF52039C23A0087C123 /* goalCell.swift in Sources */,
 				E96B192E20EE2C9A00772966 /* ProgressNotes.swift in Sources */,
 				E95379222037B59B00864212 /* GoldenGoal.swift in Sources */,
+				E9DE666F211A1A2A009F175C /* TopPageInfoViewController.swift in Sources */,
 				E92AF6E320F61D840025D1ED /* AddGoalMotivationalTextViewController.swift in Sources */,
 				E99F07CD2036458E00FA85D8 /* AppDelegate.swift in Sources */,
 				E96B192C20EE2C8300772966 /* Category.swift in Sources */,

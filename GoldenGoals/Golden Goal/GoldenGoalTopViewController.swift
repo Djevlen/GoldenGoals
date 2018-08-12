@@ -9,12 +9,22 @@
 import UIKit
 
 class GoldenGoalTopViewController: UIPageViewController{
-
+    
+    var topPages = [UIViewController]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        // Do any additional setup after loading the view.
+        self.delegate = self
+        self.dataSource = self
+        
+        let defaultPage: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "TopPageInfoView")
+        let editPage: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "TopPageEditView")
+        
+        topPages.append(defaultPage)
+        topPages.append(editPage)
+        setViewControllers([defaultPage], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +32,28 @@ class GoldenGoalTopViewController: UIPageViewController{
         // Dispose of any resources that can be recreated.
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension GoldenGoalTopViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        let currentIndex = topPages.index(of: viewController)!
+        let previousIndex = abs((currentIndex - 1) % topPages.count)
+        return topPages[previousIndex]
     }
-    */
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        let currentIndex = topPages.index(of: viewController)!
+        let nextIndex = abs((currentIndex + 1) % topPages.count)
+        return topPages[nextIndex]
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return topPages.count
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 0
+    }
+    
+    
 }

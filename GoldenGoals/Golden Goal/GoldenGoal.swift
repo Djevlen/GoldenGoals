@@ -10,18 +10,18 @@ import UIKit
 import CoreData
 
 
+//TODO: create a constants file for this
+let goalNotificationKey = "com.appbryggeriet.gold"
+
 class GoldenGoal: UIViewController {
     
     @IBOutlet weak var dateStart: UILabel!
     @IBOutlet weak var dateEnd: UILabel!
-    @IBOutlet weak var progressBarDates: UIProgressView!
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var motivationalText: UITextView!
-    @IBOutlet weak var addProgressNotesButton: UIButton!
-    @IBOutlet weak var addProgressNotesButtonLabel: UILabel!
-    @IBOutlet weak var addProgressNotesButtonStack: UIStackView!
-    @IBOutlet weak var addProgressNotesButtonStackHorizontalLayout: NSLayoutConstraint!
+    @IBOutlet weak var containerViewTopPageInfo: UIView!
     
     var showGoal: Goal?
     let calendar = NSCalendar.current
@@ -41,16 +41,12 @@ class GoldenGoal: UIViewController {
         imageView.layer.cornerRadius = 10 
         imageView.layer.borderWidth = 5
         
-        addProgressNotesButton.layer.cornerRadius = 10
-        addProgressNotesButton.layer.borderWidth = 5
-        addProgressNotesButton.layer.borderColor = Theme.mainColor?.cgColor
+        containerViewTopPageInfo.layer.cornerRadius = 10
+        containerViewTopPageInfo.layer.shadowOpacity = 1
+        containerViewTopPageInfo.layer.shadowOffset = CGSize.zero
+        containerViewTopPageInfo.layer.shadowColor = UIColor.black.cgColor
         
-    
-        
-        
-        progressBarDates.layer.cornerRadius = 10
-        progressBarDates.clipsToBounds = true
-        progressBarDates.setProgress(0, animated: false)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,6 +63,7 @@ class GoldenGoal: UIViewController {
             do {
                 let results = try CoreDataService.context.fetch(fetchRequest)
                 if let goldenGoal = results.first{
+                    showGoal = goldenGoal
                     populate(goldenGoal)
                 }else{
                     print("NO GOLDEN GOAL FOUND INSERT PLACEHOLDER STUFF")
@@ -75,6 +72,8 @@ class GoldenGoal: UIViewController {
                 print("Trying to fetch Golden Goal failed in GoldenGoal.swift")
             }
         }
+        let notificationName = Notification.Name(rawValue: goalNotificationKey)
+        NotificationCenter.default.post(name: notificationName, object: showGoal)
         
     }
     
@@ -100,8 +99,8 @@ class GoldenGoal: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         self.navigationItem.title = goal.title
-        dateStart.text = dateFormatter.string(from: goal.dateStart!)
-        dateEnd.text = dateFormatter.string(from: goal.dateEnd!)
+//        dateStart.text = dateFormatter.string(from: goal.dateStart!)
+//        dateEnd.text = dateFormatter.string(from: goal.dateEnd!)
         self.motivationalText.text = goal.motivationalText
         if let goalPhoto = goal.photo{
             imageView.image = UIImage(data: goalPhoto)
@@ -111,26 +110,14 @@ class GoldenGoal: UIViewController {
         }
         
         //TODO: Make this a variable of the class, to be accessed when needed
-        if goal.golden{
-            self.progressBarDates.progressTintColor = Theme.gold!
-            self.imageView.layer.borderColor = Theme.gold!.cgColor
-        }
-        progressBarDates.setProgress(goal.goalProgress(), animated: true)
-        addProgressNotesButtonLabel.text = dateFormatter.string(from: Date())
+//        if goal.golden{
+//            self.progressBarDates.progressTintColor = Theme.gold!
+//            self.imageView.layer.borderColor = Theme.gold!.cgColor
+//        }
+//        progressBarDates.setProgress(goal.goalProgress(), animated: true)
+//        addProgressNotesButtonLabel.text = dateFormatter.string(from: Date())
+//
         
-        
-    }
-    
-
-    @IBAction func tappedAddProgressNotesButton(_ sender: UIButton) {
-        print("Show View to Add Progress Notes")
-        if self.progressBarDates.progress == 1 {
-            addProgressNotesButtonStack.frame.origin.x = self.view.frame.midX - (addProgressNotesButtonStack.frame.width/2)
-        }else{
-            let offset = ( progressBarDates.frame.width * CGFloat(progressBarDates.progress) ) - (addProgressNotesButtonStack.frame.width/2)
-            addProgressNotesButtonStackHorizontalLayout.constant = offset
-        }
-        addProgressNotesButton.layoutIfNeeded()
     }
     
 }
