@@ -25,6 +25,8 @@ class GoldenGoalTopViewController: UIPageViewController{
         topPages.append(editPage)
         setViewControllers([defaultPage], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
         
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

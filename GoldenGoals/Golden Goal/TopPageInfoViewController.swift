@@ -16,7 +16,10 @@ class TopPageInfoViewController: UIViewController {
     @IBOutlet weak var addProgressNotesButtonStack: UIStackView!
     @IBOutlet weak var addProgressNotesButtonStackHorizontalLayout: NSLayoutConstraint!
     
-
+    @IBOutlet weak var goalDateStart: UILabel!
+    @IBOutlet weak var goalDateEnd: UILabel!
+    @IBOutlet weak var todaysDateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,8 +33,22 @@ class TopPageInfoViewController: UIViewController {
         progressBarDates.clipsToBounds = true
         progressBarDates.setProgress(0, animated: false)
         
+        let notificationName = Notification.Name(rawValue: goalNotificationKey)
+        //        NotificationCenter.default.addObserver(self, selector: #selector(goalWasSet), name: NSNotification(name: notificationName, object: nil))
+        NotificationCenter.default.addObserver(self, selector: #selector(goalWasSet(_:)), name: notificationName, object: nil)
     }
 
+    
+    @objc func goalWasSet(_ notification: Notification){
+        guard let goal = notification.object as? Goal else{
+            let object = notification.object as Any
+            assertionFailure("Invalid Object: \(object)")
+            return
+        }
+        goalDateStart.text = "\(goal.dateStart)"
+        goalDateEnd.text = "\(goal.dateEnd)"
+        progressBarDates.progress = goal.goalProgress()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

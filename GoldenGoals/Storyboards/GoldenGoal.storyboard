@@ -189,7 +189,10 @@
                         <outlet property="addProgressNotesButtonLabel" destination="Gi1-Ik-4l7" id="dDh-Je-zbk"/>
                         <outlet property="addProgressNotesButtonStack" destination="5yq-97-GYk" id="Ea4-ZT-Ntc"/>
                         <outlet property="addProgressNotesButtonStackHorizontalLayout" destination="UD7-SH-6MD" id="EdO-sy-muC"/>
+                        <outlet property="goalDateEnd" destination="P33-Of-VNx" id="kaN-BX-sXA"/>
+                        <outlet property="goalDateStart" destination="SnV-Ti-xLg" id="a36-nB-hZD"/>
                         <outlet property="progressBarDates" destination="Xbb-6y-JuR" id="wQ2-tf-coL"/>
+                        <outlet property="todaysDateLabel" destination="Gi1-Ik-4l7" id="bJZ-wx-DNR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Unb-Wk-60R" userLabel="First Responder" sceneMemberID="firstResponder"/>

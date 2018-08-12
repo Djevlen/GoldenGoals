@@ -13,6 +13,7 @@ import CoreData
 //TODO: create a constants file for this
 let goalNotificationKey = "com.appbryggeriet.gold"
 
+
 class GoldenGoal: UIViewController {
     
     @IBOutlet weak var dateStart: UILabel!
@@ -27,7 +28,6 @@ class GoldenGoal: UIViewController {
     let calendar = NSCalendar.current
     let dateFormatter = ISO8601DateFormatter() // YYYY-MM-DD
     
-   
     
     
     override func viewDidLoad() {
