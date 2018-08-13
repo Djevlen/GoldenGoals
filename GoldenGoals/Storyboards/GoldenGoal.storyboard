@@ -24,29 +24,29 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgM-t6-8Ik" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="721"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="736"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="categoryMoney" translatesAutoresizingMaskIntoConstraints="NO" id="6K7-Th-Zuy" userLabel="categoryImage View">
                                                 <rect key="frame" x="169" y="423" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="wwI-me-cA3">
-                                                <rect key="frame" x="45" y="115" width="286" height="286"/>
+                                                <rect key="frame" x="45" y="130" width="286" height="286"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="wwI-me-cA3" secondAttribute="height" multiplier="1:1" id="VOB-uJ-N6o"/>
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nb5-wC-zLz">
-                                                <rect key="frame" x="5" y="446" width="365" height="280"/>
+                                                <rect key="frame" x="5" y="461" width="365" height="280"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlh-Nj-LIb">
-                                                <rect key="frame" x="5" y="5" width="365" height="100"/>
+                                                <rect key="frame" x="5" y="5" width="365" height="115"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="S2D-HF-bD5"/>
+                                                    <constraint firstAttribute="height" constant="115" id="S2D-HF-bD5"/>
                                                 </constraints>
                                                 <connections>
                                                     <segue destination="Ai4-Uw-zYB" kind="embed" id="Mj3-IN-laj"/>
@@ -123,7 +123,7 @@
             <objects>
                 <viewController storyboardIdentifier="TopPageInfoView" id="NTO-or-Cln" customClass="TopPageInfoViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uUm-3r-RJL">
-                        <rect key="frame" x="0.0" y="0.0" width="365" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="115"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezS-er-vHg">
@@ -147,11 +147,10 @@
                                 <rect key="frame" x="5" y="24" width="355" height="2"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5yq-97-GYk">
-                                <rect key="frame" x="16" y="40" width="50" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5yq-97-GYk">
+                                <rect key="frame" x="16" y="31" width="50" height="67"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dal-s8-MJB">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dal-s8-MJB">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="HOe-4m-XSm"/>
@@ -163,7 +162,7 @@
                                             <action selector="tappedAddProgressNotesButton:" destination="LLa-Bf-VQa" eventType="touchUpInside" id="stj-GY-1ts"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gi1-Ik-4l7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gi1-Ik-4l7">
                                         <rect key="frame" x="0.0" y="50" width="50" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -171,6 +170,9 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Gi1-Ik-4l7" firstAttribute="centerX" secondItem="5yq-97-GYk" secondAttribute="centerX" id="eRF-nZ-Xea"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -179,7 +181,9 @@
                             <constraint firstItem="sn0-3A-d59" firstAttribute="trailing" secondItem="ezS-er-vHg" secondAttribute="trailing" constant="5" id="BBs-QJ-brz"/>
                             <constraint firstItem="Xbb-6y-JuR" firstAttribute="top" secondItem="ezS-er-vHg" secondAttribute="bottom" constant="3" id="Suf-fb-q2B"/>
                             <constraint firstItem="Xbb-6y-JuR" firstAttribute="leading" secondItem="uUm-3r-RJL" secondAttribute="leading" constant="5" id="UD7-SH-6MD"/>
+                            <constraint firstItem="5yq-97-GYk" firstAttribute="leading" secondItem="sn0-3A-d59" secondAttribute="leading" constant="16" id="ao1-a1-X29"/>
                             <constraint firstAttribute="trailing" secondItem="Xbb-6y-JuR" secondAttribute="trailing" constant="5" id="ez5-wv-0Ds"/>
+                            <constraint firstItem="5yq-97-GYk" firstAttribute="top" secondItem="Xbb-6y-JuR" secondAttribute="bottom" constant="5" id="jOh-BL-LgZ"/>
                             <constraint firstItem="ezS-er-vHg" firstAttribute="top" secondItem="sn0-3A-d59" secondAttribute="top" constant="5" id="tjS-7R-0eO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sn0-3A-d59"/>
@@ -188,7 +192,7 @@
                         <outlet property="addProgressNotesButton" destination="Dal-s8-MJB" id="uNF-iH-JVw"/>
                         <outlet property="addProgressNotesButtonLabel" destination="Gi1-Ik-4l7" id="dDh-Je-zbk"/>
                         <outlet property="addProgressNotesButtonStack" destination="5yq-97-GYk" id="Ea4-ZT-Ntc"/>
-                        <outlet property="addProgressNotesButtonStackHorizontalLayout" destination="UD7-SH-6MD" id="EdO-sy-muC"/>
+                        <outlet property="addProgressNotesButtonStackHorizontalLayout" destination="ao1-a1-X29" id="k7U-tB-wHW"/>
                         <outlet property="goalDateEnd" destination="P33-Of-VNx" id="kaN-BX-sXA"/>
                         <outlet property="goalDateStart" destination="SnV-Ti-xLg" id="a36-nB-hZD"/>
                         <outlet property="progressBarDates" destination="Xbb-6y-JuR" id="wQ2-tf-coL"/>
@@ -204,7 +208,7 @@
             <objects>
                 <viewController storyboardIdentifier="TopPageEditView" id="jxP-z7-ohP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UBQ-Gk-m3E">
-                        <rect key="frame" x="0.0" y="0.0" width="365" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="115"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="TintColor"/>
                         <viewLayoutGuide key="safeArea" id="707-iu-GZS"/>

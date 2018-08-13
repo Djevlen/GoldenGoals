@@ -96,11 +96,6 @@ class GoldenGoal: UIViewController {
     }
     
     fileprivate func populate(_ goal: Goal) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        self.navigationItem.title = goal.title
-//        dateStart.text = dateFormatter.string(from: goal.dateStart!)
-//        dateEnd.text = dateFormatter.string(from: goal.dateEnd!)
         self.motivationalText.text = goal.motivationalText
         if let goalPhoto = goal.photo{
             imageView.image = UIImage(data: goalPhoto)

@@ -23,7 +23,7 @@ class TopPageInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = Theme.backgroundColor
+        self.view.backgroundColor = Theme.mainColor!
         
         addProgressNotesButton.layer.cornerRadius = 10
         addProgressNotesButton.layer.borderWidth = 5
@@ -34,20 +34,20 @@ class TopPageInfoViewController: UIViewController {
         progressBarDates.setProgress(0, animated: false)
         
         let notificationName = Notification.Name(rawValue: goalNotificationKey)
-        //        NotificationCenter.default.addObserver(self, selector: #selector(goalWasSet), name: NSNotification(name: notificationName, object: nil))
         NotificationCenter.default.addObserver(self, selector: #selector(goalWasSet(_:)), name: notificationName, object: nil)
     }
 
-    
     @objc func goalWasSet(_ notification: Notification){
         guard let goal = notification.object as? Goal else{
             let object = notification.object as Any
             assertionFailure("Invalid Object: \(object)")
             return
         }
-        goalDateStart.text = "\(goal.dateStart)"
-        goalDateEnd.text = "\(goal.dateEnd)"
-        progressBarDates.progress = goal.goalProgress()
+
+        goalDateStart.text = goal.dateStartString
+        goalDateEnd.text = goal.dateEndString
+        todaysDateLabel.text = Date().today
+        progressBarDates.setProgress(goal.calculateGoalProgress(), animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
