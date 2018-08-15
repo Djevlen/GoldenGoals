@@ -35,6 +35,8 @@
 		E9DE665B211505B8009F175C /* HallOf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9DE665A211505B8009F175C /* HallOf.storyboard */; };
 		E9DE666F211A1A2A009F175C /* TopPageInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DE666E211A1A2A009F175C /* TopPageInfoViewController.swift */; };
 		E9DE6671212213D9009F175C /* Date+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DE6670212213D9009F175C /* Date+Extentsion.swift */; };
+		E9DE66742124994C009F175C /* TopPageEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DE66732124994C009F175C /* TopPageEditViewController.swift */; };
+		E9DE667621249D92009F175C /* GoalViewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9DE667521249D92009F175C /* GoalViewAssets.xcassets */; };
 		E9E90BF02039B45A0087C123 /* goldenGoalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E90BEF2039B45A0087C123 /* goldenGoalTabBarController.swift */; };
 		E9E90BF52039C23A0087C123 /* goalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E90BF42039C23A0087C123 /* goalCell.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +93,8 @@
 		E9DE665A211505B8009F175C /* HallOf.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HallOf.storyboard; sourceTree = "<group>"; };
 		E9DE666E211A1A2A009F175C /* TopPageInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPageInfoViewController.swift; sourceTree = "<group>"; };
 		E9DE6670212213D9009F175C /* Date+Extentsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+Extentsion.swift"; path = "GoldenGoals/Goal List/Extensions/Date+Extentsion.swift"; sourceTree = SOURCE_ROOT; };
+		E9DE66732124994C009F175C /* TopPageEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopPageEditViewController.swift; path = "GoldenGoals/Golden Goal/TopPageEditViewController.swift"; sourceTree = SOURCE_ROOT; };
+		E9DE667521249D92009F175C /* GoalViewAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GoalViewAssets.xcassets; sourceTree = "<group>"; };
 		E9E90BEF2039B45A0087C123 /* goldenGoalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goldenGoalTabBarController.swift; sourceTree = "<group>"; };
 		E9E90BF42039C23A0087C123 /* goalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +141,7 @@
 			children = (
 				E94163BE211454CF00B5ECAC /* GoldenGoalTopViewController.swift */,
 				E9DE666E211A1A2A009F175C /* TopPageInfoViewController.swift */,
+				E9DE66732124994C009F175C /* TopPageEditViewController.swift */,
 				E95379212037B59B00864212 /* GoldenGoal.swift */,
 			);
 			path = "Golden Goal";
@@ -244,6 +249,7 @@
 				E99F07CC2036458E00FA85D8 /* AppDelegate.swift */,
 				E92411D32037B828006616CF /* LaunchScreen.storyboard */,
 				E99F07D62036458E00FA85D8 /* Assets.xcassets */,
+				E9DE667521249D92009F175C /* GoalViewAssets.xcassets */,
 				E93816312102109E009C3398 /* Colors.xcassets */,
 			);
 			path = Support;
@@ -370,6 +376,7 @@
 				E977BCF921075AF3000009C9 /* GoalList.storyboard in Resources */,
 				E977BCF121075967000009C9 /* Settings.storyboard in Resources */,
 				E977BCF721075A4E000009C9 /* GoldenGoal.storyboard in Resources */,
+				E9DE667621249D92009F175C /* GoalViewAssets.xcassets in Resources */,
 				E99F07D72036458E00FA85D8 /* Assets.xcassets in Resources */,
 				E93816322102109E009C3398 /* Colors.xcassets in Resources */,
 				E9DE665B211505B8009F175C /* HallOf.storyboard in Resources */,
@@ -417,6 +424,7 @@
 				E99F07CD2036458E00FA85D8 /* AppDelegate.swift in Sources */,
 				E96B192C20EE2C8300772966 /* Category.swift in Sources */,
 				E94163BF211454CF00B5ECAC /* GoldenGoalTopViewController.swift in Sources */,
+				E9DE66742124994C009F175C /* TopPageEditViewController.swift in Sources */,
 				E938163021020F69009C3398 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
