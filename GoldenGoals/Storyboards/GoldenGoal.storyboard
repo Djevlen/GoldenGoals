@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,10 +25,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgM-t6-8Ik" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="736"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="categoryMoney" translatesAutoresizingMaskIntoConstraints="NO" id="6K7-Th-Zuy" userLabel="categoryImage View">
-                                                <rect key="frame" x="169" y="423" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="wwI-me-cA3">
                                                 <rect key="frame" x="45" y="130" width="286" height="286"/>
                                                 <constraints>
@@ -52,6 +47,10 @@
                                                     <segue destination="Ai4-Uw-zYB" kind="embed" id="Mj3-IN-laj"/>
                                                 </connections>
                                             </containerView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="categoryMoney" translatesAutoresizingMaskIntoConstraints="NO" id="6K7-Th-Zuy" userLabel="categoryImage View">
+                                                <rect key="frame" x="163" y="424" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -116,7 +115,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPu-GP-e5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1378" y="536"/>
+            <point key="canvasLocation" x="1569" y="517"/>
         </scene>
         <!--Top Page Info View Controller-->
         <scene sceneID="vXo-WO-WRM">
@@ -148,7 +147,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5yq-97-GYk">
-                                <rect key="frame" x="16" y="31" width="50" height="67"/>
+                                <rect key="frame" x="5" y="31" width="50" height="67"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dal-s8-MJB">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -175,13 +174,12 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ezS-er-vHg" firstAttribute="leading" secondItem="sn0-3A-d59" secondAttribute="leading" constant="5" id="6Xj-hg-nge"/>
                             <constraint firstItem="sn0-3A-d59" firstAttribute="trailing" secondItem="ezS-er-vHg" secondAttribute="trailing" constant="5" id="BBs-QJ-brz"/>
                             <constraint firstItem="Xbb-6y-JuR" firstAttribute="top" secondItem="ezS-er-vHg" secondAttribute="bottom" constant="3" id="Suf-fb-q2B"/>
                             <constraint firstItem="Xbb-6y-JuR" firstAttribute="leading" secondItem="uUm-3r-RJL" secondAttribute="leading" constant="5" id="UD7-SH-6MD"/>
-                            <constraint firstItem="5yq-97-GYk" firstAttribute="leading" secondItem="sn0-3A-d59" secondAttribute="leading" constant="16" id="ao1-a1-X29"/>
+                            <constraint firstItem="5yq-97-GYk" firstAttribute="leading" secondItem="sn0-3A-d59" secondAttribute="leading" constant="5" id="ao1-a1-X29"/>
                             <constraint firstAttribute="trailing" secondItem="Xbb-6y-JuR" secondAttribute="trailing" constant="5" id="ez5-wv-0Ds"/>
                             <constraint firstItem="5yq-97-GYk" firstAttribute="top" secondItem="Xbb-6y-JuR" secondAttribute="bottom" constant="5" id="jOh-BL-LgZ"/>
                             <constraint firstItem="ezS-er-vHg" firstAttribute="top" secondItem="sn0-3A-d59" secondAttribute="top" constant="5" id="tjS-7R-0eO"/>
@@ -201,22 +199,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Unb-Wk-60R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="1081.2593703148427"/>
+            <point key="canvasLocation" x="1268" y="802"/>
         </scene>
-        <!--View Controller-->
+        <!--Top Page Edit View Controller-->
         <scene sceneID="0Kb-wF-po6">
             <objects>
-                <viewController storyboardIdentifier="TopPageEditView" id="jxP-z7-ohP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopPageEditView" id="jxP-z7-ohP" customClass="TopPageEditViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UBQ-Gk-m3E">
                         <rect key="frame" x="0.0" y="0.0" width="365" height="115"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="TintColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcw-xg-Aix">
+                                <rect key="frame" x="16" y="20" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="goalEditButton"/>
+                                <connections>
+                                    <action selector="hitEditViewButton:" destination="jxP-z7-ohP" eventType="touchUpInside" id="qQv-ae-enY"/>
+                                    <action selector="hitEditViewButton:" destination="r8o-0S-PFp" eventType="touchUpInside" id="v6b-Ia-tLc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeD-sI-dpL">
+                                <rect key="frame" x="99" y="20" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="goalCompleteButton"/>
+                                <connections>
+                                    <action selector="hitEditViewButton:" destination="jxP-z7-ohP" eventType="touchUpInside" id="dmE-Qs-F56"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M69-Li-bA0">
+                                <rect key="frame" x="182" y="20" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="goalGoldifyButton"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djh-2e-Uf6">
+                                <rect key="frame" x="265" y="18" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="goalDeleteButton"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="707-iu-GZS"/>
                     </view>
+                    <connections>
+                        <outlet property="completeGoalButton" destination="SeD-sI-dpL" id="KSu-fN-5PP"/>
+                        <outlet property="deleteGoalButton" destination="djh-2e-Uf6" id="qcf-OG-7Jc"/>
+                        <outlet property="editGoalButton" destination="Vcw-xg-Aix" id="RBg-eI-zb6"/>
+                        <outlet property="goldifyGoalButton" destination="M69-Li-bA0" id="3hF-jt-VQ1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZC-vj-UeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="r8o-0S-PFp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2071" y="1082"/>
+            <point key="canvasLocation" x="1888.8" y="801.94902548725645"/>
         </scene>
         <!--Item-->
         <scene sceneID="FPk-X7-IO9">
@@ -246,10 +279,11 @@
     <resources>
         <image name="addPhotoPlaceholder" width="290" height="290"/>
         <image name="categoryMoney" width="25" height="25"/>
-        <image name="goalPlaceholder" width="956" height="538"/>
+        <image name="goalCompleteButton" width="350" height="350"/>
+        <image name="goalDeleteButton" width="75" height="75"/>
+        <image name="goalEditButton" width="350" height="350"/>
+        <image name="goalGoldifyButton" width="350" height="350"/>
+        <image name="goalPlaceholder" width="478" height="269"/>
         <image name="tabBarGoldenGoalPlaceholder" width="25" height="25"/>
-        <namedColor name="TintColor">
-            <color red="0.0" green="0.65098039215686276" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

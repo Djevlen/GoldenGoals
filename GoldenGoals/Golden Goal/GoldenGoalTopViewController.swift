@@ -17,6 +17,11 @@ class GoldenGoalTopViewController: UIPageViewController{
         
         self.delegate = self
         self.dataSource = self
+        self.view.backgroundColor = Theme.mainColor!
+        self.view.layer.cornerRadius = 10
+        self.view.layer.shadowOpacity = 1
+        self.view.layer.shadowOffset = CGSize.zero
+        self.view.layer.shadowColor = UIColor.black.cgColor
         
         let defaultPage: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "TopPageInfoView")
         let editPage: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "TopPageEditView")

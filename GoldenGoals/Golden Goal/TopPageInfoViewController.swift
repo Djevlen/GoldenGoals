@@ -22,12 +22,10 @@ class TopPageInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = Theme.mainColor!
-        
+                
         addProgressNotesButton.layer.cornerRadius = 10
         addProgressNotesButton.layer.borderWidth = 5
-        addProgressNotesButton.layer.borderColor = Theme.mainColor?.cgColor
+        addProgressNotesButton.layer.borderColor = Theme.tintColor!.cgColor
         
         progressBarDates.layer.cornerRadius = 10
         progressBarDates.clipsToBounds = true
