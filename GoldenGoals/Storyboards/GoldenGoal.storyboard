@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ei-x5-XgY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="502"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgM-t6-8Ik" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="736"/>
@@ -86,7 +86,7 @@
                         <viewLayoutGuide key="safeArea" id="4PT-6t-dgM"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Golden Goal" image="tabBarGoldenGoalPlaceholder" id="60d-59-c8t"/>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Clo-AA-cw6">
+                    <navigationItem key="navigationItem" id="Clo-AA-cw6">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="1qU-lQ-9U3">
                             <connections>
                                 <action selector="editButtonSelected:" destination="LLa-Bf-VQa" id="zXP-nd-1Tw"/>
@@ -258,8 +258,8 @@
                     <tabBarItem key="tabBarItem" title="Item" id="u8t-qL-oUT"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bUq-8E-D6q">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="bUq-8E-D6q">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">

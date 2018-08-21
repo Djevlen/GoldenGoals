@@ -41,6 +41,7 @@ class GoldenGoalTopViewController: UIPageViewController{
     
 }
 
+//TODO: recreate this 
 extension GoldenGoalTopViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let currentIndex = topPages.index(of: viewController)!

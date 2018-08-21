@@ -18,9 +18,7 @@ class TopPageEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let notificationName = Notification.Name(rawValue: goalNotificationKey)
-        NotificationCenter.default.addObserver(self, selector: #selector(goalWasSet(_:)), name: notificationName, object: nil)
+        
     }
     
     @objc func goalWasSet(_ notification: Notification){
@@ -30,12 +28,22 @@ class TopPageEditViewController: UIViewController {
             return
         }
         if goal.golden{
+            print("goal is golden in goalWasSet TopPageEditViewController")
             goldifyGoalButton.setImage(#imageLiteral(resourceName: "goalUngoldButton"), for: .normal)
         }else{
+            print("goal is NOT golden in goalWasSet TopPageEditViewController")
+
             goldifyGoalButton.setImage(#imageLiteral(resourceName: "goalGoldifyButton"), for: .normal)
             
         }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let notificationName = Notification.Name(rawValue: goalNotificationKey)
+        NotificationCenter.default.addObserver(self, selector: #selector(goalWasSet(_:)), name: notificationName, object: nil)
     }
 
     override func didReceiveMemoryWarning() {

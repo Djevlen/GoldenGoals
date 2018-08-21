@@ -79,14 +79,11 @@ class GoldenGoal: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.setToolbarHidden(true, animated: false)
     }
     
     //shows the tool bar and goes into edit mode
     @IBAction func editButtonSelected(_ sender: UIBarButtonItem) {
         setEditing(!self.navigationController!.isToolbarHidden, animated: true)
-        self.isEditing = true
-        self.navigationController?.setToolbarHidden(!self.navigationController!.isToolbarHidden, animated: true)
     }
     
     //TODO: This needs to work. probably change uibarbutton and remake it so this method works
@@ -96,6 +93,8 @@ class GoldenGoal: UIViewController {
     }
     
     fileprivate func populate(_ goal: Goal) {
+        
+        self.title = goal.title!
         self.motivationalText.text = goal.motivationalText
         if let goalPhoto = goal.photo{
             imageView.image = UIImage(data: goalPhoto)
