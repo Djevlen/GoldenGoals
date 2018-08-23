@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="325.60000000000002" y="936.88155922038993"/>
         </scene>
-        <!--Golden Goal Top View Controller-->
+        <!--Goal Date And Edit Page View Controller-->
         <scene sceneID="Ejz-vs-ntk">
             <objects>
-                <pageViewController storyboardIdentifier="GoldenGoalTopViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Ai4-Uw-zYB" customClass="GoldenGoalTopViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="GoalDateAndEditPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Ai4-Uw-zYB" customClass="GoalDateAndEditPageViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="NTO-or-Cln" kind="show" id="l3P-Iv-sD4"/>
                         <segue destination="jxP-z7-ohP" kind="show" id="nDe-TW-fcZ"/>

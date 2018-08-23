@@ -1,5 +1,5 @@
 //
-//  GoldenGoalTopViewController.swift
+//  GoalDateAndEditPageViewController.swift
 //  GoldenGoals
 //
 //  Created by Thomas Andre Johansen on 03/08/2018.
@@ -12,7 +12,7 @@ protocol InfoAndEditDelegate {
     func goalWasSet(goal: Goal)
 }
 
-class GoldenGoalTopViewController: UIPageViewController{
+class GoalDateAndEditPageViewController: UIPageViewController{
     
     var topPages = [UIViewController]()
     var goal: Goal?
@@ -30,8 +30,8 @@ class GoldenGoalTopViewController: UIPageViewController{
         self.view.layer.shadowOffset = CGSize.zero
         self.view.layer.shadowColor = UIColor.black.cgColor
         
-        dateView = storyboard?.instantiateViewController(withIdentifier: "GoalDateView") as! GoalDateViewController
-        buttonView = storyboard?.instantiateViewController(withIdentifier: "GoalButtonView") as! GoalButtonViewController
+        dateView = storyboard?.instantiateViewController(withIdentifier: "GoalDateView") as? GoalDateViewController
+        buttonView = storyboard?.instantiateViewController(withIdentifier: "GoalButtonView") as? GoalButtonViewController
         
         topPages.append(dateView!)
         topPages.append(buttonView!)
@@ -60,7 +60,7 @@ class GoldenGoalTopViewController: UIPageViewController{
 }
 
 //TODO: recreate this 
-extension GoldenGoalTopViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
+extension GoalDateAndEditPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let currentIndex = topPages.index(of: viewController)!
         let previousIndex = abs((currentIndex - 1) % topPages.count)

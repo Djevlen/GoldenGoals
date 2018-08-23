@@ -97,7 +97,7 @@ class GoldenGoal: UIViewController {
     fileprivate func populateView(with goal: Goal) {
         NotificationCenter.default.post(name: goalNotificationName, object: goal)
         print("POSTED NOTIFICATION ABOUT GOAL BEING SET in POPULATEVIEW")
-        self.title = goal.title!
+        self.navigationItem.title = goal.title!
         self.motivationalText.text = goal.motivationalText!
         if let goalPhoto = goal.photo{
             imageView.image = UIImage(data: goalPhoto)
