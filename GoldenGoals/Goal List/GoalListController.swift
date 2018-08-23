@@ -15,6 +15,8 @@ class GoalListController: UIViewController {
     
 //    var goals = [Goal(context: CoreDataService.context)]
     var goals: [Goal]!
+    let goalNotificationName = Notification.Name(rawValue: goalNotificationKey)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,8 @@ class GoalListController: UIViewController {
             let goalView = segue.destination as! GoldenGoal
             let selectedGoal = self.goalListTableView.indexPathForSelectedRow
             goalView.showGoal = goals[selectedGoal!.row]
+//            NotificationCenter.default.post(name: goalNotificationName, object: selectedGoal)
+//            print("GOAL LIST CONTROLLER: POSTED NOTIFICATION ABOUT GOAL BEING SET")
             
         }
     }

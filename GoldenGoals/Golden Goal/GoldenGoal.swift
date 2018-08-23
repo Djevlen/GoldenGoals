@@ -25,6 +25,9 @@ class GoldenGoal: UIViewController {
     @IBOutlet weak var containerViewTopPageInfo: UIView!
     
     var showGoal: Goal?
+    // TODO: add to constants file
+    let goalNotificationName = Notification.Name(rawValue: goalNotificationKey)
+
     let calendar = NSCalendar.current
     let dateFormatter = ISO8601DateFormatter() // YYYY-MM-DD
     
@@ -56,7 +59,7 @@ class GoldenGoal: UIViewController {
         //and we can populate the view with info about the goal
         //or else, check in the DB for the goal
         if let goal = showGoal {
-            populate(goal)
+            populateView(with: goal)
         } else{
             let fetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "golden == true")
@@ -64,7 +67,7 @@ class GoldenGoal: UIViewController {
                 let results = try CoreDataService.context.fetch(fetchRequest)
                 if let goldenGoal = results.first{
                     showGoal = goldenGoal
-                    populate(goldenGoal)
+                    populateView(with: goldenGoal)
                 }else{
                     print("NO GOLDEN GOAL FOUND INSERT PLACEHOLDER STUFF")
                 }
@@ -72,8 +75,7 @@ class GoldenGoal: UIViewController {
                 print("Trying to fetch Golden Goal failed in GoldenGoal.swift")
             }
         }
-        let notificationName = Notification.Name(rawValue: goalNotificationKey)
-        NotificationCenter.default.post(name: notificationName, object: showGoal)
+        
         
     }
     
@@ -92,10 +94,11 @@ class GoldenGoal: UIViewController {
         print("i setEditing: \(editing)")
     }
     
-    fileprivate func populate(_ goal: Goal) {
-        
+    fileprivate func populateView(with goal: Goal) {
+        NotificationCenter.default.post(name: goalNotificationName, object: goal)
+        print("POSTED NOTIFICATION ABOUT GOAL BEING SET in POPULATEVIEW")
         self.title = goal.title!
-        self.motivationalText.text = goal.motivationalText
+        self.motivationalText.text = goal.motivationalText!
         if let goalPhoto = goal.photo{
             imageView.image = UIImage(data: goalPhoto)
         }else{

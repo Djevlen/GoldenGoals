@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopPageInfoViewController: UIViewController {
+class GoalDateViewController: UIViewController {
     
     @IBOutlet weak var progressBarDates: UIProgressView!
     @IBOutlet weak var addProgressNotesButton: UIButton!
@@ -20,6 +20,8 @@ class TopPageInfoViewController: UIViewController {
     @IBOutlet weak var goalDateEnd: UILabel!
     @IBOutlet weak var todaysDateLabel: UILabel!
     
+    var goal: Goal?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -30,26 +32,6 @@ class TopPageInfoViewController: UIViewController {
         progressBarDates.layer.cornerRadius = 10
         progressBarDates.clipsToBounds = true
         progressBarDates.setProgress(0, animated: false)
-        
-        let notificationName = Notification.Name(rawValue: goalNotificationKey)
-        NotificationCenter.default.addObserver(self, selector: #selector(goalWasSet(_:)), name: notificationName, object: nil)
-    }
-
-    @objc func goalWasSet(_ notification: Notification){
-        guard let goal = notification.object as? Goal else{
-            let object = notification.object as Any
-            assertionFailure("Invalid Object: \(object)")
-            return
-        }
-
-        goalDateStart.text = goal.dateStartString
-        goalDateEnd.text = goal.dateEndString
-        todaysDateLabel.text = Date().today
-        progressBarDates.setProgress(goal.calculateGoalProgress(), animated: true)
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func tappedAddProgressNotesButton(_ sender: UIButton) {
@@ -62,5 +44,13 @@ class TopPageInfoViewController: UIViewController {
         }
         addProgressNotesButton.layoutIfNeeded()
     }
-
+    
+    func setGoal(_ goal: Goal){
+        print("Setting goal in InfoView")
+        self.goal = goal
+        goalDateStart.text = goal.dateStartString
+        goalDateEnd.text = goal.dateEndString
+        todaysDateLabel.text = Date().today
+        progressBarDates.setProgress(goal.calculateGoalProgress(), animated: true)
+    }
 }

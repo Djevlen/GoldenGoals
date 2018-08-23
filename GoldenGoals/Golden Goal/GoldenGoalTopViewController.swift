@@ -8,9 +8,16 @@
 
 import UIKit
 
+protocol InfoAndEditDelegate {
+    func goalWasSet(goal: Goal)
+}
+
 class GoldenGoalTopViewController: UIPageViewController{
     
     var topPages = [UIViewController]()
+    var goal: Goal?
+    var dateView: GoalDateViewController?
+    var buttonView: GoalButtonViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +30,26 @@ class GoldenGoalTopViewController: UIPageViewController{
         self.view.layer.shadowOffset = CGSize.zero
         self.view.layer.shadowColor = UIColor.black.cgColor
         
-        let defaultPage: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "TopPageInfoView")
-        let editPage: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "TopPageEditView")
+        dateView = storyboard?.instantiateViewController(withIdentifier: "GoalDateView") as! GoalDateViewController
+        buttonView = storyboard?.instantiateViewController(withIdentifier: "GoalButtonView") as! GoalButtonViewController
         
-        topPages.append(defaultPage)
-        topPages.append(editPage)
-        setViewControllers([defaultPage], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        topPages.append(dateView!)
+        topPages.append(buttonView!)
+        setViewControllers([dateView!], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+                
+        let notificationName = Notification.Name(rawValue: goalNotificationKey)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateSelectedGoal(notification:)), name: notificationName, object: nil)
         
-        
-        
+    }
+    @objc func updateSelectedGoal(notification: NSNotification){
+        guard let sentGoal = notification.object as? Goal else{
+            let object = notification.object as Any
+            assertionFailure("Invalid Object: \(object)")
+            return
+        }
+        print("*** updateselectedGoal WAS UPDATED with \(sentGoal.title!) ***")
+        dateView?.setGoal(sentGoal)
+        buttonView?.setGoal(sentGoal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +80,4 @@ extension GoldenGoalTopViewController: UIPageViewControllerDataSource, UIPageVie
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
     }
-    
-    
 }
