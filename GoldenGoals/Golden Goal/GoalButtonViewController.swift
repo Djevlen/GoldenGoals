@@ -1,5 +1,5 @@
 //
-//  TopPageEditViewController.swift
+//  GoalButtonViewController.swift
 //  GoldenGoals
 //
 //  Created by Thomas Andre Johansen on 15/08/2018.
@@ -26,13 +26,26 @@ class GoalButtonViewController: UIViewController {
         self.goal = goal
     }
     
-    @IBAction func hitEditViewButton(_ sender: UIButton) {
+    @IBAction func editGoal(_ sender: UIButton) {
         print("in button")
-        print("sender is \(sender)")
+        print("sender is \(self.goal!.title!)")
+    }
+    @IBAction func completeGoal(_ sender: UIButton) {
+        print("Completing Goal: \(self.goal!.title!)")
+        
+        //create modal prompt to confirm gold completion
+        
+    }
+    @IBAction func toggleGoldStatus(_ sender: UIButton) {
+        print("I want to toggle gold status of: \(self.goal!.title!)")
+        
+        //create modal prompt to confirm goldify/ungoldify
     }
     
     @IBAction func deleteGoal(_ sender: UIButton) {
         print("I want to delete: \(self.goal!.title!)")
+        
+        //create modal prompt to confirm deletion
     }
     
 }

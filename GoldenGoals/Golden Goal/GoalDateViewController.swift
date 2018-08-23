@@ -1,5 +1,5 @@
 //
-//  TopPageInfoViewController.swift
+//  GoalDateViewController.swift
 //  GoldenGoals
 //
 //  Created by Thomas Andre Johansen on 07/08/2018.

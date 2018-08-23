@@ -214,8 +214,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="goalEditButton"/>
                                 <connections>
-                                    <action selector="hitEditViewButton:" destination="jxP-z7-ohP" eventType="touchUpInside" id="qQv-ae-enY"/>
-                                    <action selector="hitEditViewButton:" destination="r8o-0S-PFp" eventType="touchUpInside" id="v6b-Ia-tLc"/>
+                                    <action selector="editGoal:" destination="jxP-z7-ohP" eventType="touchUpInside" id="qQv-ae-enY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeD-sI-dpL">
@@ -223,13 +222,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="goalCompleteButton"/>
                                 <connections>
-                                    <action selector="hitEditViewButton:" destination="jxP-z7-ohP" eventType="touchUpInside" id="dmE-Qs-F56"/>
+                                    <action selector="completeGoal:" destination="jxP-z7-ohP" eventType="touchUpInside" id="On1-J3-N1J"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M69-Li-bA0">
                                 <rect key="frame" x="182" y="20" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="goalGoldifyButton"/>
+                                <connections>
+                                    <action selector="toggleGoldStatus:" destination="jxP-z7-ohP" eventType="touchUpInside" id="XJf-Km-CdZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djh-2e-Uf6">
                                 <rect key="frame" x="265" y="18" width="75" height="75"/>
@@ -250,7 +252,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZC-vj-UeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="r8o-0S-PFp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1888.8" y="801.94902548725645"/>
         </scene>
