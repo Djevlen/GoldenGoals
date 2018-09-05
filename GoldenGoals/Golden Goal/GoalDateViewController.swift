@@ -20,7 +20,7 @@ class GoalDateViewController: UIViewController {
     @IBOutlet weak var goalDateEnd: UILabel!
     @IBOutlet weak var todaysDateLabel: UILabel!
     
-    var goal: Goal?
+    var goal: Goal!
     
     override func viewDidLoad() {
         super.viewDidLoad()

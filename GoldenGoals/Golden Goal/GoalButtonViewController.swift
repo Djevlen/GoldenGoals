@@ -16,7 +16,7 @@ class GoalButtonViewController: UIViewController {
     @IBOutlet weak var goldifyGoalButton: UIButton!
     @IBOutlet weak var deleteGoalButton: UIButton!
     
-    var goal: Goal?
+    var goal: Goal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,22 +28,22 @@ class GoalButtonViewController: UIViewController {
     
     @IBAction func editGoal(_ sender: UIButton) {
         print("in button")
-        print("sender is \(self.goal!.title!)")
+        print("sender is \(self.goal.title!)")
     }
     @IBAction func completeGoal(_ sender: UIButton) {
-        print("Completing Goal: \(self.goal!.title!)")
+        print("Completing Goal: \(self.goal.title!)")
         
         //create modal prompt to confirm gold completion
         
     }
     @IBAction func toggleGoldStatus(_ sender: UIButton) {
-        print("I want to toggle gold status of: \(self.goal!.title!)")
+        print("I want to toggle gold status of: \(self.goal.title!)")
         
         //create modal prompt to confirm goldify/ungoldify
     }
     
     @IBAction func deleteGoal(_ sender: UIButton) {
-        print("I want to delete: \(self.goal!.title!)")
+        print("I want to delete: \(self.goal.title!)")
         
         //create modal prompt to confirm deletion
     }
