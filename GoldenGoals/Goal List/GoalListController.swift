@@ -13,7 +13,6 @@ class GoalListController: UIViewController {
     
     @IBOutlet weak var goalListTableView: UITableView!
     
-//    var goals = [Goal(context: CoreDataService.context)]
     var goals: [Goal]!
     let goalNotificationName = Notification.Name(rawValue: goalNotificationKey)
 
@@ -23,7 +22,10 @@ class GoalListController: UIViewController {
         goalListTableView.delegate = self
         goalListTableView.dataSource = self
         
+        //this needs to refresh often, goals are completed, turned golden etc,
+        //this list needs to reflect changes to goals
         let fetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "dateCompleted == nil")
         do {
             let goals = try CoreDataService.context.fetch(fetchRequest)
             self.goals = goals
@@ -122,6 +124,9 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
             (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
             // TODO: Make this change color and slowly fade away
             let alert = UIAlertController(title: "Goal Info Dump", message: nil, preferredStyle: .alert)
+            alert.addTextField(configurationHandler: { (textfield) in
+                textfield.text = "dateCompleted: \(String(describing: self.goals[indexPath.row].dateCompleted))"
+            })
             alert.addTextField(configurationHandler: { (textfield) in
                 textfield.text = "ID: \(self.goals[indexPath.row].id!.uuidString)"
             })
