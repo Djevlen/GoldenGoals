@@ -1,5 +1,5 @@
 //
-//  GoalDateAndEditPageViewController.swift
+//  GoalDateAndOptionsViewController.swift
 //  GoldenGoals
 //
 //  Created by Thomas Andre Johansen on 03/08/2018.
@@ -12,12 +12,12 @@ protocol InfoAndEditDelegate {
     func goalWasSet(goal: Goal)
 }
 
-class GoalDateAndEditPageViewController: UIPageViewController{
+class GoalDateAndOptionsViewController: UIPageViewController{
     
     var topPages = [UIViewController]()
     var goal: Goal?
     var dateView: GoalDateViewController?
-    var buttonView: GoalButtonViewController?
+    var buttonView: GoalOptionsViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +30,8 @@ class GoalDateAndEditPageViewController: UIPageViewController{
         self.view.layer.shadowOffset = CGSize.zero
         self.view.layer.shadowColor = UIColor.black.cgColor
         
-        dateView = storyboard?.instantiateViewController(withIdentifier: "GoalDateView") as? GoalDateViewController
-        buttonView = storyboard?.instantiateViewController(withIdentifier: "GoalButtonView") as? GoalButtonViewController
+        dateView = storyboard?.instantiateViewController(withIdentifier: "GoalDateViewController") as? GoalDateViewController
+        buttonView = storyboard?.instantiateViewController(withIdentifier: "GoalOptionsViewController") as? GoalOptionsViewController
         
         topPages.append(dateView!)
         topPages.append(buttonView!)
@@ -60,7 +60,7 @@ class GoalDateAndEditPageViewController: UIPageViewController{
 }
 
 //TODO: recreate this 
-extension GoalDateAndEditPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
+extension GoalDateAndOptionsViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let currentIndex = topPages.index(of: viewController)!
         let previousIndex = abs((currentIndex - 1) % topPages.count)

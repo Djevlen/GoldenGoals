@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="325.60000000000002" y="936.88155922038993"/>
         </scene>
-        <!--Goal Date And Edit Page View Controller-->
+        <!--Goal Date And Options View Controller-->
         <scene sceneID="Ejz-vs-ntk">
             <objects>
-                <pageViewController storyboardIdentifier="GoalDateAndEditPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Ai4-Uw-zYB" customClass="GoalDateAndEditPageViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="GoalDateAndEditPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Ai4-Uw-zYB" customClass="GoalDateAndOptionsViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="NTO-or-Cln" kind="show" id="l3P-Iv-sD4"/>
                         <segue destination="jxP-z7-ohP" kind="show" id="nDe-TW-fcZ"/>
@@ -118,7 +118,7 @@
         <!--Goal Date View Controller-->
         <scene sceneID="vXo-WO-WRM">
             <objects>
-                <viewController storyboardIdentifier="GoalDateView" id="NTO-or-Cln" customClass="GoalDateViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoalDateViewController" id="NTO-or-Cln" customClass="GoalDateViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uUm-3r-RJL">
                         <rect key="frame" x="0.0" y="0.0" width="365" height="115"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -203,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="1268" y="802"/>
         </scene>
-        <!--Goal Button View Controller-->
+        <!--Goal Options View Controller-->
         <scene sceneID="0Kb-wF-po6">
             <objects>
-                <viewController storyboardIdentifier="GoalButtonView" id="jxP-z7-ohP" customClass="GoalButtonViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoalOptionsViewController" id="jxP-z7-ohP" customClass="GoalOptionsViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UBQ-Gk-m3E">
                         <rect key="frame" x="0.0" y="0.0" width="365" height="115"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -224,7 +224,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="goalCompleteButton"/>
                                 <connections>
-                                    <action selector="completeGoal:" destination="jxP-z7-ohP" eventType="touchUpInside" id="On1-J3-N1J"/>
+                                    <action selector="endGoal:" destination="jxP-z7-ohP" eventType="touchUpInside" id="On1-J3-N1J"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M69-Li-bA0">

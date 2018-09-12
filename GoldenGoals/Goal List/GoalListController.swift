@@ -26,6 +26,7 @@ class GoalListController: UIViewController {
         //this list needs to reflect changes to goals
         let fetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "dateCompleted == nil")
+        fetchRequest.predicate = NSPredicate(format: "deletedGoal == nil")
         do {
             let goals = try CoreDataService.context.fetch(fetchRequest)
             self.goals = goals
