@@ -33,7 +33,7 @@
                                                     <constraint firstAttribute="width" secondItem="wwI-me-cA3" secondAttribute="height" multiplier="1:1" id="lm6-QH-uLQ"/>
                                                 </constraints>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Lorem ipsum dolor sit er elit lamet...." textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nb5-wC-zLz">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet...." textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nb5-wC-zLz">
                                                 <rect key="frame" x="5" y="301" width="365" height="36.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
@@ -85,9 +85,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Golden Goal" image="tabBarGoldenGoalPlaceholder" id="60d-59-c8t"/>
                     <navigationItem key="navigationItem" id="Clo-AA-cw6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="1qU-lQ-9U3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="1qU-lQ-9U3">
                             <connections>
-                                <action selector="editButtonSelected:" destination="LLa-Bf-VQa" id="zXP-nd-1Tw"/>
+                                <action selector="composeProgressNote:" destination="LLa-Bf-VQa" id="t9y-rf-aZD"/>
+                                <segue destination="tuD-FM-QSF" kind="show" id="ILd-y8-a4O"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -102,6 +103,21 @@
             </objects>
             <point key="canvasLocation" x="325.60000000000002" y="936.88155922038993"/>
         </scene>
+        <!--Compose Progress View Controller-->
+        <scene sceneID="xx1-wE-eEX">
+            <objects>
+                <viewController id="tuD-FM-QSF" customClass="ComposeProgressViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hze-ay-dxs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yay-ma-HZD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JhS-hZ-IYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1222" y="937"/>
+        </scene>
         <!--Goal Date And Options View Controller-->
         <scene sceneID="Ejz-vs-ntk">
             <objects>
@@ -113,7 +129,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPu-GP-e5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1569" y="517"/>
+            <point key="canvasLocation" x="326" y="1447"/>
         </scene>
         <!--Goal Date View Controller-->
         <scene sceneID="vXo-WO-WRM">
@@ -201,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Unb-Wk-60R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="802"/>
+            <point key="canvasLocation" x="25" y="1731"/>
         </scene>
         <!--Goal Options View Controller-->
         <scene sceneID="0Kb-wF-po6">
@@ -255,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZC-vj-UeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1888.8" y="801.94902548725645"/>
+            <point key="canvasLocation" x="646" y="1731"/>
         </scene>
         <!--Item-->
         <scene sceneID="FPk-X7-IO9">

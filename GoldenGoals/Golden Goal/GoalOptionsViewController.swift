@@ -26,7 +26,8 @@ class GoalOptionsViewController: UIViewController {
         self.goal = goal
     }
     
-    //TODO: Implement these buttons
+    //TODO: A BUNCH OF ALERTS HERE, REFACTOR THEM MMKAY
+    //TODO: Implement the editGoal button
     @IBAction func editGoal(_ sender: UIButton) {
         print("in button")
         print("sender is \(self.goal.title!)")
@@ -67,7 +68,6 @@ class GoalOptionsViewController: UIViewController {
         }))
         
         present(toggleGoldAlert, animated: true, completion: nil)
-        //create modal prompt to confirm goldify/ungoldify
         //TODO: if maximum gold goals, prompt iAP
     }
     
@@ -78,7 +78,7 @@ class GoalOptionsViewController: UIViewController {
         let deleteGoalAlert = UIAlertController(title: "Delete Goal", message: "Are you sure you want to delete a goal? This can not be undone!", preferredStyle: .alert)
         deleteGoalAlert.addAction(UIAlertAction(title: "NO", style: .cancel, handler: nil))
         deleteGoalAlert.addAction(UIAlertAction(title: "YES, DELETE IT!", style: .destructive, handler: { (_) in
-            self.goal.deletedGoal = true
+            self.goal.removed = true
             CoreDataService.saveContext()
         }))
         present(deleteGoalAlert, animated: true, completion: nil)

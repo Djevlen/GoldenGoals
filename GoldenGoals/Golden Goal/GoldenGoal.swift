@@ -16,9 +16,6 @@ let goalNotificationKey = "com.appbryggeriet.gold"
 
 class GoldenGoal: UIViewController {
     
-    @IBOutlet weak var dateStart: UILabel!
-    @IBOutlet weak var dateEnd: UILabel!
-    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var motivationalText: UITextView!
@@ -114,6 +111,10 @@ class GoldenGoal: UIViewController {
 //        progressBarDates.setProgress(goal.goalProgress(), animated: true)
 //        addProgressNotesButtonLabel.text = dateFormatter.string(from: Date())
 //
+        
+    }
+    @IBAction func composeProgressNote(_ sender: Any) {
+        print("I want to compose some progress, man!")
         
     }
     

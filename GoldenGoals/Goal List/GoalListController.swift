@@ -26,7 +26,7 @@ class GoalListController: UIViewController {
         //this list needs to reflect changes to goals
         let fetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "dateCompleted == nil")
-        fetchRequest.predicate = NSPredicate(format: "deletedGoal == nil")
+        fetchRequest.predicate = NSPredicate(format: "removed == nil")
         do {
             let goals = try CoreDataService.context.fetch(fetchRequest)
             self.goals = goals
@@ -151,7 +151,7 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
                 textfield.text = "motivationalText: \(String(describing: self.goals[indexPath.row].motivationalText))"
             })
             alert.addTextField(configurationHandler: { (textfield) in
-                textfield.text = "deletedGoal: \(self.goals[indexPath.row].deletedGoal)"
+                textfield.text = "deletedGoal: \(self.goals[indexPath.row].removed)"
             })
             alert.addTextField(configurationHandler: { (textfield) in
                 textfield.text = "hallOfFame: \(self.goals[indexPath.row].hallOfFame!)"

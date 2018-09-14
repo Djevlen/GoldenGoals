@@ -8,9 +8,6 @@
 
 import UIKit
 
-protocol InfoAndEditDelegate {
-    func goalWasSet(goal: Goal)
-}
 
 class GoalDateAndOptionsViewController: UIPageViewController{
     
