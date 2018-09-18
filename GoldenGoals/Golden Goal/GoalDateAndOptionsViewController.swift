@@ -32,7 +32,7 @@ class GoalDateAndOptionsViewController: UIPageViewController{
         
         topPages.append(dateView!)
         topPages.append(buttonView!)
-        setViewControllers([dateView!], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        setViewControllers([dateView!], direction: UIPageViewController.NavigationDirection.forward, animated: false, completion: nil)
                 
         let notificationName = Notification.Name(rawValue: goalNotificationKey)
         NotificationCenter.default.addObserver(self, selector: #selector(updateSelectedGoal(notification:)), name: notificationName, object: nil)

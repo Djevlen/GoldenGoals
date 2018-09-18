@@ -42,7 +42,7 @@ class HallOfFameController: UIViewController {
                     allCategories[index].image = categoryImageData as Data
                     print("Bildet: \(categoryImage!)")
                 }else{
-                    allCategories[index].image = UIImagePNGRepresentation(#imageLiteral(resourceName: "categoryMoney")) as Data?
+                    allCategories[index].image = #imageLiteral(resourceName: "categoryMoney").pngData() as Data?
                     print("Har ikke noe bilde for kategorien : (")
                 }                
             }

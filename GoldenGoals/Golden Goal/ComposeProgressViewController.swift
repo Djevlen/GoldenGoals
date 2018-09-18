@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ComposeProgressViewController: UIViewController {
+class ComposeProgressViewController: UITableViewController {
 
 
     

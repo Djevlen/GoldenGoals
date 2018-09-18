@@ -69,7 +69,7 @@ class AddGoalViewController: UIViewController {
                     let category = Category(context: CoreDataService.context)
                     print("i for setupcategories: \(categoryTitles[index])")
                     category.title = categoryTitles[index]
-                    if let data = UIImagePNGRepresentation(categoryImages[index]!){
+                    if let data = categoryImages[index]!.pngData(){
                         category.image = data as Data?
                     }
                     CoreDataService.saveContext()
@@ -91,7 +91,7 @@ class AddGoalViewController: UIViewController {
                     allCategories[index].image = categoryImageData as Data
                     print("Bildet: \(categoryImage!)")
                 }else{
-                    allCategories[index].image = UIImagePNGRepresentation(#imageLiteral(resourceName: "categoryMoney")) as Data?
+                    allCategories[index].image = #imageLiteral(resourceName: "categoryMoney").pngData() as Data?
                     print("Har ikke noe bilde for kategorien : (")
                 }
             }
@@ -111,13 +111,13 @@ class AddGoalViewController: UIViewController {
         dateSelector.tintColor = .clear
         dateSelector.backgroundColor = .clear
         dateSelector.setTitleTextAttributes([
-            NSAttributedStringKey.font : UIFont.systemFont(ofSize: 18),
-            NSAttributedStringKey.foregroundColor: UIColor.lightGray
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18),
+            NSAttributedString.Key.foregroundColor: UIColor.lightGray
             ], for: .normal)
         
         dateSelector.setTitleTextAttributes([
-            NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 18),
-            NSAttributedStringKey.foregroundColor: UIColor(red: 252.0/255.0, green: 194.0/255.0, blue: 0, alpha: 1.0)//gold
+            NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18),
+            NSAttributedString.Key.foregroundColor: UIColor(red: 252.0/255.0, green: 194.0/255.0, blue: 0, alpha: 1.0)//gold
             ], for: .selected)
         
         goalEndDate.minimumDate = Date()
