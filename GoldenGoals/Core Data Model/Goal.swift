@@ -47,7 +47,7 @@ class Goal: NSManagedObject {
         }
     }
 
-    //TODO: extension to Date?
+    #warning ("TODO: extension to Date?")
     func daysToGoUntil(dueDate: Date) -> Int {
         let numberOfDaysToGo = calendar.dateComponents([.day], from: Date(), to: dueDate)
         return numberOfDaysToGo.day!

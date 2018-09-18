@@ -8,6 +8,7 @@
 
 import UIKit
 
+#warning ("TODO: REWRITE AS TABLEVIEW")
 class AddGoalMotivationViewController: UIViewController {
     
     var goal = Goal()

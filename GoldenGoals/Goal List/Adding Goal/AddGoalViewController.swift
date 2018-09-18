@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+#warning ("TODO: REWRITE AS TABLEVIEW")
 class AddGoalViewController: UIViewController {
     
     @IBOutlet weak var goalTitle: UITextField!
@@ -146,7 +147,7 @@ class AddGoalViewController: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if(identifier == "segueToMotivation"){
-            //TODO: make this its own function to check every field to be reused in seperate views
+            #warning ("TODO: make this its own function to check every field to be reused in seperate views")
             guard let title = goalTitle.text, title != "" else{
                 print("GOAL TITLE IKKE SATT")
                 goalTitle.layer.borderWidth = 3.0
@@ -171,7 +172,7 @@ class AddGoalViewController: UIViewController {
             newGoal.dateEnd = goalEndDate.date
         }
         
-        //TODO: Flytte denne til neste view
+        #warning ("TODO: Flytte denne til neste view")
         
         
         return true

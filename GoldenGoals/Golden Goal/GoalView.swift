@@ -10,10 +10,10 @@ import UIKit
 import CoreData
 
 
-//TODO: create a constants file for this
+#warning ("TODO: create a constants file for this")
 let goalNotificationKey = "com.appbryggeriet.gold"
 
-
+#warning ("TODO: Rewrite as TABLEVIEW")
 class GoalView: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -85,7 +85,7 @@ class GoalView: UIViewController {
         setEditing(!self.navigationController!.isToolbarHidden, animated: true)
     }
     
-    //TODO: This needs to work. probably change uibarbutton and remake it so this method works
+    #warning ("TODO: This needs to work. probably change uibarbutton and remake it so this method works")
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing,animated:animated)
         print("i setEditing: \(editing)")
@@ -103,7 +103,7 @@ class GoalView: UIViewController {
             imageView.image = #imageLiteral(resourceName: "goalPlaceholder")
         }
         
-        //TODO: Make this a variable of the class, to be accessed when needed
+        #warning ("TODO: Make this a variable of the class, to be accessed when needed")
 //        if goal.golden{
 //            self.progressBarDates.progressTintColor = Theme.gold!
 //            self.imageView.layer.borderColor = Theme.gold!.cgColor
@@ -137,10 +137,9 @@ class GoalView: UIViewController {
                 print("ERROR SAVING NEW PROGRESS in unwindFromComposeProgressNote: \(error)")
             }
         }
-
-
     }
     
+    #warning ("TODO: ADD A WAY TO SHOW PROGRESS NOTES")
 }
 
 extension GoalView: UIScrollViewDelegate{

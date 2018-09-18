@@ -56,7 +56,7 @@ class GoalDateAndOptionsViewController: UIPageViewController{
     
 }
 
-//TODO: recreate this 
+#warning ("TODO: recreate this") 
 extension GoalDateAndOptionsViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let currentIndex = topPages.index(of: viewController)!

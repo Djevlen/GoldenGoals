@@ -10,7 +10,7 @@ import UIKit
 
 class GoalOptionsViewController: UIViewController {
 
-    //TODO: CREATE AN ENUM OF THIS
+    #warning ("TODO: CREATE AN ENUM OF THIS")
     @IBOutlet weak var editGoalButton: UIButton!
     @IBOutlet weak var completeGoalButton: UIButton!
     @IBOutlet weak var goldifyGoalButton: UIButton!
@@ -26,8 +26,8 @@ class GoalOptionsViewController: UIViewController {
         self.goal = goal
     }
     
-    //TODO: A BUNCH OF ALERTS HERE, REFACTOR THEM MMKAY
-    //TODO: Implement the editGoal button
+    #warning ("TODO: A BUNCH OF ALERTS HERE, REFACTOR THEM MMKAY")
+    #warning ("TODO: Implement the editGoal button")
     @IBAction func editGoal(_ sender: UIButton) {
         print("in button")
         print("sender is \(self.goal.title!)")
@@ -50,7 +50,7 @@ class GoalOptionsViewController: UIViewController {
             CoreDataService.saveContext()
         }))
         self.present(alert, animated: true, completion: nil)
-        //TODO: Create a solution for what happens when you fail/complete a goal
+        #warning ("TODO: Create a solution for what happens when you fail/complete a goal")
     }
     @IBAction func toggleGoldStatus(_ sender: UIButton) {
         print("I want to toggle gold status of: \(self.goal.title!)")
@@ -68,7 +68,7 @@ class GoalOptionsViewController: UIViewController {
         }))
         
         present(toggleGoldAlert, animated: true, completion: nil)
-        //TODO: if maximum gold goals, prompt iAP
+        #warning ("TODO: if maximum gold goals, prompt iAP")
     }
     
     @IBAction func deleteGoal(_ sender: UIButton) {
