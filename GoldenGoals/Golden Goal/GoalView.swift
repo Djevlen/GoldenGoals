@@ -117,6 +117,29 @@ class GoalView: UIViewController {
         print("I want to compose some progress, man!")
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToComposeProgressNote"{
+            print("setting goal with goal: \(String(describing: showGoal))")
+            let composeProgressNoteView = segue.destination as! ComposeProgressViewController
+            composeProgressNoteView.goal = self.showGoal
+        }
+        
+    }
+    
+    
+    @IBAction func unwindFromComposeProgressNote(_ sender: UIStoryboardSegue){
+        print("unwindingfromcomposeprogressnote")
+        if sender.source is ComposeProgressViewController{
+            do {
+                print("TRYNG TO SAVE NEW PROGRESS!!!")
+                try CoreDataService.context.save()
+            } catch let error as NSError {
+                print("ERROR SAVING NEW PROGRESS in unwindFromComposeProgressNote: \(error)")
+            }
+        }
+
+
+    }
     
 }
 
