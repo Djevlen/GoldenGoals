@@ -1,5 +1,5 @@
 //
-//  HallOfFameController.swift
+//  HallOfFameTableViewController.swift
 //  GoldenGoals
 //
 //  Created by Thomas Andre Johansen on 14/06/2018.
@@ -9,9 +9,8 @@
 import UIKit
 import CoreData
 
-class HallOfFameController: UIViewController {
+class HallOfFameTableViewController: UITableViewController {
     
-    @IBOutlet weak var goalsListTitleLabel: UILabel!
     @IBOutlet weak var hallOfCollectionView: UICollectionView!
     var allCategories = [Category]()
 
@@ -68,18 +67,25 @@ class HallOfFameController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        print("LOL??")
+//        let header = UIView()
+//        header.backgroundColor = Theme.mainColor!
+//        header.tintColor = Theme.tintColor!
+//        return header
+//    }
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.tintColor = Theme.mainColor!
+        header.textLabel?.textColor = Theme.textColor!
+    }
 
 }
 
 // MARK: EXTENSION UICollectionView delegate functions
-extension HallOfFameController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension HallOfFameTableViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if (goalsListTitleLabel.text == "Goals - \(allCategories[indexPath.row].title!)"){
-            goalsListTitleLabel.text = "Goals"
-        }else{
-            goalsListTitleLabel.text = "Goals - \(allCategories[indexPath.row].title!)"
-        }
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
