@@ -22,7 +22,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xyK-fi-Q2I">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="goalCell" rowHeight="250" id="vk4-ZX-rhr" customClass="goalCell" customModule="GoldenGoals" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="250"/>
@@ -36,12 +36,13 @@
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Njv-tl-EXS">
                                                             <rect key="frame" x="8" y="8" width="329" height="185"/>
+                                                            <color key="backgroundColor" name="MainColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Njv-tl-EXS" secondAttribute="height" multiplier="16:9" id="ODG-YY-G9j"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dla-eu-v1T">
-                                                            <rect key="frame" x="8" y="153" width="329" height="43"/>
+                                                            <rect key="frame" x="8" y="143" width="329" height="43"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0JK-Ev-LWa" userLabel="titleLabel">
                                                                     <rect key="frame" x="0.0" y="0.0" width="33.5" height="20.5"/>
@@ -52,19 +53,18 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alN-Ke-3L4" userLabel="categoryLabel">
                                                                     <rect key="frame" x="0.0" y="28.5" width="52" height="14.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" name="DetailTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="Dla-eu-v1T" firstAttribute="leading" secondItem="Mfi-QM-MYw" secondAttribute="leading" constant="8" id="8du-DJ-jDw"/>
                                                         <constraint firstAttribute="trailing" secondItem="Dla-eu-v1T" secondAttribute="trailing" constant="8" id="B5t-n0-rnF"/>
                                                         <constraint firstAttribute="trailing" secondItem="Njv-tl-EXS" secondAttribute="trailing" constant="8" id="UdI-St-zNc"/>
                                                         <constraint firstItem="Njv-tl-EXS" firstAttribute="centerY" secondItem="Mfi-QM-MYw" secondAttribute="centerY" id="b7w-ln-gfF"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Dla-eu-v1T" secondAttribute="bottom" constant="5" id="gfH-qL-beT"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Dla-eu-v1T" secondAttribute="bottom" constant="15" id="gfH-qL-beT"/>
                                                         <constraint firstItem="Njv-tl-EXS" firstAttribute="leading" secondItem="Mfi-QM-MYw" secondAttribute="leading" constant="8" id="oFC-N1-TS7"/>
                                                         <constraint firstItem="Njv-tl-EXS" firstAttribute="centerX" secondItem="Mfi-QM-MYw" secondAttribute="centerX" id="rTo-XI-r8b"/>
                                                         <constraint firstItem="Njv-tl-EXS" firstAttribute="top" secondItem="Mfi-QM-MYw" secondAttribute="top" constant="8" id="tms-Za-kb9"/>
@@ -455,6 +455,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="MainColor"/>
                         <color key="tintColor" name="TintColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="MainTextColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -469,6 +472,12 @@
     <resources>
         <image name="addPhotoPlaceholder" width="290" height="290"/>
         <image name="tabBarGoalListPlaceholder" width="25" height="25"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.8784313725490196" green="0.81568627450980391" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DetailTextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="MainColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

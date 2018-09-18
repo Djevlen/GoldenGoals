@@ -36,7 +36,7 @@ class goalCell: UITableViewCell {
         if goal.golden{
             cardView.backgroundColor = Theme.gold!
         }else{
-            cardView.backgroundColor = Theme.mainColor!
+            cardView.backgroundColor = Theme.tintColor!
         }
         
         cardView.layer.cornerRadius = 10
