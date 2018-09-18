@@ -119,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="-1892" y="1549.4752623688157"/>
         </scene>
-        <!--GoldenGoal-->
+        <!--GoalView-->
         <scene sceneID="QM7-lK-F3b">
             <objects>
-                <viewControllerPlaceholder storyboardName="GoldenGoal" referencedIdentifier="GoldenGoal" id="fhR-qF-k02" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="GoalView" referencedIdentifier="GoalView" id="fhR-qF-k02" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyP-AJ-7uR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1893" y="2046"/>
@@ -369,7 +369,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="goldenGoalSwitch" destination="DIl-df-EFB" id="Ija-SC-lQu"/>
+                        <outlet property="GoalViewSwitch" destination="DIl-df-EFB" id="Ija-SC-lQu"/>
                         <outlet property="motivationImage" destination="xpa-lP-tlN" id="lY9-JO-goq"/>
                         <outlet property="motivationalText" destination="o62-bN-OXX" id="31f-qI-nXh"/>
                         <segue destination="A6q-tI-uWf" kind="presentation" identifier="segueToMotivationalTextView" modalTransitionStyle="coverVertical" id="Y1i-Eh-E1I"/>

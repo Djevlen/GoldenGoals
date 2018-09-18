@@ -17,14 +17,14 @@
 		E938163021020F69009C3398 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938162F21020F69009C3398 /* Theme.swift */; };
 		E93816322102109E009C3398 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E93816312102109E009C3398 /* Colors.xcassets */; };
 		E94163BF211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94163BE211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift */; };
-		E95379222037B59B00864212 /* GoldenGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95379212037B59B00864212 /* GoldenGoal.swift */; };
+		E95379222037B59B00864212 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95379212037B59B00864212 /* GoalView.swift */; };
 		E958DFDF20D2AB7E006C6CF4 /* HallOfFameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958DFDE20D2AB7E006C6CF4 /* HallOfFameController.swift */; };
 		E96B192A20EE2C7700772966 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B192920EE2C7700772966 /* Goal.swift */; };
 		E96B192C20EE2C8300772966 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B192B20EE2C8300772966 /* Category.swift */; };
 		E96B192E20EE2C9A00772966 /* ProgressNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B192D20EE2C9A00772966 /* ProgressNotes.swift */; };
 		E977BCEF210758D2000009C9 /* TabBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E977BCEE210758D2000009C9 /* TabBarStoryboard.storyboard */; };
 		E977BCF121075967000009C9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E977BCF021075967000009C9 /* Settings.storyboard */; };
-		E977BCF721075A4E000009C9 /* GoldenGoal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E977BCF621075A4E000009C9 /* GoldenGoal.storyboard */; };
+		E977BCF721075A4E000009C9 /* GoalView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E977BCF621075A4E000009C9 /* GoalView.storyboard */; };
 		E977BCF921075AF3000009C9 /* GoalList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E977BCF821075AF3000009C9 /* GoalList.storyboard */; };
 		E99F07CD2036458E00FA85D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F07CC2036458E00FA85D8 /* AppDelegate.swift */; };
 		E99F07D72036458E00FA85D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99F07D62036458E00FA85D8 /* Assets.xcassets */; };
@@ -70,14 +70,14 @@
 		E938162F21020F69009C3398 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E93816312102109E009C3398 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E94163BE211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalDateAndOptionsViewController.swift; path = "GoldenGoals/Golden Goal/GoalDateAndOptionsViewController.swift"; sourceTree = SOURCE_ROOT; };
-		E95379212037B59B00864212 /* GoldenGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldenGoal.swift; sourceTree = "<group>"; };
+		E95379212037B59B00864212 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		E958DFDE20D2AB7E006C6CF4 /* HallOfFameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallOfFameController.swift; sourceTree = "<group>"; };
 		E96B192920EE2C7700772966 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		E96B192B20EE2C8300772966 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E96B192D20EE2C9A00772966 /* ProgressNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressNotes.swift; sourceTree = "<group>"; };
 		E977BCEE210758D2000009C9 /* TabBarStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarStoryboard.storyboard; sourceTree = "<group>"; };
 		E977BCF021075967000009C9 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		E977BCF621075A4E000009C9 /* GoldenGoal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoldenGoal.storyboard; sourceTree = "<group>"; };
+		E977BCF621075A4E000009C9 /* GoalView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoalView.storyboard; sourceTree = "<group>"; };
 		E977BCF821075AF3000009C9 /* GoalList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoalList.storyboard; sourceTree = "<group>"; };
 		E99F07C92036458E00FA85D8 /* GoldenGoals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldenGoals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99F07CC2036458E00FA85D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 			children = (
 				E977BCEE210758D2000009C9 /* TabBarStoryboard.storyboard */,
 				E977BCF821075AF3000009C9 /* GoalList.storyboard */,
-				E977BCF621075A4E000009C9 /* GoldenGoal.storyboard */,
+				E977BCF621075A4E000009C9 /* GoalView.storyboard */,
 				E9DE665A211505B8009F175C /* HallOf.storyboard */,
 				E977BCF021075967000009C9 /* Settings.storyboard */,
 			);
@@ -144,7 +144,7 @@
 				E94163BE211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift */,
 				E9DE666E211A1A2A009F175C /* GoalDateViewController.swift */,
 				E9DE66732124994C009F175C /* GoalOptionsViewController.swift */,
-				E95379212037B59B00864212 /* GoldenGoal.swift */,
+				E95379212037B59B00864212 /* GoalView.swift */,
 				E9EAEA87214C3AF7004FE578 /* ComposeProgressViewController.swift */,
 			);
 			path = "Golden Goal";
@@ -381,7 +381,7 @@
 				E92411D42037B828006616CF /* LaunchScreen.storyboard in Resources */,
 				E977BCF921075AF3000009C9 /* GoalList.storyboard in Resources */,
 				E977BCF121075967000009C9 /* Settings.storyboard in Resources */,
-				E977BCF721075A4E000009C9 /* GoldenGoal.storyboard in Resources */,
+				E977BCF721075A4E000009C9 /* GoalView.storyboard in Resources */,
 				E9DE667621249D92009F175C /* GoalViewAssets.xcassets in Resources */,
 				E99F07D72036458E00FA85D8 /* Assets.xcassets in Resources */,
 				E93816322102109E009C3398 /* Colors.xcassets in Resources */,
@@ -425,7 +425,7 @@
 				E91B8D8020DED0F100649852 /* categoryCell.swift in Sources */,
 				E9E90BF52039C23A0087C123 /* goalCell.swift in Sources */,
 				E96B192E20EE2C9A00772966 /* ProgressNotes.swift in Sources */,
-				E95379222037B59B00864212 /* GoldenGoal.swift in Sources */,
+				E95379222037B59B00864212 /* GoalView.swift in Sources */,
 				E9DE666F211A1A2A009F175C /* GoalDateViewController.swift in Sources */,
 				E92AF6E320F61D840025D1ED /* AddGoalMotivationalTextViewController.swift in Sources */,
 				E99F07CD2036458E00FA85D8 /* AppDelegate.swift in Sources */,

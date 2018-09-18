@@ -57,7 +57,7 @@ class GoalListController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "toGoalView"){
-            let goalView = segue.destination as! GoldenGoal
+            let goalView = segue.destination as! GoalView
             let selectedGoal = self.goalListTableView.indexPathForSelectedRow
             goalView.showGoal = goals[selectedGoal!.row]
 //            NotificationCenter.default.post(name: goalNotificationName, object: selectedGoal)

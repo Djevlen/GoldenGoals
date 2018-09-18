@@ -14,7 +14,7 @@ import CoreData
 let goalNotificationKey = "com.appbryggeriet.gold"
 
 
-class GoldenGoal: UIViewController {
+class GoalView: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
@@ -120,7 +120,7 @@ class GoldenGoal: UIViewController {
     
 }
 
-extension GoldenGoal: UIScrollViewDelegate{
+extension GoalView: UIScrollViewDelegate{
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
     }
