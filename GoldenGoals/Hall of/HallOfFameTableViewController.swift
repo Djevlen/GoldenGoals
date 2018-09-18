@@ -21,6 +21,7 @@ class HallOfFameTableViewController: UITableViewController {
         hallOfCollectionView.dataSource = self
         hallOfCollectionView.delegate = self
         let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "goals.@count > 0")
         do {
             let categories = try CoreDataService.context.fetch(fetchRequest)
             allCategories = categories
@@ -57,23 +58,6 @@ class HallOfFameTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        print("LOL??")
-//        let header = UIView()
-//        header.backgroundColor = Theme.mainColor!
-//        header.tintColor = Theme.tintColor!
-//        return header
-//    }
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
         header.tintColor = Theme.mainColor!
