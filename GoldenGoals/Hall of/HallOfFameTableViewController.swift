@@ -11,8 +11,10 @@ import CoreData
 
 class HallOfFameTableViewController: UITableViewController {
     
+    @IBOutlet var hallOfTableView: UITableView!
     @IBOutlet weak var hallOfCollectionView: UICollectionView!
     var allCategories = [Category]()
+    
 
 
     override func viewDidLoad() {
@@ -20,6 +22,8 @@ class HallOfFameTableViewController: UITableViewController {
         
         hallOfCollectionView.dataSource = self
         hallOfCollectionView.delegate = self
+
+        
         let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "goals.@count > 0")
         do {
@@ -49,6 +53,8 @@ class HallOfFameTableViewController: UITableViewController {
         } catch  {
             print("GoalListController fetchRequest in viewDidLoad failed")
         }
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -63,8 +69,13 @@ class HallOfFameTableViewController: UITableViewController {
         header.tintColor = Theme.mainColor!
         header.textLabel?.textColor = Theme.textColor!
     }
+    
+    #warning ("TODO: CREATE TABLE VIEW TO SHOW GOALS WITHIN A TABLE VIEW")
+
 
 }
+
+// MARK: EXTENSION UITableView cell in row
 
 // MARK: EXTENSION UICollectionView delegate functions
 extension HallOfFameTableViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{

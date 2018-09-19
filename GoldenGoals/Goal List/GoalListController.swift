@@ -74,7 +74,9 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
         if goals.count > 0{
             goalListTableView.backgroundView = nil
         }else{
-            goalListTableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "goalPlaceholder"))
+            var backgroundImage = UIImageView(image: #imageLiteral(resourceName: "goalPlaceholder"))
+            backgroundImage.contentMode = .scaleAspectFill
+            goalListTableView.backgroundView = backgroundImage
             goalListTableView.separatorStyle = .none
         }
         return goals.count
@@ -157,7 +159,7 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
                 textfield.text = "hallOfFame: \(self.goals[indexPath.row].hallOfFame!)"
             })
             alert.addTextField(configurationHandler: { (textfield) in
-                textfield.text = "photo: \(String(describing: self.goals[indexPath.row].photo))"
+                textfield.text = "re: \(String(describing: self.goals[indexPath.row].photo))"
                 
             })
             let action =  UIAlertAction(title: "OK!!", style: .default) { (_) in
