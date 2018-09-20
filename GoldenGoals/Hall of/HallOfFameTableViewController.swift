@@ -15,18 +15,16 @@ class HallOfFameTableViewController: UITableViewController {
     @IBOutlet weak var hallOfCollectionView: UICollectionView!
     var allCategories = [Category]()
     var selectedCategory: String = " - ALL"
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        hallOfCollectionView.dataSource = self
-        hallOfCollectionView.delegate = self
-        var hallOfString = "Fame" // this should be whichever is set by default
-
+    var hallOfString = "Fame"// this should be whichever is set by default in setting UserDefaults
+    @IBOutlet weak var fameOrShame: UISegmentedControl!
+    
+    #warning ("CHANGE THIS TO NSFetchedResultsController")
+    fileprivate func fetchCategories() {
         let categoryFetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
         categoryFetchRequest.predicate = NSPredicate(format: "goals.@count > 0")
         categoryFetchRequest.predicate = NSPredicate(format: "ANY goals.hallOf like %@",hallOfString)
+        let sort = NSSortDescriptor(key: "title", ascending: true)
+        categoryFetchRequest.sortDescriptors = [sort]
         do {
             let categories = try CoreDataService.context.fetch(categoryFetchRequest)
             allCategories = categories
@@ -47,6 +45,15 @@ class HallOfFameTableViewController: UITableViewController {
         } catch  {
             print("GoalListController fetchRequest in viewDidLoad failed")
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        hallOfCollectionView.dataSource = self
+        hallOfCollectionView.delegate = self
+
+        fetchCategories()
 
         // Do any additional setup after loading the view.
     }
@@ -56,6 +63,26 @@ class HallOfFameTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func changedHall(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            print("This is the hall of FAME BABY")
+            hallOfString = "Fame"
+            fetchCategories()
+            hallOfCollectionView.reloadData()
+            self.tableView.reloadData()
+        case 1:
+            print("HALL OF SHAAAAAAAAME!!")
+            hallOfString = "Shame"
+            fetchCategories()
+            hallOfCollectionView.reloadData()
+            self.tableView.reloadData()
+        default:
+            break
+        }
+    }
+    
+    //MARK: Tableview functions
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
         header.tintColor = Theme.mainColor!
@@ -78,8 +105,6 @@ class HallOfFameTableViewController: UITableViewController {
     }
 
 }
-
-// MARK: EXTENSION UITableView cell in row
 
 // MARK: EXTENSION UICollectionView delegate functions
 extension HallOfFameTableViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{

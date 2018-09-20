@@ -36,6 +36,9 @@
                                                         <segment title="Hall of Fame"/>
                                                         <segment title="Hall of Shame"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="changedHall:" destination="bfY-n4-E7l" eventType="valueChanged" id="xXf-qZ-yGT"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -176,6 +179,7 @@
                     <tabBarItem key="tabBarItem" title="Hall of Fame" image="tabBarHallOfPlaceholder" id="vQk-wA-5oN"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="fameOrShame" destination="Dl6-eB-cNs" id="tbG-7p-bZd"/>
                         <outlet property="hallOfCollectionView" destination="UWY-w1-2fi" id="yh8-Tv-7br"/>
                         <outlet property="hallOfTableView" destination="tNB-2t-zoy" id="uw8-nm-J7q"/>
                     </connections>

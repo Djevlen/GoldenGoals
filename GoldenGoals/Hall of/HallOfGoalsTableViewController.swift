@@ -29,6 +29,8 @@ class HallOfGoalsTableViewController: UITableViewController {
         let goalFetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
         goalFetchRequest.predicate = NSPredicate(format: "category != nil")
         goalFetchRequest.predicate = NSPredicate(format: "removed == nil")
+        let sort = NSSortDescriptor(key: "dateAdded", ascending: true)
+        goalFetchRequest.sortDescriptors = [sort]
         do {
             let goals = try CoreDataService.context.fetch(goalFetchRequest)
             self.goals = goals
