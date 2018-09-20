@@ -66,13 +66,13 @@ class HallOfFameTableViewController: UITableViewController {
         var returnString = ""
         switch section {
         case 0:
-            returnString = ""
+            break
         case 1:
             returnString = "Categories"
         case 2:
             returnString = "Goals\(self.selectedCategory)"
         default:
-            return ""
+            break
         }
         return returnString
     }
