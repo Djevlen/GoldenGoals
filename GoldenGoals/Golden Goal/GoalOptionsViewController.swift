@@ -40,13 +40,13 @@ class GoalOptionsViewController: UIViewController {
         alert.addAction(UIAlertAction(title: NSLocalizedString("YES - I failed!", comment: "Hall of Shame"), style: .default, handler: {_ in
             print("Yes. I failed it!")
             self.goal.dateCompleted = Date()
-            self.goal.hallOfFame = "S"
+            self.goal.hallOf = "Shame"
             CoreDataService.saveContext()
         }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("YES - I'VE COMPLETED IT!", comment: "Hall of Fame"), style: .default, handler: { (_) in
             print("Yes, I've done it!")
             self.goal.dateCompleted = Date()
-            self.goal.hallOfFame = "F"
+            self.goal.hallOf = "Fame"
             CoreDataService.saveContext()
         }))
         self.present(alert, animated: true, completion: nil)

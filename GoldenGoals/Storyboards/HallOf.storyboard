@@ -138,7 +138,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Goals" id="wHp-ee-PCJ">
+                            <tableViewSection headerTitle="Goals - ALL" id="wHp-ee-PCJ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="179" id="dsM-cR-JmC">
                                         <rect key="frame" x="0.0" y="419" width="375" height="179"/>

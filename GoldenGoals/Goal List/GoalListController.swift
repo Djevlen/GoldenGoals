@@ -156,7 +156,7 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
                 textfield.text = "deletedGoal: \(self.goals[indexPath.row].removed)"
             })
             alert.addTextField(configurationHandler: { (textfield) in
-                textfield.text = "hallOfFame: \(self.goals[indexPath.row].hallOfFame!)"
+                textfield.text = "hallOf: \(self.goals[indexPath.row].hallOf)"
             })
             alert.addTextField(configurationHandler: { (textfield) in
                 textfield.text = "re: \(String(describing: self.goals[indexPath.row].photo))"

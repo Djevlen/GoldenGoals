@@ -39,7 +39,7 @@ class AddGoalMotivationViewController: UIViewController {
         }
         goal.motivationalText = motivation
         goal.golden = goldenGoalSwitch.isOn
-        goal.hallOfFame = "None"
+        goal.hallOf = nil
         if let data = motivationImage.image!.pngData(){
             goal.photo = data as Data?
         }else{

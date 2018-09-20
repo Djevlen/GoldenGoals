@@ -14,7 +14,7 @@ class HallOfFameTableViewController: UITableViewController {
     @IBOutlet var hallOfTableView: UITableView!
     @IBOutlet weak var hallOfCollectionView: UICollectionView!
     var allCategories = [Category]()
-    
+    var selectedCategory: String = " - ALL"
 
 
     override func viewDidLoad() {
@@ -22,39 +22,31 @@ class HallOfFameTableViewController: UITableViewController {
         
         hallOfCollectionView.dataSource = self
         hallOfCollectionView.delegate = self
+        var hallOfString = "Fame" // this should be whichever is set by default
 
-        
-        let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "goals.@count > 0")
+        let categoryFetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
+        categoryFetchRequest.predicate = NSPredicate(format: "goals.@count > 0")
+        categoryFetchRequest.predicate = NSPredicate(format: "ANY goals.hallOf like %@",hallOfString)
         do {
-            let categories = try CoreDataService.context.fetch(fetchRequest)
+            let categories = try CoreDataService.context.fetch(categoryFetchRequest)
             allCategories = categories
             if allCategories.count == 0{
                 print("allCategories.count ER 0! LAG NYE!!")
             }
-            print("I hall of fame. Antall Kategorier i databasen: \(categories.count)")
             for (index,category) in categories.enumerated() {
-                print("DETTE ER EN KATEGORI: \(category.title!) på plass: \(index)")
                 if let categoryTitle = category.title{
-                    allCategories[index].title = category.title
-                    print("Kategoritittel: \(categoryTitle)")
-                }else{
-                    print("Fant ingen tittel")
+                    allCategories[index].title = categoryTitle
                 }
                 if let categoryImageData = category.image as Data?{
-                    let categoryImage = UIImage(data: categoryImageData)
                     allCategories[index].image = categoryImageData as Data
-                    print("Bildet: \(categoryImage!)")
                 }else{
                     allCategories[index].image = #imageLiteral(resourceName: "categoryMoney").pngData() as Data?
                     print("Har ikke noe bilde for kategorien : (")
-                }                
+                }
             }
         } catch  {
             print("GoalListController fetchRequest in viewDidLoad failed")
         }
-        
-        
 
         // Do any additional setup after loading the view.
     }
@@ -70,8 +62,20 @@ class HallOfFameTableViewController: UITableViewController {
         header.textLabel?.textColor = Theme.textColor!
     }
     
-    #warning ("TODO: CREATE TABLE VIEW TO SHOW GOALS WITHIN A TABLE VIEW")
-
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var returnString = ""
+        switch section {
+        case 0:
+            returnString = ""
+        case 1:
+            returnString = "Categories"
+        case 2:
+            returnString = "Goals\(self.selectedCategory)"
+        default:
+            return ""
+        }
+        return returnString
+    }
 
 }
 
@@ -81,6 +85,14 @@ class HallOfFameTableViewController: UITableViewController {
 extension HallOfFameTableViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //update the tableview below
+        //updates the header of the goals showing list
+        if selectedCategory == " - \(allCategories[indexPath.row].title!)"{
+            selectedCategory = " - ALL"
+        }else{
+            self.selectedCategory = " - \(allCategories[indexPath.row].title!)"
+        }
+       hallOfTableView.reloadSections([2], with: UITableView.RowAnimation.middle)
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
