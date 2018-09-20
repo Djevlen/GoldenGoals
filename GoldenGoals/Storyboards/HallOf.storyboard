@@ -181,6 +181,7 @@
                     <connections>
                         <outlet property="fameOrShame" destination="Dl6-eB-cNs" id="tbG-7p-bZd"/>
                         <outlet property="hallOfCollectionView" destination="UWY-w1-2fi" id="yh8-Tv-7br"/>
+                        <outlet property="hallOfGoalsContainer" destination="6pU-At-o7m" id="osL-Ue-TfX"/>
                         <outlet property="hallOfTableView" destination="tNB-2t-zoy" id="uw8-nm-J7q"/>
                     </connections>
                 </tableViewController>

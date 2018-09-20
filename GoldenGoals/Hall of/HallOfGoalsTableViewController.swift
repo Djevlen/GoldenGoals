@@ -10,36 +10,47 @@ import UIKit
 import CoreData
 
 class HallOfGoalsTableViewController: UITableViewController {
-    var goals: [Goal]!
+    var category = ""
+    
+    fileprivate lazy var goalFetchedResultsController: NSFetchedResultsController<Goal> = {
+        let goalFetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
+        
+        let sort = NSSortDescriptor(key: "dateAdded", ascending: true)
+        goalFetchRequest.sortDescriptors = [sort]
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: goalFetchRequest, managedObjectContext: CoreDataService.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
+        return fetchedResultsController
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //fetching goals based on categories
+//        let goalFetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
+//        goalFetchRequest.predicate = NSPredicate(format: "category != nil")
+//        goalFetchRequest.predicate = NSPredicate(format: "removed == nil")
+//        let sort = NSSortDescriptor(key: "dateAdded", ascending: true)
+//        goalFetchRequest.sortDescriptors = [sort]
+//        do {
+//            let goals = try CoreDataService.context.fetch(goalFetchRequest)
+//            self.goals = goals
+//            print("\(self.goals.count) CONTAINERVIEW GOALS IN DB")
+//            //            hallOfGoalsTableView.reloadData()
+//        } catch  {
+//            print("HallOfFameTableViewController fetchRequest in viewDidLoad failed")
+//        }
+        do {
+            try self.goalFetchedResultsController.performFetch()
+        } catch  {
+            let fetchError = error as NSError
+            print("error fetching in hallOfGoalsTableViewController")
+        }
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //fetching goals based on categories
-        let goalFetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
-        goalFetchRequest.predicate = NSPredicate(format: "category != nil")
-        goalFetchRequest.predicate = NSPredicate(format: "removed == nil")
-        let sort = NSSortDescriptor(key: "dateAdded", ascending: true)
-        goalFetchRequest.sortDescriptors = [sort]
-        do {
-            let goals = try CoreDataService.context.fetch(goalFetchRequest)
-            self.goals = goals
-            print("\(self.goals.count) CONTAINERVIEW GOALS IN DB")
-            //            hallOfGoalsTableView.reloadData()
-        } catch  {
-            print("HallOfFameTableViewController fetchRequest in viewDidLoad failed")
-        }
-        self.tableView.reloadData()
+        
     }
 
     // MARK: - Table view data source
@@ -49,24 +60,52 @@ class HallOfGoalsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let goals = self.goalFetchedResultsController.fetchedObjects else {
+            print("guard let numberofworsinsection error??? or just zero")
+            self.tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "goalPlaceholder"))
+            self.tableView.separatorStyle = .none
+            return 0
+        }
         print("NUMBER OF GOALS IN THE DATABASE: \(goals.count)")
         if goals.count > 0{
             self.tableView.backgroundView = nil
-        }else{
-            self.tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "goalPlaceholder"))
-            self.tableView.separatorStyle = .none
         }
         return goals.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.reloadData()
+        print("reloading data??")
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath)
-        cell.textLabel?.text = goals[indexPath.row].title!
-        cell.imageView?.image = UIImage(data: goals[indexPath.row].photo!)
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath) as? UITableViewCell else { fatalError("indexPath error") }
+        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath)
+        let goal = self.goalFetchedResultsController.object(at: indexPath)
+        cell.textLabel?.text = goal.title!
+        cell.imageView?.image = UIImage(data: goal.photo!)
         return cell
     }
+    
+    #warning ("hacky, rewrite with working stuff DOESNT WORKDOESNT WORK")
+    func setCategoryPredicate(with category: Category){
+        print("SETTING CATEGORY PREDICATE!!!!")
+        NSFetchedResultsController<NSFetchRequestResult>.deleteCache(withName: nil)
+        self.goalFetchedResultsController.fetchRequest.predicate = NSPredicate(format: "category = %@", category)
+//        self.goalFetchedResultsController.fetchRequest.predicate = NSPredicate(format: "removed == true")
+        do {
+            print("trying to update table after setting new predicate")
+            try self.goalFetchedResultsController.performFetch()
+        } catch  {
+            let fetchError = error as NSError
+            print("error fetching in hallOfGoalsTableViewController")
+        }
+        self.tableView.reloadData()
+
+    }
+    
  
 
     /*
@@ -114,4 +153,11 @@ class HallOfGoalsTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension HallOfGoalsTableViewController: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        print("RELOAAAAAAADING!")
+        self.tableView.reloadData()
+    }
 }

@@ -17,6 +17,7 @@ class HallOfFameTableViewController: UITableViewController {
     var selectedCategory: String = " - ALL"
     var hallOfString = "Fame"// this should be whichever is set by default in setting UserDefaults
     @IBOutlet weak var fameOrShame: UISegmentedControl!
+    @IBOutlet weak var hallOfGoalsContainer: UIView!
     
     #warning ("CHANGE THIS TO NSFetchedResultsController")
     fileprivate func fetchCategories() {
@@ -117,7 +118,13 @@ extension HallOfFameTableViewController: UICollectionViewDataSource, UICollectio
         }else{
             self.selectedCategory = " - \(allCategories[indexPath.row].title!)"
         }
-       hallOfTableView.reloadSections([2], with: UITableView.RowAnimation.middle)
+        
+        #warning ("This is HORRIBLY hacky, get it away!")
+        let containerView = HallOfGoalsTableViewController()
+        containerView.setCategoryPredicate(with: allCategories[indexPath.row])
+        
+//        hallOfTableView.reloadSections([2], with: UITableView.RowAnimation.middle)
+
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
