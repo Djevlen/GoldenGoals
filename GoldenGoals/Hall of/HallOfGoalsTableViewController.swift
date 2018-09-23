@@ -81,7 +81,6 @@ class HallOfGoalsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath) as? UITableViewCell else { fatalError("indexPath error") }
-        
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath)
         let goal = self.goalFetchedResultsController.object(at: indexPath)
         cell.textLabel?.text = goal.title!
@@ -98,11 +97,13 @@ class HallOfGoalsTableViewController: UITableViewController {
         do {
             print("trying to update table after setting new predicate")
             try self.goalFetchedResultsController.performFetch()
+            self.tableView.reloadData()
+            print("reloadet data??")
+
         } catch  {
             let fetchError = error as NSError
             print("error fetching in hallOfGoalsTableViewController")
         }
-        self.tableView.reloadData()
 
     }
     
