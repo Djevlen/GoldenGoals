@@ -8,6 +8,7 @@
 
 import UIKit
 import StoreKit
+import MessageUI
 
 class AboutGoldenGoalsTableViewController: UITableViewController {
 
@@ -17,9 +18,7 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
     
     let defaults = UserDefaults.standard
     #warning("the keys associated with userdefaults should be in a CONSTANTS FILE")
-    
-    @IBOutlet weak var reviewCell: UITableViewCell!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,10 +57,25 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //about section grants users the ability to write a review or send an email with feedback
         if indexPath.section == 3{
-            print("tredje section")
-            if indexPath.row == 0{
+            switch indexPath.row{
+            case 0:
                 SKStoreReviewController.requestReview()
+            case 1:
+                if MFMailComposeViewController.canSendMail(){
+                    let sendMail = MFMailComposeViewController()
+                    sendMail.mailComposeDelegate = self
+                    sendMail.setToRecipients(["goldengoals@appbryggeriet.com"])
+                    sendMail.setSubject("GoldenGoals Feedback")
+                    sendMail.setMessageBody("<h1>GoldenGoals Feedback!</h1>", isHTML: true)
+                    present(sendMail, animated: true)
+                }
+            default:
+                print("Something went wrong in section 3")
+
+            }
+            if indexPath.row == 0{
             }
         }
     }
@@ -121,3 +135,15 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
     */
 
 }
+
+//
+extension AboutGoldenGoalsTableViewController: MFMailComposeViewControllerDelegate{
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        print("DISMISS CONTROLLER, MAN!")
+        controller.dismiss(animated: true
+            , completion: nil)
+    }
+    
+    
+}
+
