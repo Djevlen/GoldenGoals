@@ -82,6 +82,7 @@ extension GoalListController: UITableViewDataSource, UITableViewDelegate{
         return goals.count
     }
     
+    #warning("Consider turning this into a view that looks like the show view in the tv app, by using CollectionView")
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as! goalCell
         cell.setupCell(for: goals[indexPath.row])

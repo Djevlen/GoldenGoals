@@ -17,6 +17,7 @@
 		E9375076215287A500D8D638 /* HallOfGoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9375075215287A500D8D638 /* HallOfGoalsTableViewController.swift */; };
 		E938163021020F69009C3398 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938162F21020F69009C3398 /* Theme.swift */; };
 		E93816322102109E009C3398 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E93816312102109E009C3398 /* Colors.xcassets */; };
+		E9412E78215A75E1005E7ABB /* AboutGoldenGoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9412E77215A75E1005E7ABB /* AboutGoldenGoalsTableViewController.swift */; };
 		E94163BF211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94163BE211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift */; };
 		E95379222037B59B00864212 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95379212037B59B00864212 /* GoalView.swift */; };
 		E958DFDF20D2AB7E006C6CF4 /* HallOfFameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958DFDE20D2AB7E006C6CF4 /* HallOfFameTableViewController.swift */; };
@@ -71,6 +72,7 @@
 		E9375075215287A500D8D638 /* HallOfGoalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallOfGoalsTableViewController.swift; sourceTree = "<group>"; };
 		E938162F21020F69009C3398 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E93816312102109E009C3398 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		E9412E77215A75E1005E7ABB /* AboutGoldenGoalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutGoldenGoalsTableViewController.swift; sourceTree = "<group>"; };
 		E94163BE211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalDateAndOptionsViewController.swift; path = "GoldenGoals/Golden Goal/GoalDateAndOptionsViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E95379212037B59B00864212 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		E958DFDE20D2AB7E006C6CF4 /* HallOfFameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallOfFameTableViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,14 @@
 			path = "Golden Goal";
 			sourceTree = "<group>";
 		};
+		E9412E76215A7597005E7ABB /* About */ = {
+			isa = PBXGroup;
+			children = (
+				E9412E77215A75E1005E7ABB /* AboutGoldenGoalsTableViewController.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
 		E953791A2037A98300864212 /* Core Data Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +211,7 @@
 				E9E90BF32039B8760087C123 /* Goal List */,
 				E92411D52037B861006616CF /* Golden Goal */,
 				E958DFDD20D2AB47006C6CF4 /* Hall of */,
+				E9412E76215A7597005E7ABB /* About */,
 				E91B8D8120E0405900649852 /* Storyboards */,
 				E9E90BEE2038F68E0087C123 /* Support */,
 				E99F07DB2036458E00FA85D8 /* Info.plist */,
@@ -435,6 +446,7 @@
 				E99F07CD2036458E00FA85D8 /* AppDelegate.swift in Sources */,
 				E96B192C20EE2C8300772966 /* Category.swift in Sources */,
 				E94163BF211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift in Sources */,
+				E9412E78215A75E1005E7ABB /* AboutGoldenGoalsTableViewController.swift in Sources */,
 				E9DE66742124994C009F175C /* GoalOptionsViewController.swift in Sources */,
 				E938163021020F69009C3398 /* Theme.swift in Sources */,
 			);

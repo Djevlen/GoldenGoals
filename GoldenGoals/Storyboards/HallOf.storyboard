@@ -230,7 +230,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tabBarHallOfPlaceholder" width="25" height="25"/>
+        <image name="tabBarHallOfPlaceholder" width="37.5" height="37.5"/>
         <namedColor name="BackgroundColor">
             <color red="0.8784313725490196" green="0.81568627450980391" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
