@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class AboutGoldenGoalsTableViewController: UITableViewController {
 
@@ -16,6 +17,8 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
     
     let defaults = UserDefaults.standard
     #warning("the keys associated with userdefaults should be in a CONSTANTS FILE")
+    
+    @IBOutlet weak var reviewCell: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +57,14 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
     }
     
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 3{
+            print("tredje section")
+            if indexPath.row == 0{
+                SKStoreReviewController.requestReview()
+            }
+        }
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
