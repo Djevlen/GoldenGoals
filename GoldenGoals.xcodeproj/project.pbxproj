@@ -20,6 +20,7 @@
 		E9412E78215A75E1005E7ABB /* AboutGoldenGoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9412E77215A75E1005E7ABB /* AboutGoldenGoalsTableViewController.swift */; };
 		E9412E7A215AA34E005E7ABB /* Settings.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9412E79215AA34E005E7ABB /* Settings.xcassets */; };
 		E9412E7C215AB1D1005E7ABB /* SpecialThanksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9412E7B215AB1D1005E7ABB /* SpecialThanksTableViewController.swift */; };
+		E9412E7E215BFF10005E7ABB /* CreditsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9412E7D215BFF10005E7ABB /* CreditsCollectionViewController.swift */; };
 		E94163BF211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94163BE211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift */; };
 		E95379222037B59B00864212 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95379212037B59B00864212 /* GoalView.swift */; };
 		E958DFDF20D2AB7E006C6CF4 /* HallOfFameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958DFDE20D2AB7E006C6CF4 /* HallOfFameTableViewController.swift */; };
@@ -77,6 +78,7 @@
 		E9412E77215A75E1005E7ABB /* AboutGoldenGoalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutGoldenGoalsTableViewController.swift; sourceTree = "<group>"; };
 		E9412E79215AA34E005E7ABB /* Settings.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Settings.xcassets; sourceTree = "<group>"; };
 		E9412E7B215AB1D1005E7ABB /* SpecialThanksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialThanksTableViewController.swift; sourceTree = "<group>"; };
+		E9412E7D215BFF10005E7ABB /* CreditsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCollectionViewController.swift; sourceTree = "<group>"; };
 		E94163BE211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalDateAndOptionsViewController.swift; path = "GoldenGoals/Golden Goal/GoalDateAndOptionsViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E95379212037B59B00864212 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		E958DFDE20D2AB7E006C6CF4 /* HallOfFameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallOfFameTableViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				E9412E77215A75E1005E7ABB /* AboutGoldenGoalsTableViewController.swift */,
 				E9412E7B215AB1D1005E7ABB /* SpecialThanksTableViewController.swift */,
+				E9412E7D215BFF10005E7ABB /* CreditsCollectionViewController.swift */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				E9E90BF52039C23A0087C123 /* goalCell.swift in Sources */,
 				E96B192E20EE2C9A00772966 /* ProgressNotes.swift in Sources */,
 				E95379222037B59B00864212 /* GoalView.swift in Sources */,
+				E9412E7E215BFF10005E7ABB /* CreditsCollectionViewController.swift in Sources */,
 				E9DE666F211A1A2A009F175C /* GoalDateViewController.swift in Sources */,
 				E92AF6E320F61D840025D1ED /* AddGoalMotivationalTextViewController.swift in Sources */,
 				E9375076215287A500D8D638 /* HallOfGoalsTableViewController.swift in Sources */,
