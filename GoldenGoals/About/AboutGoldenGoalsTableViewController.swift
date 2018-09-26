@@ -18,7 +18,7 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
     
     let defaults = UserDefaults.standard
     #warning("the keys associated with userdefaults should be in a CONSTANTS FILE")
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -138,10 +138,24 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
 
 //
 extension AboutGoldenGoalsTableViewController: MFMailComposeViewControllerDelegate{
-    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        print("DISMISS CONTROLLER, MAN!")
-        controller.dismiss(animated: true
-            , completion: nil)
+    func mailComposeViewController(_ controller: MFMailComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch result {
+        case .cancelled:
+            print("CANCELLED SENDING MAIL!")
+            controller.dismiss(animated: true
+                , completion: nil)
+        case .failed:
+            print("FAILED SENDING MAIL")
+            controller.dismiss(animated: true
+                , completion: nil)
+        case .sent:
+            print("MAIL SENT!!")
+            controller.dismiss(animated: true
+                , completion: nil)
+        default:
+            controller.dismiss(animated: true
+                , completion: nil)
+        }
     }
     
     
