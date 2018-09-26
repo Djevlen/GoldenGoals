@@ -25,7 +25,7 @@ class SpecialThanksTableViewController: UITableViewController {
         super.viewDidLoad()
         people.append(bjorn)
         people.append(mats)
-        #warning ("append more people, lars emil? colin emil? mesed?")
+        #warning ("append more people, lars emil? colin emil? mesed? Sean Allen? John Sundell? HackingWithSwift?")
         
         people.append(icons8)//should always be the last one in the list due to footer text
 

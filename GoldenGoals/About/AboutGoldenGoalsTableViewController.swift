@@ -16,6 +16,8 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
     @IBOutlet weak var defaultHallSelector: UISegmentedControl!
     @IBOutlet weak var showGoalStartDateSwitch: UISwitch! //tag 1
     
+    let appversion = "CFBundleShortVersionString"
+    let buildnumber = "CFBundleVersion"
     let defaults = UserDefaults.standard
     #warning("the keys associated with userdefaults should be in a CONSTANTS FILE")
     
@@ -78,6 +80,16 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
             if indexPath.row == 0{
             }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section == 3 {
+            let dictionary = Bundle.main.infoDictionary! //guard this
+            let version = dictionary[appversion] as! String
+            let build = dictionary[buildnumber] as! String
+            return "Version \(version) (\(build)) - Copyright © 2018 Appbryggeriet - 🇳🇴"
+        }
+        return ""
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
