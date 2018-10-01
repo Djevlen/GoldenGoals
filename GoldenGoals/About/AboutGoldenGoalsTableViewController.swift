@@ -84,7 +84,9 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 3 {
-            let dictionary = Bundle.main.infoDictionary! //guard this
+            guard let dictionary = Bundle.main.infoDictionary else {
+                return "Copyright © 2018 Appbryggeriet - 🇳🇴"
+            }
             let version = dictionary[appversion] as! String
             let build = dictionary[buildnumber] as! String
             return "Version \(version) (\(build)) - Copyright © 2018 Appbryggeriet - 🇳🇴"
