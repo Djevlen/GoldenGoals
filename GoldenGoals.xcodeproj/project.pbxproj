@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E901612820D158F2005AA9BD /* GoldenGoal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E901612620D158F2005AA9BD /* GoldenGoal.xcdatamodeld */; };
 		E91B8D8020DED0F100649852 /* categoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B8D7F20DED0F100649852 /* categoryCell.swift */; };
+		E91C77F72162D47C00BCA601 /* CreditsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C77F62162D47C00BCA601 /* CreditsCell.swift */; };
 		E92411D42037B828006616CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92411D32037B828006616CF /* LaunchScreen.storyboard */; };
 		E925843920E8F6E000A2E7B2 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925843820E8F6E000A2E7B2 /* AddGoalViewController.swift */; };
 		E925843B20E900EC00A2E7B2 /* AddGoalCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925843A20E900EC00A2E7B2 /* AddGoalCategoryCell.swift */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		E901612720D158F2005AA9BD /* GoldenGoal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoldenGoal.xcdatamodel; sourceTree = "<group>"; };
 		E91B8D7F20DED0F100649852 /* categoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryCell.swift; sourceTree = "<group>"; };
+		E91C77F62162D47C00BCA601 /* CreditsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCell.swift; sourceTree = "<group>"; };
 		E92411D32037B828006616CF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E925843820E8F6E000A2E7B2 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		E925843A20E900EC00A2E7B2 /* AddGoalCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalCategoryCell.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				E9412E77215A75E1005E7ABB /* AboutGoldenGoalsTableViewController.swift */,
 				E9412E7B215AB1D1005E7ABB /* SpecialThanksTableViewController.swift */,
 				E9412E7D215BFF10005E7ABB /* CreditsCollectionViewController.swift */,
+				E91C77F62162D47C00BCA601 /* CreditsCell.swift */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 			files = (
 				E925843D20E936F300A2E7B2 /* AddGoalMotivationViewController.swift in Sources */,
 				E925843920E8F6E000A2E7B2 /* AddGoalViewController.swift in Sources */,
+				E91C77F72162D47C00BCA601 /* CreditsCell.swift in Sources */,
 				E9DE6671212213D9009F175C /* Date+Extentsion.swift in Sources */,
 				E901612820D158F2005AA9BD /* GoldenGoal.xcdatamodeld in Sources */,
 				E9BCB210204DCC6400E9CF8D /* GoalListController.swift in Sources */,

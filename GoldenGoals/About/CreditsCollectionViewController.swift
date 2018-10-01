@@ -8,20 +8,26 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "CreditsCell"
 
 class CreditsCollectionViewController: UICollectionViewController {
+    var people: [Person] = []
+    let thomas = Person(name: "Hi! I'm Thomas. I've written all the code that's been turned into ones and zeroes and back into the app you're now holding. I'm really grateful you decided to download this app. I hope you do find it useful. Send me a mail below if something isn't working the way it should be. Thanks! ❤️", url: "https://www.twitter.com/thomasajcom", image: UIImage(named: "thanksBjorn")!)
+    let trine = Person(name: "Hi! I'm Trine. I've created all the images used around the app - I do hope you like them! :)", url: "https://www.twitter.com/thomasajcom", image: UIImage(named: "thanksBjorn")!)
 
+    @IBOutlet weak var cellImage: UIImageView!
+    @IBOutlet weak var cellLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        var people: [Person] = []
-        let bjorn = Person(name: "Bjørn Rostad", url: "http://www.bjornrostad.no", image: UIImage(named: "thanksBjorn")!)
+        people.append(thomas)
+        people.append(trine)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -46,12 +52,14 @@ class CreditsCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return people.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CreditsCell
+        cell.creditsImage.image = people[indexPath.row].image
+        cell.creditsLabel.text = people[indexPath.row].name
+
         // Configure the cell
     
         return cell
@@ -87,5 +95,6 @@ class CreditsCollectionViewController: UICollectionViewController {
     
     }
     */
+    
 
 }
