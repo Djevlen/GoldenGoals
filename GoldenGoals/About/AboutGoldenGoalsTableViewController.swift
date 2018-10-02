@@ -53,14 +53,27 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
     }
 
     @IBAction func changedSelectedSegment(_ sender: UISegmentedControl) {
-        print("Changing value for: DEFAULT HALL SELECTOR")
         defaults.set(defaultHallSelector.selectedSegmentIndex, forKey: "SettingsDefaultHall")
     }
     
 
+
+    //MARK: tableview
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //about section grants users the ability to write a review or send an email with feedback
-        if indexPath.section == 3{
+        //section 2 is the THEME section
+        if indexPath.section == 2{
+            switch indexPath.row{
+            case 0:
+                print("Change app icon")
+            case 1:
+                print("change theme")
+            default:
+                print("Something went wrong in section 2")
+            }
+        }
+        //section 3 is the ABOUT section
+        else if indexPath.section == 3{
             switch indexPath.row{
             case 0:
                 print("this is case 0, aka the creditsview")
@@ -80,6 +93,7 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
 
             }
         }
+        tableView.deselectRow(at: indexPath , animated: true)
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
