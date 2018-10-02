@@ -12,16 +12,20 @@ private let reuseIdentifier = "CreditsCell"
 
 class CreditsCollectionViewController: UICollectionViewController {
     var people: [Person] = []
-    let thomas = Person(name: "Hi! I'm Thomas. I've written all the code that's been turned into ones and zeroes and back into the app you're now holding. I'm really grateful you decided to download this app. I hope you do find it useful. Send me a mail below if something isn't working the way it should be. Thanks! ❤️", url: "https://www.twitter.com/thomasajcom", image: UIImage(named: "thanksBjorn")!)
-    let trine = Person(name: "Hi! I'm Trine. I've created all the images used around the app - I do hope you like them! :)", url: "https://www.twitter.com/thomasajcom", image: UIImage(named: "thanksBjorn")!)
-
-    @IBOutlet weak var cellImage: UIImageView!
-    @IBOutlet weak var cellLabel: UILabel!
+    let thomas = Person(name: "Hey! I'm Thomas. I created GoldenGoals and I'm really grateful you decided to download it. Send me an email below if something's wrong! Thanks! ❤️", url: "https://www.twitter.com/thomasajcom", image: UIImage(named: "creditsThomas")!)
+    let trine = Person(name: "Hi! I'm Trine. I've created all the images used around the app - I hope you like them! 😊", url: "http://www.schizohybrid.com", image: UIImage(named: "creditsTrine")!)
+    let mentos = Person(name: "Wooof! I'm Mentos. I can make my eyes sparkle in a way that forces you to feed me. More food, please! Food is life. 😇", url: "https://www.appbryggeriet.com", image: UIImage(named: "creditsMentos")!)
+    let dent = Person(name: "Bark! I'm Dent. Bark! I'm fast! Bark! I'm crazy! Bark! I also destroy all of Mentos' favorite toys on a daily basis! 😘", url: "https://www.appbryggeriet.com", image: UIImage(named: "creditsDent")!)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         people.append(thomas)
         people.append(trine)
+        people.append(mentos)
+        people.append(dent)
+        
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -59,12 +63,9 @@ class CreditsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CreditsCell
         cell.creditsImage.image = people[indexPath.row].image
         cell.creditsLabel.text = people[indexPath.row].name
-
-        // Configure the cell
-    
         return cell
     }
-
+    
     // MARK: UICollectionViewDelegate
 
     /*
@@ -95,6 +96,28 @@ class CreditsCollectionViewController: UICollectionViewController {
     
     }
     */
-    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let thanksURL = URL(string: people[indexPath.row].url) else {return}
+        UIApplication.shared.open(thanksURL)
+    }
 
+}
+
+extension CreditsCollectionViewController: UICollectionViewDelegateFlowLayout{
+    //set the cell size to fit the collectionview
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //access to the entire width minus 1, the one being a golden spacing set in minimumLineSpacingForSectionAt
+        let availableWidth = collectionView.frame.width-1
+        let parentHeight = collectionView.frame.height
+        return CGSize(width: availableWidth, height: parentHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    //with a spacing of one we get a tiny slither of gold between each cell
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
 }

@@ -63,8 +63,10 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
         if indexPath.section == 3{
             switch indexPath.row{
             case 0:
-                SKStoreReviewController.requestReview()
+                print("this is case 0, aka the creditsview")
             case 1:
+                SKStoreReviewController.requestReview()
+            case 2:
                 if MFMailComposeViewController.canSendMail(){
                     let sendMail = MFMailComposeViewController()
                     sendMail.mailComposeDelegate = self
@@ -77,19 +79,17 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
                 print("Something went wrong in section 3")
 
             }
-            if indexPath.row == 0{
-            }
         }
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 3 {
             guard let dictionary = Bundle.main.infoDictionary else {
-                return "Copyright © 2018 Appbryggeriet - 🇳🇴"
+                return "© 2018 Appbryggeriet - 🇳🇴"
             }
             let version = dictionary[appversion] as! String
             let build = dictionary[buildnumber] as! String
-            return "Version \(version) (\(build)) - Copyright © 2018 Appbryggeriet - 🇳🇴"
+            return "Version \(version) (\(build)) - © 2018 Appbryggeriet - 🇳🇴"
         }
         return ""
     }
