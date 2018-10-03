@@ -10,15 +10,6 @@
 	<dict>
 		<key>CFBundleAlternateIcons</key>
 		<dict>
-			<key>Alt3</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>alt3</string>
-				</array>
-				<key>UIPrerenderedIcon</key>
-				<string>NO</string>
-			</dict>
 			<key>alt1</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
@@ -33,6 +24,42 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>alt2</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<string>NO</string>
+			</dict>
+			<key>alt3</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>alt3</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<string>NO</string>
+			</dict>
+			<key>alt4</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>alt4.png</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<string>NO</string>
+			</dict>
+			<key>alt5</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>alt5</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<string>NO</string>
+			</dict>
+			<key>alt6</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>alt6</string>
 				</array>
 				<key>UIPrerenderedIcon</key>
 				<string>NO</string>
@@ -70,7 +97,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.2.0</string>
 	<key>CFBundleVersion</key>
-	<string>33</string>
+	<string>49</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

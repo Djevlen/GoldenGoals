@@ -439,36 +439,22 @@
             </objects>
             <point key="canvasLocation" x="364" y="1550.3748125937032"/>
         </scene>
-        <!--Theme Popup View Controller-->
+        <!--Change App Icon View Controller-->
         <scene sceneID="pbc-Vy-utN">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="j9S-yD-iy1" customClass="ThemePopupViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="j9S-yD-iy1" customClass="ChangeAppIconViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DyP-rf-wEn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdh-go-1FX">
-                                <rect key="frame" x="62.5" y="208.5" width="250" height="250"/>
+                                <rect key="frame" x="27.5" y="183.5" width="320" height="300"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjO-Ah-aDc">
-                                        <rect key="frame" x="8" y="37" width="90" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="alt1.png"/>
-                                        <connections>
-                                            <action selector="selectIcon:" destination="j9S-yD-iy1" eventType="touchUpInside" id="bZ1-W7-DZf"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change App Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVE-dK-kVh">
-                                        <rect key="frame" x="5" y="5" width="240" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" name="MainTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8RH-pW-6j4">
-                                        <rect key="frame" x="0.0" y="214" width="250" height="36"/>
+                                        <rect key="frame" x="0.0" y="264" width="320" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3p0-fr-5Aj">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="36"/>
                                                 <color key="backgroundColor" name="MainColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Cancel">
@@ -479,7 +465,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLO-YR-pzv">
-                                                <rect key="frame" x="125" y="0.0" width="125" height="36"/>
+                                                <rect key="frame" x="160" y="0.0" width="160" height="36"/>
                                                 <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Save"/>
@@ -489,25 +475,56 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hi-YH-ibm">
-                                        <rect key="frame" x="152" y="37" width="90" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="alt2.png"/>
-                                        <connections>
-                                            <action selector="selectIcon:" destination="j9S-yD-iy1" eventType="touchUpInside" id="NXT-pI-QgE"/>
-                                        </connections>
-                                    </button>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gQb-4e-SdW">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="264"/>
+                                        <color key="backgroundColor" name="MainColor"/>
+                                        <color key="tintColor" name="TintColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="214" id="hck-2S-18B"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="z6M-5P-LRp">
+                                            <size key="itemSize" width="100" height="100"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="iconCell" id="hGU-bf-HO9" customClass="IconCell" customModule="GoldenGoals" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vOd-VN-n9C">
+                                                            <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="80" id="4Sl-MS-qlG"/>
+                                                                <constraint firstAttribute="width" constant="80" id="Sr7-3C-JXZ"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="vOd-VN-n9C" firstAttribute="centerY" secondItem="hGU-bf-HO9" secondAttribute="centerY" id="H8j-6S-Fqj"/>
+                                                    <constraint firstItem="vOd-VN-n9C" firstAttribute="centerX" secondItem="hGU-bf-HO9" secondAttribute="centerX" id="VZj-0T-Kp8"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="iconImageView" destination="vOd-VN-n9C" id="OBG-Tt-oOR"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <color key="tintColor" name="TintColor"/>
                                 <constraints>
-                                    <constraint firstItem="UVE-dK-kVh" firstAttribute="top" secondItem="rdh-go-1FX" secondAttribute="top" constant="5" id="BRI-eK-oQR"/>
-                                    <constraint firstAttribute="width" constant="250" id="HHy-x5-BRP"/>
+                                    <constraint firstItem="gQb-4e-SdW" firstAttribute="leading" secondItem="rdh-go-1FX" secondAttribute="leading" id="ANJ-5L-CY6"/>
+                                    <constraint firstAttribute="width" constant="320" id="HHy-x5-BRP"/>
                                     <constraint firstAttribute="trailing" secondItem="8RH-pW-6j4" secondAttribute="trailing" id="I9R-5S-7Cu"/>
-                                    <constraint firstAttribute="trailing" secondItem="UVE-dK-kVh" secondAttribute="trailing" constant="5" id="Zv8-rI-iKO"/>
-                                    <constraint firstItem="UVE-dK-kVh" firstAttribute="leading" secondItem="rdh-go-1FX" secondAttribute="leading" constant="5" id="e8O-4B-nje"/>
-                                    <constraint firstItem="UVE-dK-kVh" firstAttribute="centerX" secondItem="rdh-go-1FX" secondAttribute="centerX" id="fIr-6N-XwY"/>
-                                    <constraint firstAttribute="height" constant="250" id="k20-Jd-36B"/>
+                                    <constraint firstItem="gQb-4e-SdW" firstAttribute="top" secondItem="rdh-go-1FX" secondAttribute="top" id="RJq-xz-HEi"/>
+                                    <constraint firstAttribute="trailing" secondItem="gQb-4e-SdW" secondAttribute="trailing" id="YHs-xP-8eT"/>
+                                    <constraint firstAttribute="height" constant="300" id="k20-Jd-36B"/>
                                     <constraint firstItem="8RH-pW-6j4" firstAttribute="leading" secondItem="rdh-go-1FX" secondAttribute="leading" id="s1d-9B-vCD"/>
                                     <constraint firstAttribute="bottom" secondItem="8RH-pW-6j4" secondAttribute="bottom" id="xtT-2o-CYq"/>
                                 </constraints>
@@ -521,6 +538,7 @@
                         <viewLayoutGuide key="safeArea" id="KqE-qP-aVu"/>
                     </view>
                     <connections>
+                        <outlet property="appIconCollectionView" destination="gQb-4e-SdW" id="4u3-eL-Y67"/>
                         <outlet property="popupView" destination="rdh-go-1FX" id="yXS-6m-kCf"/>
                     </connections>
                 </viewController>
@@ -664,8 +682,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="alt1.png" width="80" height="80"/>
-        <image name="alt2.png" width="80" height="80"/>
         <image name="email" width="37.5" height="37.5"/>
         <image name="moredogs" width="75" height="75"/>
         <image name="nodogs" width="75" height="75"/>

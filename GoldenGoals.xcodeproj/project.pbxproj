@@ -10,11 +10,16 @@
 		E901612820D158F2005AA9BD /* GoldenGoal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E901612620D158F2005AA9BD /* GoldenGoal.xcdatamodeld */; };
 		E91B8D8020DED0F100649852 /* categoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B8D7F20DED0F100649852 /* categoryCell.swift */; };
 		E91C77F72162D47C00BCA601 /* CreditsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C77F62162D47C00BCA601 /* CreditsCell.swift */; };
-		E91C77F92163D2E600BCA601 /* ThemePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C77F82163D2E600BCA601 /* ThemePopupViewController.swift */; };
+		E91C77F92163D2E600BCA601 /* ChangeAppIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C77F82163D2E600BCA601 /* ChangeAppIconViewController.swift */; };
 		E91C77FD2163D88F00BCA601 /* alt2.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C77FB2163D88F00BCA601 /* alt2.png */; };
 		E91C77FE2163D88F00BCA601 /* alt1.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C77FC2163D88F00BCA601 /* alt1.png */; };
 		E91C78002164DDB900BCA601 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C77FF2164DDB900BCA601 /* Constants.swift */; };
 		E91C78022164E64D00BCA601 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C78012164E64D00BCA601 /* Person.swift */; };
+		E91C78042165044D00BCA601 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C78032165044D00BCA601 /* IconCell.swift */; };
+		E91C780921650BF300BCA601 /* alt5.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C780521650BF300BCA601 /* alt5.png */; };
+		E91C780A21650BF300BCA601 /* alt4.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C780621650BF300BCA601 /* alt4.png */; };
+		E91C780B21650BF300BCA601 /* alt6.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C780721650BF300BCA601 /* alt6.png */; };
+		E91C780C21650BF300BCA601 /* alt3.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C780821650BF300BCA601 /* alt3.png */; };
 		E92411D42037B828006616CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E92411D32037B828006616CF /* LaunchScreen.storyboard */; };
 		E925843920E8F6E000A2E7B2 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925843820E8F6E000A2E7B2 /* AddGoalViewController.swift */; };
 		E925843B20E900EC00A2E7B2 /* AddGoalCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925843A20E900EC00A2E7B2 /* AddGoalCategoryCell.swift */; };
@@ -74,11 +79,16 @@
 		E901612720D158F2005AA9BD /* GoldenGoal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoldenGoal.xcdatamodel; sourceTree = "<group>"; };
 		E91B8D7F20DED0F100649852 /* categoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryCell.swift; sourceTree = "<group>"; };
 		E91C77F62162D47C00BCA601 /* CreditsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCell.swift; sourceTree = "<group>"; };
-		E91C77F82163D2E600BCA601 /* ThemePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePopupViewController.swift; sourceTree = "<group>"; };
+		E91C77F82163D2E600BCA601 /* ChangeAppIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconViewController.swift; sourceTree = "<group>"; };
 		E91C77FB2163D88F00BCA601 /* alt2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alt2.png; sourceTree = "<group>"; };
 		E91C77FC2163D88F00BCA601 /* alt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alt1.png; sourceTree = "<group>"; };
 		E91C77FF2164DDB900BCA601 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E91C78012164E64D00BCA601 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		E91C78032165044D00BCA601 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
+		E91C780521650BF300BCA601 /* alt5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alt5.png; sourceTree = "<group>"; };
+		E91C780621650BF300BCA601 /* alt4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alt4.png; sourceTree = "<group>"; };
+		E91C780721650BF300BCA601 /* alt6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alt6.png; sourceTree = "<group>"; };
+		E91C780821650BF300BCA601 /* alt3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alt3.png; sourceTree = "<group>"; };
 		E92411D32037B828006616CF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E925843820E8F6E000A2E7B2 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		E925843A20E900EC00A2E7B2 /* AddGoalCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalCategoryCell.swift; sourceTree = "<group>"; };
@@ -163,6 +173,10 @@
 		E91C77FA2163D86000BCA601 /* AppIcons */ = {
 			isa = PBXGroup;
 			children = (
+				E91C780821650BF300BCA601 /* alt3.png */,
+				E91C780621650BF300BCA601 /* alt4.png */,
+				E91C780521650BF300BCA601 /* alt5.png */,
+				E91C780721650BF300BCA601 /* alt6.png */,
 				E91C77FC2163D88F00BCA601 /* alt1.png */,
 				E91C77FB2163D88F00BCA601 /* alt2.png */,
 			);
@@ -188,7 +202,8 @@
 				E9412E7B215AB1D1005E7ABB /* SpecialThanksTableViewController.swift */,
 				E9412E7D215BFF10005E7ABB /* CreditsCollectionViewController.swift */,
 				E91C77F62162D47C00BCA601 /* CreditsCell.swift */,
-				E91C77F82163D2E600BCA601 /* ThemePopupViewController.swift */,
+				E91C77F82163D2E600BCA601 /* ChangeAppIconViewController.swift */,
+				E91C78032165044D00BCA601 /* IconCell.swift */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -434,11 +449,15 @@
 				E977BCF121075967000009C9 /* Settings.storyboard in Resources */,
 				E977BCF721075A4E000009C9 /* GoalView.storyboard in Resources */,
 				E9412E7A215AA34E005E7ABB /* Settings.xcassets in Resources */,
+				E91C780921650BF300BCA601 /* alt5.png in Resources */,
 				E9DE667621249D92009F175C /* GoalViewAssets.xcassets in Resources */,
 				E99F07D72036458E00FA85D8 /* Assets.xcassets in Resources */,
+				E91C780A21650BF300BCA601 /* alt4.png in Resources */,
+				E91C780B21650BF300BCA601 /* alt6.png in Resources */,
 				E93816322102109E009C3398 /* Colors.xcassets in Resources */,
 				E9DE665B211505B8009F175C /* HallOf.storyboard in Resources */,
 				E977BCEF210758D2000009C9 /* TabBarStoryboard.storyboard in Resources */,
+				E91C780C21650BF300BCA601 /* alt3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,7 +495,8 @@
 				E925843B20E900EC00A2E7B2 /* AddGoalCategoryCell.swift in Sources */,
 				E9C99EED20D133DB007D3E8B /* CoreDataService.swift in Sources */,
 				E9E90BF02039B45A0087C123 /* goldenGoalTabBarController.swift in Sources */,
-				E91C77F92163D2E600BCA601 /* ThemePopupViewController.swift in Sources */,
+				E91C77F92163D2E600BCA601 /* ChangeAppIconViewController.swift in Sources */,
+				E91C78042165044D00BCA601 /* IconCell.swift in Sources */,
 				E96B192A20EE2C7700772966 /* Goal.swift in Sources */,
 				E91B8D8020DED0F100649852 /* categoryCell.swift in Sources */,
 				E9E90BF52039C23A0087C123 /* goalCell.swift in Sources */,
