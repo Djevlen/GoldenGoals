@@ -1,5 +1,5 @@
 //
-//  ThemePopupViewController.swift
+//  ChangeAppIconViewController.swift
 //  GoldenGoals
 //
 //  Created by Thomas Andre Johansen on 02/10/2018.
@@ -9,7 +9,7 @@
 import UIKit
 
 struct Icon {
-    var iconName: String//outfacing name
+    var iconName: String//outfacing name - potential future use
     var icon: UIImage
     var alternateIconName: String//internal name
 }
@@ -28,14 +28,7 @@ class ChangeAppIconViewController: UIViewController {
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var appIconCollectionView: UICollectionView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        popupView.layer.cornerRadius = 10
-        popupView.layer.masksToBounds = true
-        
-        appIconCollectionView.delegate = self
-        appIconCollectionView.dataSource = self
-
+    fileprivate func addIcons() {
         icons.append(icon1)
         icons.append(icon2)
         icons.append(icon3)
@@ -44,19 +37,29 @@ class ChangeAppIconViewController: UIViewController {
         icons.append(icon6)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        popupView.layer.cornerRadius = 10
+        popupView.layer.masksToBounds = true
+        
+        appIconCollectionView.delegate = self
+        appIconCollectionView.dataSource = self
+
+        addIcons()
+    }
+    
     @IBAction func cancel(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func save(_ sender: UIButton) {
-        //set the new app icon here
+        //make sure the app actually allows changing the icon
         guard UIApplication.shared.supportsAlternateIcons else {return}
         
+        //if no icon is selected, there's nothing to save
         guard let selected = selectedIcon else {return}
-        
         UIApplication.shared.setAlternateIconName(icons[selected.row].alternateIconName, completionHandler: nil)
         
-        //fix this one
         dismiss(animated: true, completion: nil)
     }
     
@@ -86,6 +89,7 @@ extension ChangeAppIconViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! IconCell
+        //if a cell is already selected, deselect it
         if let selected = selectedIcon{
             collectionView.deselectItem(at: selected, animated: true)
             collectionView.cellForItem(at: selected)?.layer.borderWidth = 0.0
