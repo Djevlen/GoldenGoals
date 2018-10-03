@@ -76,9 +76,10 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
                     sendMail.setMessageBody("<h1>GoldenGoals Feedback!</h1>", isHTML: true)
                     present(sendMail, animated: true)
                 }
+            case 3:
+                print("segue to thanks")
             default:
                 print("Something went wrong in section 3")
-
             }
         }
         tableView.deselectRow(at: indexPath , animated: true)

@@ -10,24 +10,35 @@ import UIKit
 
 class SpecialThanksTableViewController: UITableViewController {
     var people: [Person] = []
-    let bjorn = Person(name: "Bjørn Rostad", url: "http://www.bjornrostad.no", image: UIImage(named: "thanksBjorn")!)
-    let mats = Person(name: "Mats Lindh", url: "http://www.matslindh.no", image: UIImage(named: "thanksMats")!)
-//    let marius = Person(name: "Marius Lindh", url: <#T##String#>, image: <#T##UIImage#>:
-//    let eirik = Person(name: "Eirik Jensen", url: <#T##String#>, image: <#T##UIImage#>
-//    let sean = Person(name: "Sean Allen", url: <#T##String#>, image: <#T##UIImage#>
-//    let john = Person(name: "John Sundell", url: "https://www.swiftbysundell.com", image: PUT IMAGE HERE)
-//    let paul = Person(name: "Paul Hudson", url: "https://twitter.com/twostraws", image: <#T##UIImage#>
-    let icons8 = Person(name: "Icons8.com", url: "http://www.icons8.com", image: UIImage(named: "thanksIcon8")!)
+    let bjorn = Person(name: "Bjørn Rostad", url: "http://www.bjornrostad.no", image: UIImage(named: "thanksBjorn")!, text: nil)
+    let mats = Person(name: "Mats Lindh", url: "https://twitter.com/matslindh", image: UIImage(named: "thanksMats")!, text: nil)
+    let marius = Person(name: "Marius Lindh", url: nil, image: nil, text: "Vroom vrooom")
+    let eirik = Person(name: "Eirik Jensen", url: nil, image: nil, text: nil)
+    let kristian = Person(name: "Kristian Aasgård", url: nil, image: nil, text: nil)
+    let janp = Person(name: "Jan-Petter Jensen", url: nil, image: nil, text: nil)
+    let sean = Person(name: "Sean Allen", url: "https://twitter.com/seanallen", image: nil, text: nil)
+    let john = Person(name: "John Sundell", url: "https://www.swiftbysundell.com", image: nil, text: nil)
+    let paul = Person(name: "Paul Hudson", url: "https://twitter.com/twostraws", image: nil, text: nil)
+    let icons8 = Person(name: "Icons8.com", url: "http://www.icons8.com", image: UIImage(named: "thanksIcon8")!, text: nil)
     
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    fileprivate func populateThanksTable() {
         people.append(bjorn)
         people.append(mats)
+        people.append(marius)
+        people.append(eirik)
+        people.append(kristian)
+        people.append(janp)
+        people.append(sean)
+        people.append(john)
+        people.append(paul)
         #warning ("append more people, lars emil? colin emil? mesed? Sean Allen? John Sundell? HackingWithSwift?")
-        
         people.append(icons8)//should always be the last one in the list due to footer text
-
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        populateThanksTable()
     }
 
     // MARK: - Table view data source
@@ -44,7 +55,14 @@ class SpecialThanksTableViewController: UITableViewController {
         let person = people[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "thanksCell", for: indexPath)
         cell.textLabel?.text = person.name
-        cell.imageView?.image = person.image
+        if let personImage = person.image{
+            cell.imageView?.image = personImage
+        }else{
+            cell.imageView?.image = nil
+        }
+        if person.url == nil, person.text == nil{
+            cell.accessoryType = .none
+        }
         return cell
     }
     
@@ -56,7 +74,15 @@ class SpecialThanksTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let thanksURL = URL(string: people[indexPath.row].url)!
-        UIApplication.shared.open(thanksURL)
+        if let theURL = people[indexPath.row].url{
+            let thanksURL = URL(string:theURL)
+            UIApplication.shared.open(thanksURL!)
+        } else {
+            guard let message = people[indexPath.row].text else {return}
+            let alert = UIAlertController(title: "\(people[indexPath.row].name) says:", message: "\(message)", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok!", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert,animated: true,completion: nil)
+        }
     }
 }

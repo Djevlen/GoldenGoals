@@ -13,6 +13,7 @@ import UIKit
 
 struct Person{
     var name: String
-    var url: String
-    var image: UIImage
+    var url: String? //not everyone provides an url
+    var image: UIImage?//not everyone provides an image
+    var text: String?
 }
