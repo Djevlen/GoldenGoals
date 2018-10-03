@@ -13,6 +13,7 @@ class SpecialThanksTableViewController: UITableViewController {
     let bjorn = Person(name: "Bjørn Rostad", url: "http://www.bjornrostad.no", image: UIImage(named: "thanksBjorn")!, text: nil)
     let mats = Person(name: "Mats Lindh", url: "https://twitter.com/matslindh", image: UIImage(named: "thanksMats")!, text: nil)
     let marius = Person(name: "Marius Lindh", url: nil, image: nil, text: "Vroom vrooom")
+    let larsemil = Person(name: "Lars Emil Knudsen", url: nil, image: nil, text: nil)
     let eirik = Person(name: "Eirik Jensen", url: nil, image: nil, text: nil)
     let kristian = Person(name: "Kristian Aasgård", url: nil, image: nil, text: nil)
     let janp = Person(name: "Jan-Petter Jensen", url: nil, image: nil, text: nil)
@@ -26,13 +27,13 @@ class SpecialThanksTableViewController: UITableViewController {
         people.append(bjorn)
         people.append(mats)
         people.append(marius)
+        people.append(larsemil)
         people.append(eirik)
         people.append(kristian)
         people.append(janp)
         people.append(sean)
         people.append(john)
         people.append(paul)
-        #warning ("append more people, lars emil? colin emil? mesed? Sean Allen? John Sundell? HackingWithSwift?")
         people.append(icons8)//should always be the last one in the list due to footer text
     }
     
