@@ -16,8 +16,6 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
     @IBOutlet weak var defaultHallSelector: UISegmentedControl!
     @IBOutlet weak var showGoalStartDateSwitch: UISwitch! //tag 1
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,18 +41,14 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
         default:
             print("didnt understand tag")
         }
-        
     }
 
     @IBAction func changedSelectedSegment(_ sender: UISegmentedControl) {
         UserDefaultsStrings.Default.set(defaultHallSelector.selectedSegmentIndex, forKey: UserDefaultsStrings.DefaultHall)
     }
-    
-
 
     //MARK: tableview
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //about section grants users the ability to write a review or send an email with feedback
         //section 2 is the THEME section
         if indexPath.section == 2{
             switch indexPath.row{
@@ -66,7 +60,7 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
                 print("Something went wrong in section 2")
             }
         }
-        //section 3 is the ABOUT section
+        //section 3 is the ABOUT section where users can review app or send feedback
         else if indexPath.section == 3{
             switch indexPath.row{
             case 0:
@@ -91,6 +85,7 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        //Only one section should have a footer, the last one
         if section == 3 {
             guard let dictionary = Bundle.main.infoDictionary else {
                 return "© 2018 Appbryggeriet - 🇳🇴"
@@ -101,51 +96,6 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
         }
         return ""
     }
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     /*
     // MARK: - Navigation
 
@@ -158,7 +108,7 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
 
 }
 
-//
+//conforming to MFMailComposeViewControllerDelegate to send an email
 extension AboutGoldenGoalsTableViewController: MFMailComposeViewControllerDelegate{
     func mailComposeViewController(_ controller: MFMailComposeViewController, didFinishWith result: MessageComposeResult) {
         switch result {
@@ -167,10 +117,12 @@ extension AboutGoldenGoalsTableViewController: MFMailComposeViewControllerDelega
             controller.dismiss(animated: true
                 , completion: nil)
         case .failed:
+            #warning("When sending mail fails, catch the error and present it to user")
             print("FAILED SENDING MAIL")
             controller.dismiss(animated: true
                 , completion: nil)
         case .sent:
+            #warning("When sending mail succeeds, inform the user of sent mail")
             print("MAIL SENT!!")
             controller.dismiss(animated: true
                 , completion: nil)
@@ -179,7 +131,5 @@ extension AboutGoldenGoalsTableViewController: MFMailComposeViewControllerDelega
                 , completion: nil)
         }
     }
-    
-    
 }
 
