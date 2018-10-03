@@ -16,10 +16,7 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
     @IBOutlet weak var defaultHallSelector: UISegmentedControl!
     @IBOutlet weak var showGoalStartDateSwitch: UISwitch! //tag 1
     
-    let appversion = "CFBundleShortVersionString"
-    let buildnumber = "CFBundleVersion"
-    let defaults = UserDefaults.standard
-    #warning("the keys associated with userdefaults should be in a CONSTANTS FILE")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,28 +29,25 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        startInGoldenGoalSwitch.setOn(defaults.bool(forKey: "SettingsStartView"), animated: false)
-        defaultHallSelector.selectedSegmentIndex = defaults.integer(forKey: "SettingsDefaultHall")
-        showGoalStartDateSwitch.setOn(defaults.bool(forKey: "SettingsShowGoalStart"), animated: false)
+        startInGoldenGoalSwitch.setOn(UserDefaultsStrings.Default.bool(forKey: UserDefaultsStrings.StartView), animated: false)
+        defaultHallSelector.selectedSegmentIndex = UserDefaultsStrings.Default.integer(forKey: UserDefaultsStrings.DefaultHall)
+        showGoalStartDateSwitch.setOn(UserDefaultsStrings.Default.bool(forKey: UserDefaultsStrings.ShowGoalStart), animated: false)
     }
 
     @IBAction func changedValue(_ sender: UISwitch) {
         switch sender.tag {
         case 0:
-            print("Changing value for: START IN GOLDEN GOAL??")
-            defaults.set(startInGoldenGoalSwitch.isOn, forKey: "SettingsStartView")
+            UserDefaultsStrings.Default.set(startInGoldenGoalSwitch.isOn, forKey: UserDefaultsStrings.StartView)
         case 1:
-            print("Changing value for: SHOW GOAL START DATE")
-            defaults.set(showGoalStartDateSwitch.isOn, forKey: "SettingsShowGoalStart")
+            UserDefaultsStrings.Default.set(showGoalStartDateSwitch.isOn, forKey: UserDefaultsStrings.ShowGoalStart)
         default:
             print("didnt understand tag")
-
         }
         
     }
 
     @IBAction func changedSelectedSegment(_ sender: UISegmentedControl) {
-        defaults.set(defaultHallSelector.selectedSegmentIndex, forKey: "SettingsDefaultHall")
+        UserDefaultsStrings.Default.set(defaultHallSelector.selectedSegmentIndex, forKey: UserDefaultsStrings.DefaultHall)
     }
     
 
@@ -101,9 +95,9 @@ class AboutGoldenGoalsTableViewController: UITableViewController {
             guard let dictionary = Bundle.main.infoDictionary else {
                 return "© 2018 Appbryggeriet - 🇳🇴"
             }
-            let version = dictionary[appversion] as! String
-            let build = dictionary[buildnumber] as! String
-            return "Version \(version) (\(build)) - © 2018 Appbryggeriet - 🇳🇴"
+            let version = dictionary[Constants.Appversion] as! String
+            let build = dictionary[Constants.Buildnumber] as! String
+            return "🇳🇴 - Version \(version) (\(build)) - © 2018 Appbryggeriet - 🇳🇴"
         }
         return ""
     }
