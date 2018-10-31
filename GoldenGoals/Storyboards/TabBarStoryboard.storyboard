@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UTp-5Y-arF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UTp-5Y-arF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,22 +24,11 @@
                         <segue destination="Mex-lg-umI" kind="relationship" relationship="viewControllers" id="Gp3-HF-eI4"/>
                         <segue destination="nAt-gy-KJM" kind="relationship" relationship="viewControllers" id="hlk-oK-CFh"/>
                         <segue destination="7bg-Hm-fLg" kind="relationship" relationship="viewControllers" id="xPf-cn-2Tt"/>
-                        <segue destination="kiS-PX-A5x" kind="relationship" relationship="viewControllers" id="CQ1-Mr-rlg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqA-tf-Ew8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-919" y="-111"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="Ib4-Rd-JED">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="kiS-PX-A5x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="WR8-Du-Fh9"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0n4-Ee-ddQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-634" y="503"/>
         </scene>
         <!--HallOf-->
         <scene sceneID="2ZN-bZ-Wpe">
@@ -49,7 +38,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6di-Ic-myi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-822" y="503"/>
+            <point key="canvasLocation" x="-675" y="503"/>
         </scene>
         <!--GoalView-->
         <scene sceneID="7lM-bf-H8F">
@@ -59,7 +48,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMn-bN-PIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1026" y="503"/>
+            <point key="canvasLocation" x="-919" y="503"/>
         </scene>
         <!--GoalList-->
         <scene sceneID="f5T-rn-uR0">
@@ -69,7 +58,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="01h-lN-677" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1250" y="503"/>
+            <point key="canvasLocation" x="-1154" y="503"/>
         </scene>
     </scenes>
     <resources>
@@ -77,7 +66,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TintColor">
-            <color red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.30980392156862746" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
