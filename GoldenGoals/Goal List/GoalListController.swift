@@ -24,6 +24,7 @@ class GoalListController: UIViewController {
         
         //this needs to refresh often, goals are completed, turned golden etc,
         //this list needs to reflect changes to goals
+        //create global variable with info about changes perhaps?? if true: refresh view
         let fetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "dateCompleted == nil")
         fetchRequest.predicate = NSPredicate(format: "removed == nil")

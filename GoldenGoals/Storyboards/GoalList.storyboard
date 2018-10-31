@@ -1,17 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HBu-mF-Jv1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HBu-mF-Jv1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Goal List Table View Controller-->
+        <scene sceneID="EEm-nu-LOf">
+            <objects>
+                <tableViewController id="QZQ-e8-zWq" customClass="GoalListTableViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="C4x-35-vPG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="tintColor" name="TintColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Recently Added Progress" id="2Pr-23-M5h">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Vwg-2n-Bxc">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vwg-2n-Bxc" id="IMy-AW-eEf">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Urgent" id="oSh-M8-DUT">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kFL-O8-VtD">
+                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kFL-O8-VtD" id="ndd-fX-UZQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Chase Your Goals" id="gLQ-xv-TwD">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hXl-dz-C9z">
+                                        <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hXl-dz-C9z" id="Bo2-Ng-1ks">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="All Goals" id="kUA-8m-vfX">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XhN-k5-WCf">
+                                        <rect key="frame" x="0.0" y="355.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XhN-k5-WCf" id="ctI-09-uDc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="QZQ-e8-zWq" id="xAp-eK-Bnm"/>
+                            <outlet property="delegate" destination="QZQ-e8-zWq" id="Prt-Ln-HqK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="2v2-mH-02p">
+                        <barButtonItem key="rightBarButtonItem" image="tabBarSettingsPlaceholder" id="07N-zK-2fQ">
+                            <color key="tintColor" name="TintColor"/>
+                            <connections>
+                                <segue destination="sfd-Xw-pL9" kind="show" id="FSM-C2-xPC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N2F-el-GOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2674" y="1550"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="6fs-SM-IWC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="sfd-Xw-pL9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lq8-eQ-zLS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2126" y="1173"/>
+        </scene>
         <!--Goals-->
         <scene sceneID="sMB-HS-8yU">
             <objects>
@@ -137,14 +222,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Give Your Goal a Title" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ySK-7i-bga">
-                                <rect key="frame" x="5" y="69" width="365" height="34"/>
+                                <rect key="frame" x="5" y="25" width="365" height="34"/>
                                 <color key="tintColor" red="1" green="0.85098039219999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GdF-Sg-5Om">
-                                <rect key="frame" x="5" y="111" width="365" height="220"/>
+                                <rect key="frame" x="5" y="67" width="365" height="220"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="31V-n6-b5C"/>
@@ -194,19 +279,19 @@
                                 </cells>
                             </collectionView>
                             <datePicker hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="249" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="48r-tA-7c5">
-                                <rect key="frame" x="5" y="370" width="365" height="292"/>
+                                <rect key="frame" x="5" y="326" width="365" height="336"/>
                                 <date key="date" timeIntervalSinceReferenceDate="552136419.62527001">
                                     <!--2018-07-01 11:13:39 +0000-->
                                 </date>
                             </datePicker>
                             <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="V9g-99-v5n" userLabel="Goal Start Date">
-                                <rect key="frame" x="5" y="370" width="365" height="292"/>
+                                <rect key="frame" x="5" y="326" width="365" height="336"/>
                                 <date key="date" timeIntervalSinceReferenceDate="552136419.62527001">
                                     <!--2018-07-01 11:13:39 +0000-->
                                 </date>
                             </datePicker>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zht-IT-wye">
-                                <rect key="frame" x="15" y="339" width="345" height="29"/>
+                                <rect key="frame" x="15" y="295" width="345" height="29"/>
                                 <segments>
                                     <segment title="Start Date"/>
                                     <segment title="Due Date"/>
@@ -216,7 +301,7 @@
                                 </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5Se-Tg-nvg">
-                                <rect key="frame" x="15" y="368" width="345" height="5"/>
+                                <rect key="frame" x="15" y="324" width="345" height="5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rO8-7f-bha" userLabel="startDateSelectorHighlightView">
                                         <rect key="frame" x="0.0" y="0.0" width="172.5" height="5"/>
@@ -287,7 +372,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPhotoPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="xpa-lP-tlN">
-                                <rect key="frame" x="42.5" y="103" width="290" height="290"/>
+                                <rect key="frame" x="42.5" y="59" width="290" height="290"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="290" id="4zl-YU-3mR"/>
@@ -299,19 +384,19 @@
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a photo that helps you focus" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aQP-Px-JIK">
-                                <rect key="frame" x="5" y="69" width="365" height="29"/>
+                                <rect key="frame" x="5" y="25" width="365" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is this a Golden Goal? " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WGD-eX-1gw">
-                                <rect key="frame" x="5" y="398" width="365" height="29"/>
+                                <rect key="frame" x="5" y="354" width="365" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9z-Xx-OGG">
-                                <rect key="frame" x="5" y="430" width="365" height="31"/>
+                                <rect key="frame" x="5" y="386" width="365" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Golden Goal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQ2-o7-58d">
                                         <rect key="frame" x="0.0" y="0.0" width="316" height="31"/>
@@ -326,13 +411,13 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter a motivational text to help you stay motivated and reach your goal!" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o62-bN-OXX">
-                                <rect key="frame" x="5" y="503" width="365" height="161"/>
+                                <rect key="frame" x="5" y="459" width="365" height="205"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write your own motivational text!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v4t-gZ-Mft">
-                                <rect key="frame" x="5" y="471" width="365" height="29"/>
+                                <rect key="frame" x="5" y="427" width="365" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -444,11 +529,11 @@
             </objects>
             <point key="canvasLocation" x="-253" y="2404"/>
         </scene>
-        <!--Item-->
+        <!--List-->
         <scene sceneID="HR1-Fg-eTf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HBu-mF-Jv1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="f0M-d3-qkm"/>
+                    <tabBarItem key="tabBarItem" title="List" image="tabBarGoalListPlaceholder" id="f0M-d3-qkm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="qog-Ty-Lhr">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -461,7 +546,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8Bs-7V-beq" kind="relationship" relationship="rootViewController" id="veb-mz-afd"/>
+                        <segue destination="QZQ-e8-zWq" kind="relationship" relationship="rootViewController" id="xSQ-dL-vzM"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2v-sg-qZO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -471,12 +556,13 @@
     </scenes>
     <resources>
         <image name="addPhotoPlaceholder" width="290" height="290"/>
-        <image name="tabBarGoalListPlaceholder" width="25" height="25"/>
+        <image name="tabBarGoalListPlaceholder" width="37.5" height="37.5"/>
+        <image name="tabBarSettingsPlaceholder" width="37.5" height="37.5"/>
         <namedColor name="BackgroundColor">
             <color red="0.8784313725490196" green="0.81568627450980391" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DetailTextColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.30980392156862746" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -484,8 +570,11 @@
         <namedColor name="MainTextColor">
             <color red="0.23529411764705882" green="0.30980392156862746" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="MainTextColor">
+            <color red="0.23529411764705882" green="0.30980392156862746" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="TintColor">
-            <color red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.30980392156862746" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
