@@ -30,6 +30,7 @@ class RecentProgressCollectionViewCell: UICollectionViewCell {
         
         cardView.layer.cornerRadius = 10
         cardView.layer.borderWidth = 0.5
+        
         if (gold){
             cardView.layer.borderColor = Theme.gold!.cgColor
             shadowView.layer.shadowColor = Theme.gold!.cgColor
