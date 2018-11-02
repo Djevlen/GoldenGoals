@@ -7,10 +7,24 @@
 //
 
 import UIKit
+import CoreData
 
 
 
 class RecentProgressCollectionViewController: UICollectionViewController {
+    
+    fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Goal> = {
+        let fetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
+        
+        #warning("This Needs Predicates to limit result to only goals with RECENT PROGRESS")
+        // fetchRequest.predicate = NSPredicate(format:....
+        
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateAdded", ascending: true)]
+        
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataService.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
+        return fetchedResultsController
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +33,13 @@ class RecentProgressCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Do any additional setup after loading the view.
+        do {
+            try self.fetchedResultsController.performFetch()
+        } catch{
+            let error = error as NSError
+            print("Something went wrong with fetching the recent progress goals")
+            print("\(error) : \(error.localizedDescription)")
+        }
     }
 
     /*
@@ -32,14 +53,13 @@ class RecentProgressCollectionViewController: UICollectionViewController {
     */
 
     // MARK: UICollectionViewDataSource
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        guard let recentProgressGoals = fetchedResultsController.fetchedObjects else {return 0}
+        return recentProgressGoals.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -49,19 +69,21 @@ class RecentProgressCollectionViewController: UICollectionViewController {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecentProgressCollectionViewCell.reuseIdentifier, for: indexPath) as? RecentProgressCollectionViewCell else {
             fatalError("Unexpected IndexPath in RecentProgressCollectionView")
         }
-        
-        cell.goalTitle.text = "This is a title!"
-        cell.recentProgressImage.image = UIImage(named: "goalPlaceholder")
-        cell.recentProgressNote.text = "I've made so much progress lately! I've eaten a cow, a chicken, a horse, a chimpanzee, a cat, an orangutan, an elephant and a pig. Soon, I shall have eaten all there is to eat in this world, and I will be a very fulfilled Joey Chestnut! Yes I will, I will, I will! Eat on, goal! Eat on."
-        if (indexPath.row == 1){
-            cell.setupCardView(with: true)
+        let goal = fetchedResultsController.object(at: indexPath)
+        cell.setupCardView(with: goal.golden)
+        if let goalTitle = goal.title{
+            cell.goalTitle.text = goalTitle
         }else{
-            cell.setupCardView(with: false)
+            cell.goalTitle.text = NSLocalizedString("CELL_GOAL_TITLE_ERROR", comment: "Error getting the title of the goal")
         }
-        
-    
-        // Configure the cell
-    
+        if let goalImage = goal.photo{
+            cell.recentProgressImage.image = UIImage(data: goalImage)
+        }else{
+            #warning("Dette må byttes ut med et ordentlig 'errorbilde'.")
+            cell.recentProgressImage.image = UIImage(named: "goalPlaceholder")
+        }
+        //this needs to be updated
+        cell.recentProgressNote.text = "I've made so much progress lately! I've eaten a cow, a chicken, a horse, a chimpanzee, a cat, an orangutan, an elephant and a pig. Soon, I shall have eaten all there is to eat in this world, and I will be a very fulfilled Joey Chestnut! Yes I will, I will, I will! Eat on, goal! Eat on."
         return cell
     }
 
@@ -96,4 +118,9 @@ class RecentProgressCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+extension RecentProgressCollectionViewController: NSFetchedResultsControllerDelegate{
+    //IMPLEMENT THESE TO RESPOND TO UPDATES
+    
 }

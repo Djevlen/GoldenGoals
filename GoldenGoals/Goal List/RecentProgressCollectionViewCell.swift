@@ -23,10 +23,14 @@ class RecentProgressCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCardView(with gold: Bool){
+        #warning("look into the following if perfomance is poor")
+        //shadowView.layer.shadowPath = UIBezierPath(roundedRect: shadowView.bounds, cornerRadius: 10).cgPath
+        //shadowView.layer.shouldRasterize = true
+        //shadowView.layer.rasterizationScale = UIScreen.main.scale
         shadowView.backgroundColor = UIColor.clear
         shadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
         shadowView.layer.shadowOpacity = 0.8
-        shadowView.layer.shadowRadius = 5.0
+//        shadowView.layer.shadowRadius = 5.0
         
         cardView.layer.cornerRadius = 10
         cardView.layer.borderWidth = 0.5

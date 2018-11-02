@@ -5,4 +5,7 @@
   Created by Thomas Andre Johansen on 31/10/2018.
   Copyright © 2018 Appbryggeriet. All rights reserved.
 */
-"GOAL_LIST_TITLE" = "Liste";
+"GOAL_LIST_TITLE" = "Goals";
+
+"CELL_GOAL_TITLE_ERROR" = "Det oppstod en feil under henting av måltittel";
+

@@ -5,4 +5,6 @@
   Created by Thomas Andre Johansen on 31/10/2018.
   Copyright © 2018 Appbryggeriet. All rights reserved.
 */
-"GOAL_LIST_TITLE" = "List";
+"GOAL_LIST_TITLE" = "Goals";
+
+"CELL_GOAL_TITLE_ERROR" = "Error getting the goal title.";
