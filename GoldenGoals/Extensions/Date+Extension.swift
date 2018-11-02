@@ -1,5 +1,5 @@
 //
-//  Date+Extentsion.swift
+//  Date+Extension.swift
 //  GoldenGoals
 //
 //  Created by Thomas Andre Johansen on 13/08/2018.

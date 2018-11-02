@@ -11,7 +11,7 @@
 		E91B8D8020DED0F100649852 /* categoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B8D7F20DED0F100649852 /* categoryCell.swift */; };
 		E91C37A8218B86B8002EBB20 /* RecentProgressCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37A7218B86B8002EBB20 /* RecentProgressCollectionViewController.swift */; };
 		E91C37AA218B888A002EBB20 /* RecentProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37A9218B888A002EBB20 /* RecentProgressCollectionViewCell.swift */; };
-		E91C37AC218CFB05002EBB20 /* Date+Extentsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37AB218CFB04002EBB20 /* Date+Extentsion.swift */; };
+		E91C37AC218CFB05002EBB20 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37AB218CFB04002EBB20 /* Date+Extension.swift */; };
 		E91C77F72162D47C00BCA601 /* CreditsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C77F62162D47C00BCA601 /* CreditsCell.swift */; };
 		E91C77F92163D2E600BCA601 /* ChangeAppIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C77F82163D2E600BCA601 /* ChangeAppIconViewController.swift */; };
 		E91C77FD2163D88F00BCA601 /* alt2.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C77FB2163D88F00BCA601 /* alt2.png */; };
@@ -83,7 +83,7 @@
 		E91C37A6218B8170002EBB20 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E91C37A7218B86B8002EBB20 /* RecentProgressCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProgressCollectionViewController.swift; sourceTree = "<group>"; };
 		E91C37A9218B888A002EBB20 /* RecentProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProgressCollectionViewCell.swift; sourceTree = "<group>"; };
-		E91C37AB218CFB04002EBB20 /* Date+Extentsion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extentsion.swift"; path = "GoldenGoals/Extensions/Date+Extentsion.swift"; sourceTree = SOURCE_ROOT; };
+		E91C37AB218CFB04002EBB20 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extension.swift"; path = "GoldenGoals/Extensions/Date+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		E91C77F62162D47C00BCA601 /* CreditsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCell.swift; sourceTree = "<group>"; };
 		E91C77F82163D2E600BCA601 /* ChangeAppIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconViewController.swift; sourceTree = "<group>"; };
 		E91C77FB2163D88F00BCA601 /* alt2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alt2.png; sourceTree = "<group>"; };
@@ -314,7 +314,7 @@
 		E9DE6672212213FD009F175C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E91C37AB218CFB04002EBB20 /* Date+Extentsion.swift */,
+				E91C37AB218CFB04002EBB20 /* Date+Extension.swift */,
 			);
 			name = Extensions;
 			path = "Goal List/Extensions";
@@ -528,7 +528,7 @@
 				E96B192C20EE2C8300772966 /* Category.swift in Sources */,
 				E94163BF211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift in Sources */,
 				E9412E78215A75E1005E7ABB /* AboutGoldenGoalsTableViewController.swift in Sources */,
-				E91C37AC218CFB05002EBB20 /* Date+Extentsion.swift in Sources */,
+				E91C37AC218CFB05002EBB20 /* Date+Extension.swift in Sources */,
 				E9DE66742124994C009F175C /* GoalOptionsViewController.swift in Sources */,
 				E91C37A8218B86B8002EBB20 /* RecentProgressCollectionViewController.swift in Sources */,
 				E938163021020F69009C3398 /* Theme.swift in Sources */,
