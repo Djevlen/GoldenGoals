@@ -12,6 +12,8 @@
 		E91C37A8218B86B8002EBB20 /* RecentProgressCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37A7218B86B8002EBB20 /* RecentProgressCollectionViewController.swift */; };
 		E91C37AA218B888A002EBB20 /* RecentProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37A9218B888A002EBB20 /* RecentProgressCollectionViewCell.swift */; };
 		E91C37AC218CFB05002EBB20 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37AB218CFB04002EBB20 /* Date+Extension.swift */; };
+		E91C37AE218F9682002EBB20 /* AddNewGoalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37AD218F9682002EBB20 /* AddNewGoalCollectionViewController.swift */; };
+		E91C37B0218F99CD002EBB20 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37AF218F99CD002EBB20 /* CategoryCollectionViewCell.swift */; };
 		E91C77F72162D47C00BCA601 /* CreditsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C77F62162D47C00BCA601 /* CreditsCell.swift */; };
 		E91C77F92163D2E600BCA601 /* ChangeAppIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C77F82163D2E600BCA601 /* ChangeAppIconViewController.swift */; };
 		E91C77FD2163D88F00BCA601 /* alt2.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C77FB2163D88F00BCA601 /* alt2.png */; };
@@ -84,6 +86,8 @@
 		E91C37A7218B86B8002EBB20 /* RecentProgressCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProgressCollectionViewController.swift; sourceTree = "<group>"; };
 		E91C37A9218B888A002EBB20 /* RecentProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentProgressCollectionViewCell.swift; sourceTree = "<group>"; };
 		E91C37AB218CFB04002EBB20 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extension.swift"; path = "GoldenGoals/Extensions/Date+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		E91C37AD218F9682002EBB20 /* AddNewGoalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGoalCollectionViewController.swift; sourceTree = "<group>"; };
+		E91C37AF218F99CD002EBB20 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		E91C77F62162D47C00BCA601 /* CreditsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCell.swift; sourceTree = "<group>"; };
 		E91C77F82163D2E600BCA601 /* ChangeAppIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconViewController.swift; sourceTree = "<group>"; };
 		E91C77FB2163D88F00BCA601 /* alt2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alt2.png; sourceTree = "<group>"; };
@@ -217,8 +221,8 @@
 		E953791A2037A98300864212 /* Core Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				E9C99EEC20D133DB007D3E8B /* CoreDataService.swift */,
 				E901612620D158F2005AA9BD /* GoldenGoal.xcdatamodeld */,
+				E9C99EEC20D133DB007D3E8B /* CoreDataService.swift */,
 				E96B192D20EE2C9A00772966 /* ProgressNotes.swift */,
 				E96B192920EE2C7700772966 /* Goal.swift */,
 				E96B192B20EE2C8300772966 /* Category.swift */,
@@ -344,6 +348,8 @@
 				E91C37A9218B888A002EBB20 /* RecentProgressCollectionViewCell.swift */,
 				E9852380218A474900BCDB31 /* GoalListTableViewController.swift */,
 				E9C008A4207A48C1004CD929 /* Adding Goal */,
+				E91C37AD218F9682002EBB20 /* AddNewGoalCollectionViewController.swift */,
+				E91C37AF218F99CD002EBB20 /* CategoryCollectionViewCell.swift */,
 			);
 			path = "Goal List";
 			sourceTree = "<group>";
@@ -513,12 +519,14 @@
 				E9C99EED20D133DB007D3E8B /* CoreDataService.swift in Sources */,
 				E9E90BF02039B45A0087C123 /* goldenGoalTabBarController.swift in Sources */,
 				E91C77F92163D2E600BCA601 /* ChangeAppIconViewController.swift in Sources */,
+				E91C37AE218F9682002EBB20 /* AddNewGoalCollectionViewController.swift in Sources */,
 				E91C78042165044D00BCA601 /* IconCell.swift in Sources */,
 				E96B192A20EE2C7700772966 /* Goal.swift in Sources */,
 				E91B8D8020DED0F100649852 /* categoryCell.swift in Sources */,
 				E96B192E20EE2C9A00772966 /* ProgressNotes.swift in Sources */,
 				E91C37AA218B888A002EBB20 /* RecentProgressCollectionViewCell.swift in Sources */,
 				E95379222037B59B00864212 /* GoalView.swift in Sources */,
+				E91C37B0218F99CD002EBB20 /* CategoryCollectionViewCell.swift in Sources */,
 				E9412E7E215BFF10005E7ABB /* CreditsCollectionViewController.swift in Sources */,
 				E9DE666F211A1A2A009F175C /* GoalDateViewController.swift in Sources */,
 				E92AF6E320F61D840025D1ED /* AddGoalMotivationalTextViewController.swift in Sources */,

@@ -8,3 +8,18 @@
 "GOAL_LIST_TITLE" = "Goals";
 
 "CELL_GOAL_TITLE_ERROR" = "Error getting the goal title.";
+"CATEGORY_TITLE_ERROR" = "Error getting the goal title.";
+
+"CATEGORY_BUSINESS" = "Business";
+"CATEGORY_EDUCATION" = "Education";
+"CATEGORY_ENTERTAINMENT" = "Entertainment";
+"CATEGORY_HEALTH & FITNESS" = "Health";
+"CATEGORY_LIFESTYLE" = "Lifestyle";
+"CATEGORY_MONEY" = "Money";
+"CATEGORY_PRODUCTIVITY" = "Productivity";
+"CATEGORY_SKILLS" = "Skills";
+"CATEGORY_SOCIAL" = "Social";
+"CATEGORY_TRAVEL" = "Travel";
+
+
+

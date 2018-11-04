@@ -28,11 +28,6 @@ class RecentProgressCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Do any additional setup after loading the view.
         do {
             try self.fetchedResultsController.performFetch()
         } catch{
@@ -62,6 +57,8 @@ class RecentProgressCollectionViewController: UICollectionViewController {
         return recentProgressGoals.count
     }
 
+    
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         print("i cellForItemAt")
         print("\(indexPath.row)")
@@ -70,20 +67,8 @@ class RecentProgressCollectionViewController: UICollectionViewController {
             fatalError("Unexpected IndexPath in RecentProgressCollectionView")
         }
         let goal = fetchedResultsController.object(at: indexPath)
-        cell.setupCardView(with: goal.golden)
-        if let goalTitle = goal.title{
-            cell.goalTitle.text = goalTitle
-        }else{
-            cell.goalTitle.text = NSLocalizedString("CELL_GOAL_TITLE_ERROR", comment: "Error getting the title of the goal")
-        }
-        if let goalImage = goal.photo{
-            cell.recentProgressImage.image = UIImage(data: goalImage)
-        }else{
-            #warning("Dette må byttes ut med et ordentlig 'errorbilde'.")
-            cell.recentProgressImage.image = UIImage(named: "goalPlaceholder")
-        }
-        //this needs to be updated
-        cell.recentProgressNote.text = "I've made so much progress lately! I've eaten a cow, a chicken, a horse, a chimpanzee, a cat, an orangutan, an elephant and a pig. Soon, I shall have eaten all there is to eat in this world, and I will be a very fulfilled Joey Chestnut! Yes I will, I will, I will! Eat on, goal! Eat on."
+        cell.setupCell(with: goal)
+        
         return cell
     }
 

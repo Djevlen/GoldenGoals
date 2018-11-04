@@ -22,7 +22,23 @@ class RecentProgressCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    func setupCardView(with gold: Bool){
+     func setupCell(with goal: Goal) {
+        setupCardView(gold: goal.golden)
+        if let title = goal.title{
+            goalTitle.text = title
+        }else{
+            goalTitle.text = NSLocalizedString("CELL_GOAL_TITLE_ERROR", comment: "Error getting the title of the goal")
+        }
+        if let goalImage = goal.photo{
+            recentProgressImage.image = UIImage(data: goalImage)
+        }else{
+            #warning("Dette må byttes ut med et ordentlig 'errorbilde'.")
+            recentProgressImage.image = UIImage(named: "goalPlaceholder")
+        }
+        //this needs to be updated
+        recentProgressNote.text = "I've made so much progress lately! I've eaten a cow, a chicken, a horse, a chimpanzee, a cat, an orangutan, an elephant and a pig. Soon, I shall have eaten all there is to eat in this world, and I will be a very fulfilled Joey Chestnut! Yes I will, I will, I will! Eat on, goal! Eat on."
+    }
+    func setupCardView(gold: Bool){
         #warning("look into the following if perfomance is poor")
         //shadowView.layer.shadowPath = UIBezierPath(roundedRect: shadowView.bounds, cornerRadius: 10).cgPath
         //shadowView.layer.shouldRasterize = true

@@ -8,4 +8,16 @@
 "GOAL_LIST_TITLE" = "Goals";
 
 "CELL_GOAL_TITLE_ERROR" = "Det oppstod en feil under henting av måltittel";
+"CATEGORY_TITLE_ERROR" = "Det oppstod en feil under henting av kategoritittel";
+
+"CATEGORY_BUSINESS" = "Jobb";
+"CATEGORY_EDUCATION" = "Utdannelse";
+"CATEGORY_ENTERTAINMENT" = "Underholdning";
+"CATEGORY_HEALTH & FITNESS" = "Helse";
+"CATEGORY_LIFESTYLE" = "Livsstil";
+"CATEGORY_MONEY" = "Penger";
+"CATEGORY_PRODUCTIVITY" = "Produktivitet";
+"CATEGORY_SKILLS" = "Ferdigheter";
+"CATEGORY_SOCIAL" = "Sosialt";
+"CATEGORY_TRAVEL" = "Reise";
 

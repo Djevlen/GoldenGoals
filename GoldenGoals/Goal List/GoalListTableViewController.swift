@@ -22,22 +22,6 @@ class GoalListTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    //For the time being(version 1.0), the list consists of four sections
-    //1. The Goals With Recently Added Progress Notes
-    //2. The Goals That Are Sorted By Due Date, where Due Date is within X days (two months?)
-    //3. Add A New Goal By selecting a Category
-    //4. All Goals in DB, sorted ascending by date added
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        default:
-            return 1
-        }
-    }
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
