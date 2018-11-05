@@ -9,12 +9,14 @@
 import UIKit
 import CoreData
 
+
+//add delegation pattern to be able to do multiple queries to core data based on which row of the tableview we're in
 class GoalCollectionViewController: UICollectionViewController {
 
     fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Goal> = {
         let fetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
         
-        #warning("This Needs Predicates to limit result to only goals with RECENT PROGRESS - add setting to define how many months recent is")
+        #warning("This Needs Predicates to limit result to only goals within due soon range - add setting to define how many months that is")
         // fetchRequest.predicate = NSPredicate(format:....
         
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateEnd", ascending: true)]
@@ -55,8 +57,8 @@ class GoalCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let recentProgressGoals = fetchedResultsController.fetchedObjects else {return 0}
-        return recentProgressGoals.count
+        guard let goals = fetchedResultsController.fetchedObjects else {return 0}
+        return goals.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -76,8 +78,6 @@ class GoalCollectionViewController: UICollectionViewController {
         default:
             cell.setupCell(with: goal, due: false)
         }
-        
-        
         return cell
     }
 
