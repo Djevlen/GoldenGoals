@@ -60,8 +60,8 @@ class GoalCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("i cellForItemAt")
-        print("\(indexPath.row)")
+        print("i cellForItemAt GoalCollectionViewController")
+        print("row: \(indexPath.row) section: \(indexPath.section)")
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoalCollectionViewCell.reuseIdentifier, for: indexPath) as? GoalCollectionViewCell else {
             fatalError("Unexpected IndexPath in RecentProgressCollectionView")

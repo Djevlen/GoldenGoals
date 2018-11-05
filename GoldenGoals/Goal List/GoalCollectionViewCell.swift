@@ -26,6 +26,7 @@ class GoalCollectionViewCell: UICollectionViewCell {
     }
     
     func setupCell(with goal: Goal, due: Bool){
+        setupImage(golden: goal.golden)
         if let title = goal.title{
             goalTitle.text = title
         }else{
@@ -37,6 +38,11 @@ class GoalCollectionViewCell: UICollectionViewCell {
             #warning("Dette må byttes ut med et ordentlig 'errorbilde'.")
             goalImage.image = UIImage(named: "goalPlaceholder")
         }
+        if let category = goal.category?.title{
+            goalCategory.text = category
+        }else{
+            goalCategory.text = NSLocalizedString("CATEGORY_TITLE_ERROR", comment: "Error getting the title of the category")
+        }
         
         if(due){
             goalDue.isHidden = false
@@ -44,6 +50,17 @@ class GoalCollectionViewCell: UICollectionViewCell {
         }else{
             goalDue.isHidden = true
         }
+    }
+    
+    func setupImage(golden: Bool){
+        goalImage.layer.cornerRadius = 10
+        goalImage.layer.borderWidth = 1
+        if golden{
+            goalImage.layer.borderColor = Theme.gold!.cgColor
+        }else{
+            goalImage.layer.borderColor = Theme.tintColor!.cgColor
+        }
+        goalImage.layer.masksToBounds = true
     }
     
     
