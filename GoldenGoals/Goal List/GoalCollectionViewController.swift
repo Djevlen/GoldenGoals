@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 
-
 //add delegation pattern to be able to do multiple queries to core data based on which row of the tableview we're in
 class GoalCollectionViewController: UICollectionViewController {
 
