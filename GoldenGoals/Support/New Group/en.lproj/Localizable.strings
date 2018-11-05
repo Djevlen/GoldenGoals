@@ -8,7 +8,7 @@
 "GOAL_LIST_TITLE" = "Goals";
 
 "CELL_GOAL_TITLE_ERROR" = "Error getting the goal title.";
-"CATEGORY_TITLE_ERROR" = "Error getting the goal title.";
+"CATEGORY_TITLE_ERROR" = "Error getting the category title.";
 
 "CATEGORY_BUSINESS" = "Business";
 "CATEGORY_EDUCATION" = "Education";
