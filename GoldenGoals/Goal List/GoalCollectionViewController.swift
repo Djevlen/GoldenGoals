@@ -1,25 +1,23 @@
 //
-//  RecentProgressCollectionViewController.swift
+//  GoalCollectionViewController.swift
 //  GoldenGoals
 //
-//  Created by Thomas Andre Johansen on 01/11/2018.
+//  Created by Thomas Andre Johansen on 05/11/2018.
 //  Copyright © 2018 Appbryggeriet. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
+class GoalCollectionViewController: UICollectionViewController {
 
-
-class RecentProgressCollectionViewController: UICollectionViewController {
-    
     fileprivate lazy var fetchedResultsController: NSFetchedResultsController<Goal> = {
         let fetchRequest: NSFetchRequest<Goal> = Goal.fetchRequest()
         
         #warning("This Needs Predicates to limit result to only goals with RECENT PROGRESS - add setting to define how many months recent is")
         // fetchRequest.predicate = NSPredicate(format:....
         
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateAdded", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateEnd", ascending: true)]
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataService.context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
@@ -35,6 +33,7 @@ class RecentProgressCollectionViewController: UICollectionViewController {
             print("Something went wrong with fetching the recent progress goals")
             print("\(error) : \(error.localizedDescription)")
         }
+
     }
 
     /*
@@ -48,26 +47,36 @@ class RecentProgressCollectionViewController: UICollectionViewController {
     */
 
     // MARK: UICollectionViewDataSource
+
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
+
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let recentProgressGoals = fetchedResultsController.fetchedObjects else {return 0}
         return recentProgressGoals.count
     }
 
-    
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         print("i cellForItemAt")
         print("\(indexPath.row)")
-
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecentProgressCollectionViewCell.reuseIdentifier, for: indexPath) as? RecentProgressCollectionViewCell else {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GoalCollectionViewCell.reuseIdentifier, for: indexPath) as? GoalCollectionViewCell else {
             fatalError("Unexpected IndexPath in RecentProgressCollectionView")
         }
         let goal = fetchedResultsController.object(at: indexPath)
-        cell.setupCell(with: goal)
+        //this needs rework
+        switch indexPath.row {
+        case 1:
+            cell.setupCell(with: goal, due: true)
+        case 2:
+            cell.setupCell(with: goal, due: false)
+        default:
+            cell.setupCell(with: goal, due: false)
+        }
+        
         
         return cell
     }
@@ -105,7 +114,7 @@ class RecentProgressCollectionViewController: UICollectionViewController {
 
 }
 
-extension RecentProgressCollectionViewController: NSFetchedResultsControllerDelegate{
+extension GoalCollectionViewController: NSFetchedResultsControllerDelegate{
     //IMPLEMENT THESE TO RESPOND TO UPDATES
-    
+
 }
