@@ -111,7 +111,7 @@
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRd-dZ-8yd">
                                                     <rect key="frame" x="0.0" y="39.5" width="375" height="340"/>
                                                     <connections>
-                                                        <segue destination="4D5-nv-wxq" kind="embed" id="Grz-f5-xDN"/>
+                                                        <segue destination="8Y1-yr-7ZZ" kind="embed" id="uv3-iO-otT"/>
                                                     </connections>
                                                 </containerView>
                                             </subviews>
@@ -188,7 +188,7 @@
                 <viewControllerPlaceholder storyboardName="Settings" id="sfd-Xw-pL9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lq8-eQ-zLS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2170" y="1197"/>
+            <point key="canvasLocation" x="-2455" y="1130"/>
         </scene>
         <!--Add Goal-->
         <scene sceneID="ByZ-U5-Liw">
@@ -199,14 +199,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Give Your Goal a Title" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ySK-7i-bga">
-                                <rect key="frame" x="5" y="25" width="365" height="34"/>
+                                <rect key="frame" x="5" y="69" width="365" height="34"/>
                                 <color key="tintColor" red="1" green="0.85098039219999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GdF-Sg-5Om">
-                                <rect key="frame" x="5" y="67" width="365" height="220"/>
+                                <rect key="frame" x="5" y="111" width="365" height="220"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="31V-n6-b5C"/>
@@ -256,19 +256,19 @@
                                 </cells>
                             </collectionView>
                             <datePicker hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="249" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="48r-tA-7c5">
-                                <rect key="frame" x="5" y="326" width="365" height="336"/>
+                                <rect key="frame" x="5" y="370" width="365" height="292"/>
                                 <date key="date" timeIntervalSinceReferenceDate="552136419.62527001">
                                     <!--2018-07-01 11:13:39 +0000-->
                                 </date>
                             </datePicker>
                             <datePicker contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="V9g-99-v5n" userLabel="Goal Start Date">
-                                <rect key="frame" x="5" y="326" width="365" height="336"/>
+                                <rect key="frame" x="5" y="370" width="365" height="292"/>
                                 <date key="date" timeIntervalSinceReferenceDate="552136419.62527001">
                                     <!--2018-07-01 11:13:39 +0000-->
                                 </date>
                             </datePicker>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zht-IT-wye">
-                                <rect key="frame" x="15" y="295" width="345" height="29"/>
+                                <rect key="frame" x="15" y="339" width="345" height="29"/>
                                 <segments>
                                     <segment title="Start Date"/>
                                     <segment title="Due Date"/>
@@ -278,7 +278,7 @@
                                 </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5Se-Tg-nvg">
-                                <rect key="frame" x="15" y="324" width="345" height="5"/>
+                                <rect key="frame" x="15" y="368" width="345" height="5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rO8-7f-bha" userLabel="startDateSelectorHighlightView">
                                         <rect key="frame" x="0.0" y="0.0" width="172.5" height="5"/>
@@ -338,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQC-cA-YuF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-729" y="2183"/>
+            <point key="canvasLocation" x="-972" y="2657.7211394302849"/>
         </scene>
         <!--Add Motivation-->
         <scene sceneID="rqh-PJ-Jdz">
@@ -349,7 +349,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addPhotoPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="xpa-lP-tlN">
-                                <rect key="frame" x="42.5" y="59" width="290" height="290"/>
+                                <rect key="frame" x="42.5" y="103" width="290" height="290"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="290" id="4zl-YU-3mR"/>
@@ -361,19 +361,19 @@
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a photo that helps you focus" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aQP-Px-JIK">
-                                <rect key="frame" x="5" y="25" width="365" height="29"/>
+                                <rect key="frame" x="5" y="69" width="365" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is this a Golden Goal? " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WGD-eX-1gw">
-                                <rect key="frame" x="5" y="354" width="365" height="29"/>
+                                <rect key="frame" x="5" y="398" width="365" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9z-Xx-OGG">
-                                <rect key="frame" x="5" y="386" width="365" height="31"/>
+                                <rect key="frame" x="5" y="430" width="365" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Golden Goal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQ2-o7-58d">
                                         <rect key="frame" x="0.0" y="0.0" width="316" height="31"/>
@@ -388,13 +388,13 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter a motivational text to help you stay motivated and reach your goal!" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o62-bN-OXX">
-                                <rect key="frame" x="5" y="459" width="365" height="205"/>
+                                <rect key="frame" x="5" y="503" width="365" height="161"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write your own motivational text!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000001192092896" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v4t-gZ-Mft">
-                                <rect key="frame" x="5" y="427" width="365" height="29"/>
+                                <rect key="frame" x="5" y="471" width="365" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -446,7 +446,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="561" y="1373"/>
+            <point key="canvasLocation" x="-236" y="2657.7211394302849"/>
         </scene>
         <!--Add Goal Motivational Text View Controller-->
         <scene sceneID="eFG-gp-iRc">
@@ -504,7 +504,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZQ-Cl-QWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="X47-Qf-jaE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="561" y="2111"/>
+            <point key="canvasLocation" x="472.80000000000001" y="2657.7211394302849"/>
         </scene>
         <!--List-->
         <scene sceneID="HR1-Fg-eTf">
@@ -528,7 +528,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2v-sg-qZO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1893" y="709"/>
+            <point key="canvasLocation" x="-2674" y="770"/>
         </scene>
         <!--Recent Progress Collection View Controller-->
         <scene sceneID="bTb-3p-KQw">
@@ -628,14 +628,14 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZi-ba-5lK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1735" y="1339"/>
+            <point key="canvasLocation" x="-1890" y="1108"/>
         </scene>
-        <!--Goal Collection View Controller-->
+        <!--Ending Soon Goal Collection View Controller-->
         <scene sceneID="mNT-CV-D9f">
             <objects>
-                <collectionViewController id="4D5-nv-wxq" customClass="GoalCollectionViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="4D5-nv-wxq" customClass="EndingSoonGoalCollectionViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="h5s-H4-sgO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="340"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="337"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="MainColor"/>
                         <color key="tintColor" name="TintColor"/>
@@ -647,18 +647,18 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="GoalCollectionViewCell" id="AcL-tO-FRI" customClass="GoalCollectionViewCell" customModule="GoldenGoals" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="-12.5" width="365" height="365"/>
+                                <rect key="frame" x="0.0" y="-14" width="365" height="365"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="365" height="365"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFn-FU-ltn">
-                                            <rect key="frame" x="0.0" y="0.0" width="365" height="38"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="365" height="35"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kd1-SG-eT6">
                                                     <rect key="frame" x="8" y="289.5" width="349" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <color key="textColor" name="MainTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -730,7 +730,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Doj-G9-GZU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1735.2" y="1847.2263868065968"/>
+            <point key="canvasLocation" x="-1890" y="1576"/>
         </scene>
         <!--Add New Goal Collection View Controller-->
         <scene sceneID="0RB-ft-QgN">
@@ -821,6 +821,127 @@
             </objects>
             <point key="canvasLocation" x="-2674" y="2111"/>
         </scene>
+        <!--All Goals Collection View Controller-->
+        <scene sceneID="cIV-1u-Whg">
+            <objects>
+                <collectionViewController id="8Y1-yr-7ZZ" customClass="AllGoalsCollectionViewController" customModule="GoldenGoals" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="5lH-6t-9qc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="340"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="MainColor"/>
+                        <color key="tintColor" name="TintColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eG9-X1-Ao2">
+                            <size key="itemSize" width="363" height="350"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="GoalCollectionViewCell" id="wkG-39-JA8" customClass="GoalCollectionViewCell" customModule="GoldenGoals" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="-12.5" width="365" height="365"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="365" height="365"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbh-AJ-3EW">
+                                            <rect key="frame" x="0.0" y="0.0" width="365" height="38"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWR-UN-pif">
+                                                    <rect key="frame" x="8" y="289.5" width="349" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
+                                                    <color key="textColor" name="MainTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gNU-MC-1Mx">
+                                                    <rect key="frame" x="8" y="8" width="349" height="262"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="gNU-MC-1Mx" secondAttribute="height" multiplier="4:3" id="ipl-Q5-NAo"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due in x days..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oku-VN-xcT">
+                                                    <rect key="frame" x="8" y="316" width="349" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" name="MainTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt5-1b-02w">
+                                                    <rect key="frame" x="8" y="270" width="349" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" name="DetailTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" name="MainColor"/>
+                                            <color key="tintColor" name="TintColor"/>
+                                            <constraints>
+                                                <constraint firstItem="CWR-UN-pif" firstAttribute="leading" secondItem="qbh-AJ-3EW" secondAttribute="leadingMargin" id="9U7-kJ-VN3"/>
+                                                <constraint firstItem="gNU-MC-1Mx" firstAttribute="top" secondItem="qbh-AJ-3EW" secondAttribute="topMargin" id="ECM-ma-JnF"/>
+                                                <constraint firstItem="gNU-MC-1Mx" firstAttribute="leading" secondItem="qbh-AJ-3EW" secondAttribute="leadingMargin" id="FsF-Gh-P2f"/>
+                                                <constraint firstItem="Wt5-1b-02w" firstAttribute="trailing" secondItem="qbh-AJ-3EW" secondAttribute="trailingMargin" id="Px8-Gr-neB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CWR-UN-pif" secondAttribute="trailing" id="W0Y-W3-qre"/>
+                                                <constraint firstItem="Wt5-1b-02w" firstAttribute="top" secondItem="gNU-MC-1Mx" secondAttribute="bottom" id="XRi-c9-IiX"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Oku-VN-xcT" secondAttribute="trailing" id="hpQ-4h-aJF"/>
+                                                <constraint firstItem="Oku-VN-xcT" firstAttribute="leading" secondItem="qbh-AJ-3EW" secondAttribute="leadingMargin" id="p0m-xa-DXo"/>
+                                                <constraint firstItem="Wt5-1b-02w" firstAttribute="leading" secondItem="qbh-AJ-3EW" secondAttribute="leadingMargin" id="pxO-Io-NsS"/>
+                                                <constraint firstItem="CWR-UN-pif" firstAttribute="top" secondItem="Wt5-1b-02w" secondAttribute="bottom" id="rc6-6j-oaR"/>
+                                                <constraint firstItem="Oku-VN-xcT" firstAttribute="top" secondItem="CWR-UN-pif" secondAttribute="bottom" id="s9U-h7-Toj"/>
+                                                <constraint firstItem="gNU-MC-1Mx" firstAttribute="trailing" secondItem="qbh-AJ-3EW" secondAttribute="trailingMargin" id="uI6-3Y-Soe"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <color key="tintColor" name="TintColor"/>
+                                <constraints>
+                                    <constraint firstItem="qbh-AJ-3EW" firstAttribute="leading" secondItem="wkG-39-JA8" secondAttribute="leading" id="4x4-D8-HHf"/>
+                                    <constraint firstItem="qbh-AJ-3EW" firstAttribute="leading" secondItem="wkG-39-JA8" secondAttribute="leading" id="6NG-rd-HY2"/>
+                                    <constraint firstAttribute="trailing" secondItem="qbh-AJ-3EW" secondAttribute="trailing" id="JFi-P5-BB1"/>
+                                    <constraint firstAttribute="bottom" secondItem="qbh-AJ-3EW" secondAttribute="bottom" id="Ogs-1A-hCS"/>
+                                    <constraint firstItem="qbh-AJ-3EW" firstAttribute="top" secondItem="wkG-39-JA8" secondAttribute="top" id="hgf-9S-n4b"/>
+                                    <constraint firstItem="qbh-AJ-3EW" firstAttribute="top" secondItem="wkG-39-JA8" secondAttribute="top" id="m5z-wp-RCB"/>
+                                    <constraint firstAttribute="trailing" secondItem="qbh-AJ-3EW" secondAttribute="trailing" id="tdt-qJ-4Xo"/>
+                                    <constraint firstAttribute="bottom" secondItem="qbh-AJ-3EW" secondAttribute="bottom" id="tsC-aV-I4P"/>
+                                </constraints>
+                                <size key="customSize" width="365" height="365"/>
+                                <connections>
+                                    <outlet property="goalCategory" destination="Wt5-1b-02w" id="MER-7X-ScT"/>
+                                    <outlet property="goalDue" destination="Oku-VN-xcT" id="dzO-3y-yco"/>
+                                    <outlet property="goalImage" destination="gNU-MC-1Mx" id="fCo-Wx-w9q"/>
+                                    <outlet property="goalTitle" destination="CWR-UN-pif" id="OCR-yT-yWQ"/>
+                                    <outlet property="goalView" destination="qbh-AJ-3EW" id="wb3-fX-kNE"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="8Y1-yr-7ZZ" id="bKG-8W-Ow5"/>
+                            <outlet property="delegate" destination="8Y1-yr-7ZZ" id="HNb-Yb-J3f"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9V-oF-MAp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1890" y="1999"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9Jt-uX-Po2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qa3-h9-2s9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="ev4-vk-z7k">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3d3-To-fLc" kind="relationship" relationship="rootViewController" id="B9q-0u-aOL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="94T-IR-BSG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1911.2" y="2657.7211394302849"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addPhotoPlaceholder" width="290" height="290"/>
@@ -848,7 +969,4 @@
             <color red="0.23529411764705882" green="0.30980392156862746" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Grz-f5-xDN"/>
-    </inferredMetricsTieBreakers>
 </document>

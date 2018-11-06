@@ -14,7 +14,7 @@
 		E91C37AC218CFB05002EBB20 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37AB218CFB04002EBB20 /* Date+Extension.swift */; };
 		E91C37AE218F9682002EBB20 /* AddNewGoalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37AD218F9682002EBB20 /* AddNewGoalCollectionViewController.swift */; };
 		E91C37B0218F99CD002EBB20 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37AF218F99CD002EBB20 /* CategoryCollectionViewCell.swift */; };
-		E91C37B22190552C002EBB20 /* GoalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37B12190552C002EBB20 /* GoalCollectionViewController.swift */; };
+		E91C37B22190552C002EBB20 /* EndingSoonGoalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37B12190552C002EBB20 /* EndingSoonGoalCollectionViewController.swift */; };
 		E91C37B4219055C5002EBB20 /* GoalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C37B3219055C5002EBB20 /* GoalCollectionViewCell.swift */; };
 		E91C77F72162D47C00BCA601 /* CreditsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C77F62162D47C00BCA601 /* CreditsCell.swift */; };
 		E91C77F92163D2E600BCA601 /* ChangeAppIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91C77F82163D2E600BCA601 /* ChangeAppIconViewController.swift */; };
@@ -42,6 +42,7 @@
 		E94163BF211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94163BE211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift */; };
 		E95379222037B59B00864212 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95379212037B59B00864212 /* GoalView.swift */; };
 		E958DFDF20D2AB7E006C6CF4 /* HallOfFameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958DFDE20D2AB7E006C6CF4 /* HallOfFameTableViewController.swift */; };
+		E9605FB72192236B00D37631 /* AllGoalsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9605FB62192236B00D37631 /* AllGoalsCollectionViewController.swift */; };
 		E96B192A20EE2C7700772966 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B192920EE2C7700772966 /* Goal.swift */; };
 		E96B192C20EE2C8300772966 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B192B20EE2C8300772966 /* Category.swift */; };
 		E96B192E20EE2C9A00772966 /* ProgressNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B192D20EE2C9A00772966 /* ProgressNotes.swift */; };
@@ -90,7 +91,7 @@
 		E91C37AB218CFB04002EBB20 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extension.swift"; path = "GoldenGoals/Extensions/Date+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		E91C37AD218F9682002EBB20 /* AddNewGoalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGoalCollectionViewController.swift; sourceTree = "<group>"; };
 		E91C37AF218F99CD002EBB20 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		E91C37B12190552C002EBB20 /* GoalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCollectionViewController.swift; sourceTree = "<group>"; };
+		E91C37B12190552C002EBB20 /* EndingSoonGoalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndingSoonGoalCollectionViewController.swift; sourceTree = "<group>"; };
 		E91C37B3219055C5002EBB20 /* GoalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCollectionViewCell.swift; sourceTree = "<group>"; };
 		E91C77F62162D47C00BCA601 /* CreditsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCell.swift; sourceTree = "<group>"; };
 		E91C77F82163D2E600BCA601 /* ChangeAppIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		E94163BE211454CF00B5ECAC /* GoalDateAndOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoalDateAndOptionsViewController.swift; path = "GoldenGoals/Golden Goal/GoalDateAndOptionsViewController.swift"; sourceTree = SOURCE_ROOT; };
 		E95379212037B59B00864212 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		E958DFDE20D2AB7E006C6CF4 /* HallOfFameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallOfFameTableViewController.swift; sourceTree = "<group>"; };
+		E9605FB62192236B00D37631 /* AllGoalsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsCollectionViewController.swift; sourceTree = "<group>"; };
 		E96B192920EE2C7700772966 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		E96B192B20EE2C8300772966 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E96B192D20EE2C9A00772966 /* ProgressNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressNotes.swift; sourceTree = "<group>"; };
@@ -348,7 +350,8 @@
 		E9E90BF32039B8760087C123 /* Goal List */ = {
 			isa = PBXGroup;
 			children = (
-				E91C37B12190552C002EBB20 /* GoalCollectionViewController.swift */,
+				E91C37B12190552C002EBB20 /* EndingSoonGoalCollectionViewController.swift */,
+				E9605FB62192236B00D37631 /* AllGoalsCollectionViewController.swift */,
 				E91C37B3219055C5002EBB20 /* GoalCollectionViewCell.swift */,
 				E91C37A7218B86B8002EBB20 /* RecentProgressCollectionViewController.swift */,
 				E91C37A9218B888A002EBB20 /* RecentProgressCollectionViewCell.swift */,
@@ -514,7 +517,7 @@
 			files = (
 				E91C78022164E64D00BCA601 /* Person.swift in Sources */,
 				E925843D20E936F300A2E7B2 /* AddGoalMotivationViewController.swift in Sources */,
-				E91C37B22190552C002EBB20 /* GoalCollectionViewController.swift in Sources */,
+				E91C37B22190552C002EBB20 /* EndingSoonGoalCollectionViewController.swift in Sources */,
 				E925843920E8F6E000A2E7B2 /* AddGoalViewController.swift in Sources */,
 				E91C77F72162D47C00BCA601 /* CreditsCell.swift in Sources */,
 				E901612820D158F2005AA9BD /* GoldenGoal.xcdatamodeld in Sources */,
@@ -530,6 +533,7 @@
 				E91C37AE218F9682002EBB20 /* AddNewGoalCollectionViewController.swift in Sources */,
 				E91C78042165044D00BCA601 /* IconCell.swift in Sources */,
 				E96B192A20EE2C7700772966 /* Goal.swift in Sources */,
+				E9605FB72192236B00D37631 /* AllGoalsCollectionViewController.swift in Sources */,
 				E91B8D8020DED0F100649852 /* categoryCell.swift in Sources */,
 				E96B192E20EE2C9A00772966 /* ProgressNotes.swift in Sources */,
 				E91C37AA218B888A002EBB20 /* RecentProgressCollectionViewCell.swift in Sources */,
